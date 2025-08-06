@@ -1,0 +1,14 @@
+{
+  "articles": [
+    {
+      "title": "Arithmetic Basics",
+      "slug": "arithmetic-basics",
+      "description": "Foundations of addition and subtraction"
+    },
+    {
+      "title": "Number Theory Primer",
+      "slug": "number-theory",
+      "description": "Intro to modular arithmetic"
+    }
+  ]
+}
