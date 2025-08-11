@@ -23,12 +23,19 @@
 }
 
 .course-image {
+  display: block; /* Prevent alt text from influencing text flow */
   width: 120px;
   height: 120px;
   object-fit: cover;
   border-radius: 12px;
   margin-right: 1.5rem;
 }
+
+.course-info {
+  flex: 1; /* takes all space left of the image */
+  text-align: left;
+}
+
 
 .course-info h3 {
   margin: 0 0 0.5rem;

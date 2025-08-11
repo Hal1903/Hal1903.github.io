@@ -4,6 +4,7 @@ import "../css/Timeline.css";
 
 export default function Timeline() {
   const items = [
+    { title: "2021", cardTitle: "2021 Hihglights"},
     { title: "2022", cardTitle: "2022 Highlights" },
     { title: "2023", cardTitle: "2023 Highlights" },
     { title: "2024", cardTitle: "2024 Highlights" },
@@ -30,9 +31,15 @@ export default function Timeline() {
             }}
         >
             <div>
+                <ul>
+                    <li>Started programming (Python, C++, JS)</li>
+                    <li>Passed APUSH and Biology (self-studied the last 2 chapters of biology)</li>
+                </ul>
+            </div>
+            <div>
             <ul>
-                <li>Passed AP Calculus BC with 2 months</li>
-                <li>Intern at FPI</li>
+                <li>Passed AP Calculus BC with 2 months self-study</li>
+                <li>Intern at FPI (VBA dev)</li>
                 <li>Started undergraduate studies in CS and MA at UKY</li>
                 <li>Started competitive programming and TA in Calc II and JPN's</li>
             </ul>

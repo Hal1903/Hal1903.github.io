@@ -1,13 +1,19 @@
-/* ArticleList.css */
-.article-list-container {
-  max-width: 960px;
+.article-container {
+  max-width: 1080px;
   margin: 2rem auto;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* the last three for centering panels */
 }
 
 .article-panel {
   display: flex;
   align-items: center;
+  width: 100%;            /* make it fill parent width */
+  max-width: 600px;       /* max fixed width */
+  min-width: 500px;       /* optional */
   background-color: #f9f9f9;
   border-radius: 12px;
   padding: 1rem;

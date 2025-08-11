@@ -40,7 +40,7 @@ function Home() {
                 Welcome! I'm Haruku, an undergraduate researcher and developer interested in math, computer science, and education at University of Kentucky.
               </p>
               <p>
-                My goals are to foster academic curiosity and enjoyment in learning and to earn a PhD in computer science. 
+                My goals are to foster academic curiosity and enjoyment in learning and to earn a Ph.D. in computer science. 
                 My works explaining math and CS is in Resources section. Feel free to check them out:)
               </p>
               <p>
@@ -62,7 +62,13 @@ function Home() {
 
         <section id="projects">
           <h2>Projects</h2>
+          <p style={{fontSize: "20px", marginTop: "1rem"}}>
+          Here are the most recent or significant projects I developed. 
+          <br></br>
+          Click the project panels to see more details. They will flip;)
+          </p>
           <div className="projects-grid">
+          {/* at some point, isolate the list of panels to another file */}
             <Panel
                 imageSrc="/images/projects/PINN.png"
                 title="Physics-Informed Neural Networks for Tensegrity Analysis"
@@ -116,7 +122,7 @@ function Home() {
               description="Taking an integer as input, the model generates a digit image of the integer. 
               Trained on MNIST dataset and implemented from the scratch."
               detail = {`
-              One of te model tested during the REU at WPI was CGAN, and the model underperformed due to data limitation.
+              One of the model tested during the REU at WPI was CGAN, and the model underperformed due to data limitation.
               To confirm the model's capability with sufficient data, I implemented both regression and classification CGANs. 
               This project is an extension of it.
               This CGAN takes an integer as input and generates a digit image of the integer. 
@@ -139,15 +145,31 @@ function Home() {
             />
           </div>
           <div>
-            <p style={{fontSize: "20px", marginTop: "2rem"}}>
+            <p style={{fontSize: "20px", marginTop: "2rem", marginBottom: "3rem"}}>
               ... and last but not least, I am working on this portfolio website to showcase my works and projects:)
               <br></br>
-              Click the project panels to see more details. They will flip;)
+              
             </p>
             
           </div>
         </section>
+        {/* <section>
+          
+          <div>
+          <p style={{fontSize: "20px", marginTop: "1rem", marginBottom: "3rem"}}>
+              Also, here is my sister's website. She provides you a portrait of your house, please check this out if you want one as a trait of your invaluable memory:
+              <br></br>
+              <a href="http://aono.my.canva.site/watercolor-house-portrait-website">
+              http://aono.my.canva.site/watercolor-house-portrait-website
+              </a>
+          </p>
+          </div>
+
+        </section> */}
+
       </main>
+      
+      {/* Language proficiency line, Skills, Favorite things to do*/}
 
 
       <footer className="footer">

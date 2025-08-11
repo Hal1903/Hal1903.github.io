@@ -7,7 +7,7 @@ const courses = [
     id: 'elementary_math',
     title: 'Elementary Mathematics',
     description: 'Exposure to advanced topics and abstraction in arithmetics, number theory, graph theory, and algorithms.',
-    image: '../images/Courses/math1.png',
+    image: '../images/Courses/elem.png',
   },
   {
     id: 'discrete',
@@ -35,7 +35,7 @@ function Courses() {
   return (
     <div className="App">
       <header className="navbar">
-        <h1>My Portfolio</h1>
+        <h1>STEM-STUDIES</h1>
         <nav>
           <a href="/">Home</a>
         </nav>
