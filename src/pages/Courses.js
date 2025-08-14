@@ -49,7 +49,7 @@ function Courses() {
   return (
     <div className="App">
       <header className="navbar">
-        <h1>STEM-STUDIES</h1>
+        <h1>MAX-STUDIES</h1>
         <nav>
           <a href="/">Home</a>
         </nav>

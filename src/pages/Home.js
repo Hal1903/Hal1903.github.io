@@ -1,28 +1,22 @@
 import React from 'react';
 import '../css/Home.css';
 import { SocialIcon } from 'react-social-icons'
-// import { Link } from 'react-router-dom';
-import { HashLink as Link } from 'react-router-hash-link';
+// import { Link } from 'react-router-dom'; 
+import { HashLink as Link } from 'react-router-hash-link'; // This works for github.io, static web
 import AboutSlideshow from '../components/Slideshow'; // Adjust the import path as necessary
 import HorizontalTimeline from '../components/Timeline';
 import Panel from "../components/ProjectPanel"; // adjust path if needed
 import "../css/ProjectGrid.css";
+import Gacha from "../components/Gacha";
 
 // import { Timeline } from "flowbite-react";
-/*
-TODO: mobile responsive design
-TODO: add a comment widget
-*/
 
 function Home() {
   return (
     <div className="App">
       <header className="navbar">
-        <h1>STEM-STUDIES</h1>
+        <h1>MAX-STUDIES</h1>
         <nav>
-          {/* <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a> */}
             <Link smooth to="#about">About</Link>
             <Link smooth to="#projects">Projects</Link>
             <Link smooth to="#contact">Contact</Link>
@@ -170,6 +164,15 @@ function Home() {
       </main>
       
       {/* Language proficiency line, Skills, Favorite things to do*/}
+      <p style={{fontSize: "20px", marginTop: "2rem", marginBottom: "3rem"}}> 
+      Also, here is an About-Me Gacha, try to click or tap the gacha:)
+      There are 20 items in total. Higher rank describes more niche, academic-heavy facts.
+      </p>
+      <div className="gacha">
+          <Gacha />
+          {/* 5 appreciation coins. Sell one item to get 2 coins. Prepare 20 items and 2 same items. 2 epics, 3 rare, 4 uncommon, 6 common*/}
+
+      </div>
       
 
       <footer className="footer">

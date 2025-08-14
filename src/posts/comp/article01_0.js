@@ -17,7 +17,7 @@ export default function Article1() {
                 <h2>Windows vs. macOS: The Main Operating Systems</h2>
                 <p>
                 The first decision you'll likely make is Operating System (OS), between a Windows PC and a Mac. 
-                Both are excellent, but they provide different user needs.
+                Both are excellent, but they meet the different user needs.
                 </p>
                 <ul>
                     <li><b>Windows:</b> 

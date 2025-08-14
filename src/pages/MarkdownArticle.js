@@ -17,7 +17,7 @@ export default function MarkdownArticle() {
   return (
     <div>
       <header className="navbar">
-        <h1>STEM-STUDIES</h1>
+        <h1>MAX-STUDIES</h1>
         <nav>
           <a href="/">Home</a>
           <a href={`/course/${topic}`}>Back</a>
