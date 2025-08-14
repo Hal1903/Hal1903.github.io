@@ -9,12 +9,6 @@ import MarkdownArticle from './pages/MarkdownArticle';
 import ArticleList from './pages/ArticleList';
 // import ReactMarkdown from 'react-markdown';
 
-
-// import Linear from './pages/course/Linear';
-// import ML from './pages/course/ML';
-// import LinearArticle1 from './pages/course/linear/Article1';
-// import MLArticle1 from './pages/course/rl/Article2';
-
 function App() {
   return (
     <Router>

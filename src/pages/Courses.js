@@ -3,29 +3,43 @@ import { useNavigate } from 'react-router-dom';
 import '../css/Courses.css';
 
 const courses = [
+  // Ask my sibling for accounting and finance.
+  // Maybe sister for drawing.
+  {
+    id: 'comp',
+    title: 'Introduction to Using Computers',
+    description: 'Navigation to the basic knowledge of core computer systems and essential skills for beginners.',
+    image: '../images/Courses/pc.png',
+  },
   {
     id: 'elementary_math',
     title: 'Elementary Mathematics',
-    description: 'Exposure to advanced topics and abstraction in arithmetics, number theory, graph theory, and algorithms.',
+    description: 'Exposure to advanced topics and abstraction in arithmetics, number theory, graph theory, and algorithms. 8 chapters are open.',
     image: '../images/Courses/elem.png',
   },
   {
-    id: 'discrete',
+    id: 'Discrete',
     title: 'Introduction to Discrete Math',
-    description: 'Introduction to discrete mathematics.',
+    description: 'Starting point of proof-based mathematics and getting interesting perspectives to mathematics.',
     image: '../images/Courses/discrete.png',
   },
   {
-    id: 'linear',
+    id: 'Linear',
     title: 'Linear Algebra',
-    description: 'Introduction to linear algebra to build a strong foundation for ML and various other fields of mathematics.',
+    description: 'Introduction to vectors and matrices to build a strong foundation for ML and various other fields of mathematics.',
     image: '../images/Courses/linear.png',
   },
   {
-    id: 'ml1',
-    title: 'Introduction to Machine Learning',
+    id: 'ML1',
+    title: 'Introduction to Data Science and Machine Learning',
     description: 'Example-based machine learning with mathematical backgrounds and Python programs.',
     image: '../images/Courses/ml1.png',
+  },
+    {
+    id: 'toc',
+    title: 'Introduction to Theory of Computing',
+    description: 'Introduction to fundamental capabilities and limitations of computers to deepen the knowledge of the mathematical background of computers.',
+    image: '../images/Courses/DFA.png',
   },
 ];
 

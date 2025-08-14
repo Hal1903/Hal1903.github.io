@@ -1,3 +1,40 @@
-.body {
+.container {
     margin: 5rem;
+    padding-bottom: 1rem;
+}
+
+.title {
+    margin-bottom: 2rem;
+}
+
+.container p, li {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.hanging-bullet {
+    list-style: none; /* remove bullets */
+    margin: 0;
+    padding: 0;
+}
+
+.hanging-bullet li {
+    display: grid;
+    grid-template-columns: 80px 1fr; /* label fixed, description flexible */
+    margin-bottom: 1em;
+}
+
+.container table tr {
+    margin-bottom: 1rem;
+}
+
+.container h2 {
+    margin-top: 2.5rem;
+}
+
+table, table td, 
+table th {
+    padding: 12px 8px; /* top/bottom, left/right */
+    border: 1px solid black;
+    border-collapse: collapse;
 }

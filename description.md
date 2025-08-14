@@ -1,0 +1,39 @@
+# Documentation on Structure
+
+### App.js
+Defines routing config: what pages to display, URL path, and URL parameters/variables needed to route.
+... path="/course/:topic" shows a list of articles
+... path="/course/:topic/:articleId" uses dynamic parameters to show /SUBJECT/ARTICLE post.
+
+### Courses.js
+Contains all the course panels and descriptions.
+onClick={() => navigate(`/course/${course.id}`)} inserts course ID to the URL and instructs to look up the corresponding article list i.e. articleMap[topic].
+course.id should match the folder name so that the loader and this navigate logic works properly.
+
+### utils/loadPosts
+This loads the posts, used in ArticleList navigated from Courses.
+require.context is a webpack feature telling webpack to look only .js in the src/posts and its subdirectories
+-> context is a function that lists all the matching files that can be extracted via .keys().
+module i.e. context(key) is a dict-like object: keys={__esModule, default, title, ...} and values. key is a string of path matched.
+articleMap is a nested object of articleName: {default: ..., variable1: ..., ...}. 
+Ordering logic is done by naming system of article js files.
+
+### ArticleList.js
+
+
+### MarkdownArticle.js
+This is a framework of articles, containing UI miscellaneous and actual post components.
+
+### Timeline.js
+
+
+### Slideshow.js
+
+
+### src/posts/SUBJECT/articleX_Y
+
+
+### public
+Contains all the images and blog posts in html format.
+Academic resources are in .js because they are more likely to get shared hence should have better UI, 
+while blogs are less interested.

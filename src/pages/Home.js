@@ -170,7 +170,7 @@ function Home() {
       </main>
       
       {/* Language proficiency line, Skills, Favorite things to do*/}
-
+      
 
       <footer className="footer">
         <section id="contact">
@@ -189,6 +189,19 @@ function Home() {
             <SocialIcon url="https://github.com/Hal1903"></SocialIcon>
             <SocialIcon url="https://www.linkedin.com/in/haruku-aono-b656661a9/"></SocialIcon>
             <SocialIcon url="mailto:hahikeyuaono0419@gmail.com/"></SocialIcon>
+            <a
+              href="https://scholar.google.com/citations?hl=en&user=0vYSmiwAAAAJ"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+            <img
+              src={"/images/icons/scholar.png"}
+              alt="Google Scholar"
+              className="scholar-icon"
+              // style={{ width: '35px', height: '35px', marginTop: '6px'}}
+            />
+            </a>
+           
           </div>
         </section>
 

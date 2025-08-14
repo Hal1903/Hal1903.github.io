@@ -1,7 +1,7 @@
 import '../../css/post.css';
 
 
-export const title = "Intro to Applications 1.5";
+export const title = "Multiples";
 export const category = "elementary_math";
 
 export default function Article1_5() {

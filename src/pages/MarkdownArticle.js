@@ -1,5 +1,7 @@
 import { useParams } from 'react-router-dom';
 import articleMap from '../utils/loadPosts';
+import SideBar from '../components/SideBar';
+import { HashLink as Link } from 'react-router-hash-link';
 
 export default function MarkdownArticle() {
   const { topic, articleId } = useParams();
@@ -13,8 +15,18 @@ export default function MarkdownArticle() {
   const ArticleComponent = ArticleModule.default;
 
   return (
-    <div className="markdown-body">
-      <ArticleComponent />
+    <div>
+      <header className="navbar">
+        <h1>STEM-STUDIES</h1>
+        <nav>
+          <a href="/">Home</a>
+          <a href={`/course/${topic}`}>Back</a>
+        </nav>
+      </header>
+      <div className="markdown-body">
+        {/* <SideBar /> needs more format!*/}
+        <ArticleComponent />
+      </div>
     </div>
   );
 }

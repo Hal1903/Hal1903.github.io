@@ -61,7 +61,25 @@ body, html, #root {
     display: flex;
     gap: 30px;
     justify-content: center;
+    object-fit: contain;
 }
+
+.scholar-icon {
+    width: 48px;
+    height: 48px;
+    /* margin-top: 6px; */
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    object-fit: contain;  /* makes image scale nicely */
+}
+
+.footer {
+    margin-top: 1rem;
+}
+
 
 /* 👇 Mobile: stack columns vertically */
 @media (max-width: 768px) {

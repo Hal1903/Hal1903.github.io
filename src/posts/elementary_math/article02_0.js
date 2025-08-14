@@ -1,7 +1,7 @@
 import '../../css/post.css';
 
 
-export const title = "Exponentiation 2.0";
+export const title = "Prime Factorization";
 export const category = "elementary_math";
 
 export default function Article2_0() {

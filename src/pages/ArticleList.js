@@ -24,26 +24,35 @@ function ArticleList() {
 
 
   return (
-    <div className="article-container">
-      {articles.map((article) => (
-        <Link
-          key={article.id}
-          to={`/course/${topic}/${article.id}`}
-          style={{ textDecoration: 'none', color: 'inherit' }}
-        >
-          <div className="article-panel">
-            {/* <img
-              className="article-image"
-              src="/default-article.jpg"
-              alt={article.title}
-            /> */}
-            <div className="article-info">
-              <h3>{article.title}</h3>
-              <p>Click to read</p>
+    <div>
+      <header className="navbar">
+        <h1>STEM-STUDIES</h1>
+        <nav>
+          <a href="/">Home</a>
+          <a href={`/course/`}>Course List</a>
+        </nav>
+      </header>
+      <div className="article-container">
+        {articles.map((article) => (
+          <Link
+            key={article.id}
+            to={`/course/${topic}/${article.id}`}
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <div className="article-panel">
+              {/* <img
+                className="article-image"
+                src="/default-article.jpg"
+                alt={article.title}
+              /> */}
+              <div className="article-info">
+                <h3>{article.title}</h3>
+                <p>Click to read</p>
+              </div>
             </div>
-          </div>
-        </Link>
-      ))}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
