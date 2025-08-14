@@ -70,7 +70,9 @@ export default function Article1() {
                 <h2>Memory</h2>
                 <p>
                     Another key component is the capacity of Random Access Memory (RAM), amount of memory.
-                    Memory is like short-term memory storage, while storage or HDD/SSD keeps the data persistently.
+                    Memory is like short-term data storage, which disappears after shutting down, while storage or HDD/SSD keeps the data persistently.
+                    If you are planning to open a software that is inherently intensive like Photoshop and a video editor, you must have at least 8GB.
+                    Lack of memory causes freeze, crash, and/or inability to open some applications.
 
                 </p>
 
