@@ -2,6 +2,8 @@ import { useParams } from 'react-router-dom';
 import articleMap from '../utils/loadPosts';
 import SideBar from '../components/SideBar';
 import { HashLink as Link } from 'react-router-hash-link';
+import { MathJax, MathJaxContext } from "better-react-mathjax";
+
 
 export default function MarkdownArticle() {
   const { topic, articleId } = useParams();
@@ -25,7 +27,9 @@ export default function MarkdownArticle() {
       </header>
       <div className="markdown-body">
         {/* <SideBar /> needs more format!*/}
-        <ArticleComponent />
+        <MathJaxContext>
+          <ArticleComponent />
+        </MathJaxContext>
       </div>
     </div>
   );

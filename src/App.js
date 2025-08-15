@@ -7,10 +7,12 @@ import Courses from './pages/Courses';
 import './App.css';
 import MarkdownArticle from './pages/MarkdownArticle';
 import ArticleList from './pages/ArticleList';
+import { MathJax, MathJaxContext } from "better-react-mathjax";
 // import ReactMarkdown from 'react-markdown';
 
 function App() {
   return (
+    <MathJaxContext>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -19,6 +21,7 @@ function App() {
         <Route path="/course/:topic" element={<ArticleList />} />
       </Routes>
     </Router>
+    </MathJaxContext>
   );
 }
 

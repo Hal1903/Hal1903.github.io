@@ -28,6 +28,7 @@
   },
   "homepage": "https://hal1903.github.io",
   "dependencies": {
+    "better-react-mathjax": "^2.3.0",
     "flowbite-react": "^0.12.6",
     "react": "^19.1.1",
     "react-chrono": "^2.9.1",
