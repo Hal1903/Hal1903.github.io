@@ -11,9 +11,8 @@
 .article-panel {
   display: flex;
   align-items: center;
-  width: 100%;            /* make it fill parent width */
-  max-width: 600px;       /* max fixed width */
-  min-width: 500px;       /* optional */
+  width: 100%;           /* take full available width */
+  max-width: 600px;      /* upper bound */
   background-color: #f9f9f9;
   border-radius: 12px;
   padding: 1rem;
@@ -22,7 +21,11 @@
   text-decoration: none;
   color: inherit;
   transition: transform 0.2s ease;
+  box-sizing: border-box; /* ensures padding doesn’t add overflow */
 }
+
+
+
 
 .article-panel:hover {
   transform: scale(1.02);
@@ -52,13 +55,17 @@
   font-size: 0.95rem;
 }
 
+/* Remove fixed min-width */
+.article-panel {
+  min-width: unset;
+}
+
+/* On small screens, let it shrink to fit */
 @media (max-width: 600px) {
   .article-panel {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .article-image {
-    margin-bottom: 0.5rem;
+    width: 100%;   /* fully fit within viewport */
+    max-width: 100%;
   }
 }
