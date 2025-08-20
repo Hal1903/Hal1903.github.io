@@ -4,22 +4,22 @@ import '../css/Gacha.css'
 // 1 mythic, 1 secret, 2 epics, 3 rare, 5 uncommon, 8 common. Higher -> academic / engineering. Oh, Fibonacci!
 const items = [
     {rank: 1, title: "01. Favorite music genre", desc: "Classical, rock, vocaloid, military songs, aand game music"},
-    {rank: 1, title: "02. The max # of pushups I could make (08/14/2025)", desc: "30, 3^3+3. 2 months ago I barely made 15, very happy."},
+    {rank: 1, title: "02. The max # of pushups I could make (08/19/2025)", desc: "32, 2^5. Before May 2025 I barely made 15, very happy."},
     {rank: 1, title: "03. The longest concentration hour", desc: "12 hours" },
-    {rank: 1, title: "04. Favorite food", desc: "Roast beef, sushi, omelette rice, and cream melon soda" },
-    {rank: 1, title: "05. When I realized I like studying", desc: "19 or 20. I am catching up to those who liked studying earlier!" },
+    {rank: 1, title: "04. Favorite food", desc: "Roast beef, sushi, omelette rice, cream melon soda, and my parent's cooking" },
+    {rank: 1, title: "05. When I realized I like studying", desc: "At the age of 19-20. I am catching up to those who liked studying earlier!" },
     {rank: 1, title: "06. Favorite games", desc: "Final Fantasy Tactics Advance, Dragon Quest 11, Puyo Puyo & Tetris, and Japanese indies" },
     {rank: 1, title: "07. Three words that describe me the most (subjective)", desc: "curious, coherent, and lazy (good and bad)"},
     {rank: 1, title: "08. Favorite Color in MTG", desc: "Blue and Black" },
 
-    {rank: 2, title: "09. The lowest test score", desc: "8/100 (2nd grade, a test drawing lines using a ruler.)" },
+    {rank: 2, title: "09. The lowest test score", desc: "8/100 (examining the ability to draw straight lines using a ruler.)" },
     {rank: 2, title: "10. My Computer", desc: "Ryzen5 7600X + NVIDIA 4060 Ti + 32GB RAM"},
     {rank: 2, title: "11. Favorite quote", desc: "Hobbies are means that became the goals. 趣味とは手段と目的が逆転したものである。" },
     {rank: 2, title: "12. My travel habits", desc: "Going to universities nearby and buy some gifts, visit tech companies nearby, and buy a Starbucks mug if it is a state I have never visited." },
     {rank: 2, title: "13. Favorite Programming Language", desc: "Python, C++, and Prolog. I want to learn Haskell at some point."},
     
     {rank: 3, title: "14. Daily habits", desc: "Thinking of interesting properties of a number I see. Sometimes I work on proof when I found a patterns, but sometimes it is an unsolved problem."},
-    {rank: 3, title: "15. Favorite equations (hence formula as well)", desc: "Bellman Equation, Euler's formula and identity, Taylor series, and Cross-Entropy (especially with a conneciton to KL divergence)" },
+    {rank: 3, title: "15. Favorite equations (hence formula as well)", desc: "Bellman Equation, Euler's formula and identity, Taylor series, adversarial training loss, and Cross-Entropy (especially with a conneciton to KL divergence)" },
     {rank: 3, title: "16. Favorite Paradox", desc: "Arcsin law, Simpson's Paradox, Giffen goods, Hilbert hotel, and Banach-Tarski" },
     // {rank: 3, title: "Things I struggled to understand the most", desc: "Renewal Process with Kolmogorov Equations, RB Tree, and "},
 

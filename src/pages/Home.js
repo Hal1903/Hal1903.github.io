@@ -160,19 +160,14 @@ function Home() {
           </div>
 
         </section> */}
-
+          <p style={{fontSize: "20px", marginTop: "2rem", marginBottom: "3rem"}}> 
+          Also, here is an About-Me Gacha, try to click or tap the gacha:)
+          There are 20 items in total. Higher rank describes more niche, academic-heavy facts.
+          </p>
+          <div className="gacha">
+            <Gacha />
+          </div>
       </main>
-      
-      {/* Language proficiency line, Skills, Favorite things to do*/}
-      <p style={{fontSize: "20px", marginTop: "2rem", marginBottom: "3rem"}}> 
-      Also, here is an About-Me Gacha, try to click or tap the gacha:)
-      There are 20 items in total. Higher rank describes more niche, academic-heavy facts.
-      </p>
-      <div className="gacha">
-          <Gacha />
-          {/* 5 appreciation coins. Sell one item to get 2 coins. Prepare 20 items and 2 same items. 2 epics, 3 rare, 4 uncommon, 6 common*/}
-
-      </div>
       
 
       <footer className="footer">

@@ -1,7 +1,7 @@
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import articleMap from '../utils/loadPosts';
-import SideBar from '../components/SideBar';
-import { HashLink as Link } from 'react-router-hash-link';
+import Sidebar from '../components/SideBar';
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 
 const mathjaxConfig = {
@@ -14,32 +14,53 @@ const mathjaxConfig = {
 
 export default function MarkdownArticle() {
   const { topic, articleId } = useParams();
+  const [isOpen, setIsOpen] = useState(false);
 
   const ArticleModule = articleMap[topic]?.[articleId];
-
   if (!ArticleModule) {
     return <div><h1>404</h1><p>Article not found.</p></div>;
   }
 
   const ArticleComponent = ArticleModule.default;
 
+  // button label without ternary
+  let buttonLabel = "☰";
+  if (isOpen) buttonLabel = "✖";
+
+  // sidebar class without ternary
+  let toggleClass = "collapsed";
+  if (isOpen) toggleClass = "open";
+
   return (
     <div>
-      <header className="navbar">
-        <h1>MAX-STUDIES</h1>
-        <nav>
-          <a href="/">Home</a>
-          <a href={`/course/${topic}`}>Back</a>
-        </nav>
+      <header className={`navbar ${isOpen ? "shifted" : ""}`}>
+        <h1 className="navbar-title">MAX STUDIES</h1>
+        <div className="navbar-bottom">
+          <button 
+            className="sidebar-btn" 
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {buttonLabel}
+          </button>
+          <nav>
+            <a href="/">Home</a>
+            <a href={`/course/${topic}`}>Back</a>
+          </nav>
+        </div>
       </header>
-      <div className="markdown-body">
-        {/* <SideBar /> needs more format!*/}
 
-          <ArticleComponent />
+<div className="markdown-body">
+  <div className={`sidebar ${isOpen ? "open" : "collapsed"}`}>
+    <Sidebar topic={topic} onClose={setIsOpen}/>
+  </div>
 
-      </div>
+  <div className={`main ${isOpen ? "shifted" : ""}`}>
+    <MathJaxContext config={mathjaxConfig}>
+      <ArticleComponent />
+    </MathJaxContext>
+  </div>
+</div>
+
     </div>
   );
 }
-
-

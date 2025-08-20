@@ -1,22 +1,27 @@
-// not used yet
-// src/components/Sidebar.js
 import { Link, useParams } from 'react-router-dom';
 import articleMap from '../utils/loadPosts';
+import "../css/SideBar.css";
 
-export default function Sidebar() {
-  const { topic } = useParams();
-  const articles = articleMap[topic] ? Object.keys(articleMap[topic]) : [];
+export default function Sidebar({ topic, onClose }) {
+  const { articleId } = useParams();
+  const articles = articleMap[topic] ? Object.entries(articleMap[topic]) : [];
 
   return (
     <aside>
-      <h3>Articles</h3>
-      <ul>
-        {articles.map(id => (
+      <div className="sidebar-header">
+        <h3>Articles</h3>
+        <button className="close-btn" onClick={() => onClose(false)}>✖</button>
+      </div>
+
+      <ol>
+        {articles.map(([id, article]) => (
           <li key={id}>
-            <Link to={`/course/${topic}/${id}`}>{id}</Link>
+            <Link to={`/course/${topic}/${id}`} onClick={() => onClose(false)}>
+              {article.title || id}
+            </Link>
           </li>
         ))}
-      </ul>
+      </ol>
     </aside>
   );
 }
