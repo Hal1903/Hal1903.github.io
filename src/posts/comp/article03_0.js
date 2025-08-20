@@ -12,7 +12,8 @@ export default function Article1() {
                 </div>
             <div className="body">
 
-                This is where the div text of your article will go. You can write about anything you want here.
+                This article introduces useful techniques for using spreadsheet. 
+                
 
 
             </div>

@@ -75,7 +75,7 @@ export default function Gacha() {
 
   const containerRef = useRef(null);
   return (
-    <div style={{ display: "flex", gap: "2rem", width: "100%" }}>
+    <div style={{ display: "flex", gap: "2rem", width: "90%", height: "375px"}}>
       {/* Left: Gacha machine (40%) */}
       <div
         className="machine"
@@ -83,7 +83,7 @@ export default function Gacha() {
           flex: "0 0 40%",
           display: "flex",
           alignItems: "center",
-          justifyContent: "center"
+          justifyContent: "center",
         }}
       >
         <img
@@ -110,6 +110,7 @@ export default function Gacha() {
           alignItems: "center"
         }}
       >
+      
       {/* Storage mapping, shows item panel */}
         {
           storage.map((item, index) => (

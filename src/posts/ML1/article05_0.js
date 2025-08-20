@@ -1,7 +1,7 @@
 import '../../css/post.css';
 
 
-export const title = "Data Preprocessing: Dimension Reduction";
+export const title = "Feature Engineering";
 // export const category = "elementary_math";
 
 export default function Article1() {

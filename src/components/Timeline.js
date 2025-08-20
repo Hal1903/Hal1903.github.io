@@ -33,7 +33,7 @@ export default function Timeline() {
             <div>
                 <ul>
                     <li>Started programming (Python, C++, JS)</li>
-                    <li>Passed APUSH and Biology (self-studied the last 2 chapters of biology)</li>
+                    <li>Developed simple video games, Kivy calculator, automation with Google API, etc.</li>
                 </ul>
             </div>
             <div>

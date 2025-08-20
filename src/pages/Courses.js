@@ -13,16 +13,16 @@ const courses = [
   },
   {
     id: 'elementary_math',
-    title: 'Elementary Mathematics',
+    title: 'Elementary Mathematics (JPN): 算数応用',
     description: 'Exposure to advanced topics and abstraction in arithmetics, number theory, graph theory, and algorithms. 8 chapters are open.',
     image: '../images/Courses/elem.png',
   },
-  {
-    id: 'Discrete',
-    title: 'Introduction to Discrete Math',
-    description: 'Starting point of proof-based mathematics and getting interesting perspectives to mathematics.',
-    image: '../images/Courses/discrete.png',
-  },
+  // {
+  //   id: 'Discrete',
+  //   title: 'Introduction to Discrete Math',
+  //   description: 'Starting point of proof-based mathematics and getting interesting perspectives to mathematics.',
+  //   image: '../images/Courses/discrete.png',
+  // },
   {
     id: 'Linear',
     title: 'Linear Algebra',
@@ -35,12 +35,18 @@ const courses = [
     description: 'Example-based machine learning with mathematical backgrounds and Python programs.',
     image: '../images/Courses/ml1.png',
   },
-    {
-    id: 'toc',
-    title: 'Introduction to Theory of Computing',
-    description: 'Introduction to fundamental capabilities and limitations of computers to deepen the knowledge of the mathematical background of computers.',
-    image: '../images/Courses/DFA.png',
-  },
+  // {
+  //   id: 'toc',
+  //   title: 'Introduction to Theory of Computing',
+  //   description: 'Introduction to fundamental capabilities and limitations of computers to deepen the knowledge of the mathematical background of computers.',
+  //   image: '../images/Courses/DFA.png',
+  // },
+  // {
+  //   id: 'nlinear',
+  //   title: 'Introduction to Numerical Linear Algebra',
+  //   description: '',
+  //   image: '../images/Courses/DFA.png',
+  // },
 ];
 
 function Courses() {

@@ -1,7 +1,7 @@
 import '../../css/post.css';
 
 
-export const title = "Data Preprocessing: One-hot Encoding";
+export const title = "Data Preprocessing";
 // export const category = "elementary_math";
 
 export default function Article1() {

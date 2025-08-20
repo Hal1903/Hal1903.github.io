@@ -1,5 +1,6 @@
 import '../../css/post.css';
-
+import { Block, Inline } from "../../components/KatexBox";
+import "katex/dist/katex.min.css";
 
 export const title = "Inverse of Matrix";
 // export const category = "elementary_math";

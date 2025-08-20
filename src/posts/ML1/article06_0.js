@@ -1,7 +1,7 @@
 import '../../css/post.css';
 
 
-export const title = "Data Preprocessing: Normalization";
+export const title = "Regularization";
 // export const category = "elementary_math";
 
 export default function Article1() {

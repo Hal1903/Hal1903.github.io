@@ -4,6 +4,13 @@ import SideBar from '../components/SideBar';
 import { HashLink as Link } from 'react-router-hash-link';
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 
+const mathjaxConfig = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+  },
+};
 
 export default function MarkdownArticle() {
   const { topic, articleId } = useParams();
@@ -27,9 +34,9 @@ export default function MarkdownArticle() {
       </header>
       <div className="markdown-body">
         {/* <SideBar /> needs more format!*/}
-        <MathJaxContext>
+
           <ArticleComponent />
-        </MathJaxContext>
+
       </div>
     </div>
   );
