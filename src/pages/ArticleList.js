@@ -29,7 +29,7 @@ function ArticleList() {
         <h1>MAX-STUDIES</h1>
         <nav>
           <a href="/">Home</a>
-          <a href={`/course/`}>Course List</a>
+          <Link to="/course/">Course List</Link>
         </nav>
       </header>
       <div className="article-container">

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import articleMap from '../utils/loadPosts';
 import Sidebar from '../components/SideBar';
 import { MathJax, MathJaxContext } from "better-react-mathjax";
+import { Link } from "react-router-dom"
 
 const mathjaxConfig = {
   tex: {
@@ -42,10 +43,10 @@ export default function MarkdownArticle() {
           >
             {buttonLabel}
           </button>
-          <nav>
-            <a href="/">Home</a>
-            <a href={`/#/course/${topic}`}>Back</a>
-          </nav>
+            <nav>
+              <Link to="/">Home</Link>
+              <Link to={`/course/${topic}`}>Back</Link>
+            </nav>
         </div>
       </header>
 
