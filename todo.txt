@@ -1,0 +1,4 @@
+mobile:
+- fix navbar
+- gacha side-scrollable
+- makiing sure to load slides every time
