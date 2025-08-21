@@ -132,3 +132,13 @@ aside a:hover {
 .navbar.shifted {
   transform: translateX(125px); /* same width as your sidebar */
 }
+
+/* .sidebar-header {
+    display: flex;
+    gap: 2rem;
+}
+
+.close-btn {
+    width: 3rem;
+    height: 2rem;
+} */

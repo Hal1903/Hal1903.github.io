@@ -11,6 +11,7 @@ export default function Sidebar({ topic, onClose }) {
       <div className="sidebar-header">
         <h3>Articles</h3>
         <button className="close-btn" onClick={() => onClose(false)}>✖</button>
+        {/* This position without flex display is easier to use, although it doesn't look stylish */}
       </div>
 
       <ol>

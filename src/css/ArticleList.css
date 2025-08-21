@@ -12,8 +12,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 600px;          /* ✅ fixed width on desktop */
-  flex-shrink: 0;        /* ✅ don’t shrink to fit content */
+  width: 600px;          /* fixed width on desktop */
+  flex-shrink: 0;        /* don’t shrink to fit content */
   background-color: #f9f9f9;
   border-radius: 12px;
   padding: 1rem;
@@ -40,7 +40,7 @@
 }
 
 .article-info {
-  flex: 1;  /* ✅ forces text block to take remaining width */
+  flex: 1;  /* forces text block to take remaining width */
 }
 
 .article-title {
