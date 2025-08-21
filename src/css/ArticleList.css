@@ -4,15 +4,16 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /* the last three for centering panels */
+  align-items: center; /* center the cards */
+  box-sizing: border-box;
 }
 
 .article-panel {
   display: flex;
   align-items: center;
-  width: 100%;           /* take full available width */
-  max-width: 600px;      /* upper bound */
+  justify-content: flex-start;
+  width: 600px;          /* ✅ fixed width on desktop */
+  flex-shrink: 0;        /* ✅ don’t shrink to fit content */
   background-color: #f9f9f9;
   border-radius: 12px;
   padding: 1rem;
@@ -21,11 +22,8 @@
   text-decoration: none;
   color: inherit;
   transition: transform 0.2s ease;
-  box-sizing: border-box; /* ensures padding doesn’t add overflow */
+  box-sizing: border-box;
 }
-
-
-
 
 .article-panel:hover {
   transform: scale(1.02);
@@ -38,16 +36,18 @@
   object-fit: cover;
   border-radius: 8px;
   margin-right: 1rem;
+  flex-shrink: 0;
 }
 
-.article-text {
-  flex: 1;
+.article-info {
+  flex: 1;  /* ✅ forces text block to take remaining width */
 }
 
 .article-title {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  word-wrap: break-word;
 }
 
 .article-description {
@@ -55,17 +55,17 @@
   font-size: 0.95rem;
 }
 
-/* Remove fixed min-width */
-.article-panel {
-  min-width: unset;
-}
-
-/* On small screens, let it shrink to fit */
-@media (max-width: 600px) {
+/* Mobile: make them all same width (full screen) */
+@media (max-width: 640px) {
   .article-panel {
+    min-width: 400px;
+    width: 100%;       /* stretch across screen */
+    max-width: 100%;   /* prevent overflow */
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;   /* fully fit within viewport */
-    max-width: 100%;
+  }
+
+  .article-image {
+    margin-bottom: 0.5rem;
   }
 }

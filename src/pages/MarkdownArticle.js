@@ -44,7 +44,7 @@ export default function MarkdownArticle() {
           </button>
           <nav>
             <a href="/">Home</a>
-            <a href={`/course/${topic}`}>Back</a>
+            <a href={`/#/course/${topic}`}>Back</a>
           </nav>
         </div>
       </header>
