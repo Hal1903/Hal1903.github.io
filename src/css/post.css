@@ -3,6 +3,13 @@
     padding-bottom: 1rem;
 }
 
+@media (max-width: 600px) {
+  .container {
+    margin: 2rem; /* smaller margin on phone */
+    padding: 0.5rem;
+  }
+}
+
 .title {
     margin-bottom: 2rem;
 }
@@ -37,4 +44,26 @@ table th {
     padding: 12px 8px; /* top/bottom, left/right */
     border: 1px solid black;
     border-collapse: collapse;
+}
+
+
+.latex-center, 
+.katex-display {
+  max-width: 100%;
+  overflow-x: auto;           /* allow side scrolling */
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  overflow-y: hidden;
+  text-align: center;         /* keep math centered */
+  margin: 1rem 0;
+}
+
+.latex-center::-webkit-scrollbar,
+.katex-display::-webkit-scrollbar {
+  height: 6px;
+}
+
+.latex-center::-webkit-scrollbar-thumb,
+.katex-display::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
 }

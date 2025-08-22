@@ -1,4 +1,6 @@
 mobile:
+- favicon / logo
 - fix navbar
 - gacha side-scrollable
 - makiing sure to load slides every time
+- article format. margin is too large and not centered.

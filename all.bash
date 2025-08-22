@@ -13,7 +13,6 @@ if [ -z "$commit_message" ]; then
     exit 1
 fi
 
----
 
 ## The Build and Deployment Steps
 
@@ -21,7 +20,6 @@ echo "Building and deploying the project..."
 npm run build
 npm run deploy
 
----
 
 ## The Git Operations
 

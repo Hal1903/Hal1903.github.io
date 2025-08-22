@@ -32,7 +32,7 @@ export default function Timeline() {
         >
             <div>
                 <ul>
-                    <li>Started programming (Python, C++, JS)</li>
+                    <li>Started programming beyond just playing around (Python, C++, JS)</li>
                     <li>Developed simple video games, Kivy calculator, automation with Google API, etc.</li>
                 </ul>
             </div>
