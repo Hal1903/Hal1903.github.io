@@ -37,3 +37,17 @@ This is a framework of articles, containing UI miscellaneous and actual post com
 Contains all the images and blog posts in html format.
 Academic resources are in .js because they are more likely to get shared hence should have better UI, 
 while blogs are less interested.
+
+
+### posts katex
+No more than 2 matrices in the same block should be added. It will overflow.
+
+
+### Resource Creation
+Run on git bash in the project root folder:
+for i in {3..10}; do touch src/posts/reason/article${i}_0.js; done
+
+
+### Building + Deploying + Uploading to GitHub
+Run on git bash in the project root folder:
+$ /bin/bash "c:\Users\...\project_folder\all.bash"

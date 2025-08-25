@@ -17,6 +17,12 @@ const courses = [
     description: 'Exposure to advanced topics and abstraction in arithmetics, number theory, graph theory, and algorithms. 8 chapters are open.',
     image: '../images/Courses/elem.png',
   },
+    {
+    id: 'reason',
+    title: 'Elementary Reasoning (JPN): 推論基礎',
+    description: 'Primer to critical thinking and reasoning via causation/correlation distinction, bias/fallacies, and logics.',
+    image: '../images/Courses/thinker.jpg',
+  },
   // {
   //   id: 'Discrete',
   //   title: 'Introduction to Discrete Math',

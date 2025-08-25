@@ -1,19 +1,7 @@
 .container {
-    margin: 5rem auto;      /* auto centers horizontally */
+    margin: 5rem;
     padding-bottom: 1rem;
-    max-width: 900px;       /* keep content from stretching too wide */
-    box-sizing: border-box; /* include padding in width calculations */
-    overflow-x: hidden;     /* prevent horizontal scrollbar */
 }
-
-@media (max-width: 600px) {
-  .container {
-    margin: 1rem;          /* smaller margin on phones */
-    padding: 0.5rem;
-    max-width: 100%;       /* let it shrink to viewport */
-  }
-}
-
 
 .title {
     margin-bottom: 2rem;
@@ -51,25 +39,3 @@ table th {
     border-collapse: collapse;
 }
 
-
-/* Ensure math blocks behave */
-.latex-center, 
-.katex-display {
-  display: block;
-  max-width: 100%;
-  overflow-x: auto;   /* allow side scroll if really needed */
-  overflow-y: hidden;
-  text-align: center;
-  margin: 1rem 0;
-}
-
-.latex-center::-webkit-scrollbar,
-.katex-display::-webkit-scrollbar {
-  height: 6px;
-}
-
-.latex-center::-webkit-scrollbar-thumb,
-.katex-display::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 3px;
-}

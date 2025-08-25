@@ -105,6 +105,9 @@ x_1 + 2x_2 + 3x_3 &= 1 \\\\
 0 & 2 & 3
 \\end{array}
 \\right)
+`}/>
+
+<Block math={`
 \\to
 \\left(
 \\begin{array}{cc|c}
@@ -123,66 +126,75 @@ x_1 + 2x_2 + 3x_3 &= 1 \\\\
                 </div>
             </div>
             <br></br>
-    <details>
-    <summary style={{ cursor: "pointer", fontWeight: "bold" }}>
-        Exercise: Try to solve the system of equations given at the very beginning.
-    </summary>
-    <p>
-       <div className="latex-center" style={{ textAlign: 'center' }}>
-  <Block math={`
-\\left(
-\\begin{array}{ccc|c}
-1 & 2 & 3 & 1 \\\\
-2 & 3 & 6 & 0 \\\\
-3 & 2 & 1 & -1
-\\end{array}
-\\right)
-\\to
-\\left(
-\\begin{array}{ccc|c}
-1 & 2 & 3 & 1 \\\\
-0 & -1 & 0 & -2 \\\\
-0 & -4 & -8 & -4
-\\end{array}
-\\right)
-\\to
-\\left(
-\\begin{array}{ccc|c}
-1 & 2 & 3 & 1 \\\\
-0 & 1 & 0 & 2 \\\\
-0 & -4 & -8 & -4
-\\end{array}
-\\right)
-\\\\
-\\to
-\\left(
-\\begin{array}{ccc|c}
-1 & 0 & 3 & -3 \\\\
-0 & 1 & 0 & 2 \\\\
-0 & 0 & -8 & 4
-\\end{array}
-\\right)
-\\to
-\\left(
-\\begin{array}{ccc|c}
-1 & 0 & 3 & -3 \\\\
-0 & 1 & 0 & 2 \\\\
-0 & 0 & 1 & -\\tfrac{1}{2}
-\\end{array}
-\\right)
-\\to
-\\left(
-\\begin{array}{ccc|c}
-1 & 0 & 0 & -\\tfrac{3}{2} \\\\
-0 & 1 & 0 & 2 \\\\
-0 & 0 & 1 & -\\tfrac{1}{2}
-\\end{array}
-\\right)
-  `}/>
-</div>
+<details>
+  <summary style={{ cursor: "pointer", fontWeight: "bold" }}>
+    Exercise: Try to solve the system of equations given at the very beginning.
+  </summary>
 
-    </p>
-    </details>
+  {/* Step 1 */}
+  <div className="latex-scroll">
+    <Block math={String.raw`
+\left(
+\begin{array}{ccc|c}
+1 & 2 & 3 & 1 \\
+2 & 3 & 6 & 0 \\
+3 & 2 & 1 & -1
+\end{array}
+\right)
+\to
+\left(
+\begin{array}{ccc|c}
+1 & 2 & 3 & 1 \\
+0 & -1 & 0 & -2 \\
+0 & -4 & -8 & -4
+\end{array}
+\right)
+    `}/>
+  </div>
+
+  {/* Step 2 */}
+  <div className="latex-scroll">
+    <Block math={String.raw`
+\left(
+\begin{array}{ccc|c}
+1 & 2 & 3 & 1 \\
+0 & 1 & 0 & 2 \\
+0 & -4 & -8 & -4
+\end{array}
+\right)
+\to
+\left(
+\begin{array}{ccc|c}
+1 & 0 & 3 & -3 \\
+0 & 1 & 0 & 2 \\
+0 & 0 & -8 & 4
+\end{array}
+\right)
+    `}/>
+  </div>
+
+  {/* Step 3 */}
+  <div className="latex-scroll">
+    <Block math={String.raw`
+\left(
+\begin{array}{ccc|c}
+1 & 0 & 3 & -3 \\
+0 & 1 & 0 & 2 \\
+0 & 0 & 1 & -\tfrac{1}{2}
+\end{array}
+\right)
+\to
+\left(
+\begin{array}{ccc|c}
+1 & 0 & 0 & -\tfrac{3}{2} \\
+0 & 1 & 0 & 2 \\
+0 & 0 & 1 & -\tfrac{1}{2}
+\end{array}
+\right)
+    `}/>
+  </div>
+</details>
+
         </div>
     );
 }

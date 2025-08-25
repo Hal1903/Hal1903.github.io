@@ -1,5 +1,4 @@
 import '../../css/post.css';
-// import { Inline, Block } from "react-katex";
 import {Block, Inline} from "../../components/KatexBox";
 import "katex/dist/katex.min.css";
 
