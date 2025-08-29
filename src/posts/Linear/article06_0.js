@@ -12,9 +12,10 @@ export default function Article1() {
                 </div>
             <div className="body">
 
-                This is where the div text of your article will go. You can write about anything you want here.
-
-
+                Coming soon.
+                <br></br>
+                I am stepping back to study historical background and proofs for existence of determinants.
+                The direction will be different from 3Blue1Brown's explanation.
             </div>
 
         </div>
