@@ -3,7 +3,7 @@ import {Block, Inline} from "../../components/KatexBox";
 import "katex/dist/katex.min.css";
 
 export const title = "Biases";
-// export const category = "elementary_math";
+// confirmation, survivorship, selection, anchoring, bandwagon, halo
 
 export default function Article1() {
     return (
