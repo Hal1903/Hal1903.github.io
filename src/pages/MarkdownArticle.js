@@ -4,6 +4,7 @@ import articleMap from '../utils/loadPosts';
 import Sidebar from '../components/SideBar';
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import { Link } from "react-router-dom"
+import { Suspense } from 'react';
 
 const mathjaxConfig = {
   tex: {
@@ -56,9 +57,13 @@ export default function MarkdownArticle() {
   </div>
 
   <div className={`main ${isOpen ? "shifted" : ""}`}>
-    <MathJaxContext config={mathjaxConfig}>
+    <Suspense fallback={<p>Loading article...</p>}>
       <ArticleComponent />
-    </MathJaxContext>
+    </Suspense>
+
+    {/* <MathJaxContext config={mathjaxConfig}>
+      <ArticleComponent />
+    </MathJaxContext> */}
   </div>
 </div>
 

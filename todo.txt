@@ -4,3 +4,6 @@ mobile:
 - gacha side-scrollable
 - makiing sure to load slides every time
 - article format. margin is too large and not centered.
+
+
+- getting slowed, explore and implement lazy loading for articles: finished I guess.
