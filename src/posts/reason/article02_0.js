@@ -38,7 +38,7 @@ export default function Article1() {
                 
                 </p>
                 <div className="image-center">
-                <img src={'/images/articles/reason/1-3/bar_truncated_y.png'} alt="plot 1" style={{maxWidth: "75%"}}/>
+                <img src={'/images/articles/reason/1-3/bar_truncated_y.png'} alt="plot 1" style={{maxWidth: "95%", minHeight: "200px"}}/>
                 </div>
                 <br></br> <br></br>
                 <details>
@@ -52,7 +52,7 @@ export default function Article1() {
                             Always check the y-axis range to ensure it starts at zero or an appropriate baseline, or make sure the truncation is clearly indicated.
                         </p>
                         <div className="image-center">"
-                            <img src={'/images/articles/reason/1-3/bar_truncated_y_correct.png'} alt="plot 1 corrected" style={{maxWidth: "75%"}}/>
+                            <img src={'/images/articles/reason/1-3/bar_truncated_y_correct.png'} alt="plot 1 corrected" style={{maxWidth: "95%", minHeight: "200px"}}/>
                         </div>
                 </details>
 
@@ -66,7 +66,7 @@ export default function Article1() {
                 </p>
                 
                 <div className="image-center">
-                    <img src={'/images/articles/reason/1-3/gdp_dual_axis_misleading.png'} alt="plot 2" style={{maxWidth: "75%"}}/>
+                    <img src={'/images/articles/reason/1-3/gdp_dual_axis_misleading.png'} alt="plot 2" style={{maxWidth: "95%", minHeight: "200px"}}/>
                 </div>
 
                 <br></br> <br></br>
@@ -79,7 +79,7 @@ export default function Article1() {
                         The scales of the two y-axes are different, which can create a misleading impression of the data.
                         The correct way to compare these two variables is to use a single y-axis with a consistent scale:
                         <div className="image-center">"
-                        <img src={'/images/articles/reason/1-3/gdp_dual_axis_correct.png'} alt="plot 2 corrected" style={{maxWidth: "75%"}}/>
+                        <img src={'/images/articles/reason/1-3/gdp_dual_axis_correct.png'} alt="plot 2 corrected" style={{maxWidth: "95%", minHeight: "200px"}}/>
                         </div>
                         </p>
                     </details>
@@ -91,7 +91,7 @@ export default function Article1() {
                 This example is fallacious, but can you identify why?
                 </p>
                 <div className="image-center">
-                    <img src={'/images/articles/reason/1-3/fake_pie.png'} alt="plot 3" style={{maxWidth: "75%"}}/>
+                    <img src={'/images/articles/reason/1-3/fake_pie.png'} alt="plot 3" style={{maxWidth: "95%", minHeight: "200px"}}/>
                 </div>
 
                 <br></br> <br></br>
@@ -100,7 +100,7 @@ export default function Article1() {
                     <summary><b>Explanation</b></summary>
                         <p>
                         This is a pie chart that misrepresents the proportions of two categories by distorting the area of the slices.
-                        The left pie chart shows the actual proportions of addicted class (25%) and non-addicted class (75%).
+                        The left pie chart shows the actual proportions of addicted class (25%) and non-addicted class (95%).
                         The addicted class is 3 times smaller than the non-addicted class; 
                         however, the shown pie chart distorts the area of the slices particularly to highlight the addicted class more than it should be.
                         Pie charts should accurately represent the <b>proportions</b> of the categories they depict.
