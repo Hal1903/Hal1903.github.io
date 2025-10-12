@@ -1,7 +1,7 @@
 import '../../css/post.css';
 
 
-export const title = "Function";
+export const title = "Vector Space and Subspace";
 // export const category = "elementary_math";
 
 export default function Article1() {

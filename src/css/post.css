@@ -3,14 +3,6 @@
     padding-bottom: 1rem;
 }
 
-@media (max-width: 600px) {
-    .container {
-        margin: 1.5rem;
-        padding: 1rem;
-    }
-    
-}
-
 .title {
     margin-bottom: 2rem;
 }
@@ -28,9 +20,38 @@
 
 .hanging-bullet li {
     display: grid;
-    grid-template-columns: 80px 1fr; /* label fixed, description flexible */
-    margin-bottom: 1em;
+    grid-template-columns: minmax(80px, 25%) 1fr; /* responsive */
+    gap: 0.5rem;
 }
+
+
+@media (max-width: 600px) {
+    .container {
+        margin: 1.5rem;
+        padding: 1rem;
+    }
+}
+
+.table-container {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;   /* ensures equal-width columns */
+  word-wrap: break-word; /* allow breaking long words */
+  white-space: normal;   /* allow line breaks */
+}
+
+
+/* .container table {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+} side scrollable */
+
 
 .container table tr {
     margin-bottom: 1rem;
@@ -45,6 +66,8 @@ table th {
     padding: 12px 8px; /* top/bottom, left/right */
     border: 1px solid black;
     border-collapse: collapse;
+    /* word-break: break-word;  /* break long words if needed */
+    /* white-space: normal;     wrap text */
 }
 
 .quote {

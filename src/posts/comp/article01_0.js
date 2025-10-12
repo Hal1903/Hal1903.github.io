@@ -79,6 +79,7 @@ export default function Article1() {
                 <h2>A Guide to CPU and RAM Choices by Workload</h2>
                 <p>Here's a simple table to help you decide which CPU and RAM combination is right for you. Keep in mind that a good computer is a balanced computer, so make sure your CPU and GPU are on similar performance tiers to avoid bottlenecks.</p>
                
+                <div className='table-container'>
                 <table>
                     <thead>
                         <tr>
@@ -115,6 +116,7 @@ export default function Article1() {
                         </tr>
                     </tbody>
                 </table>
+                </div>
 
                 <p style={{marginTop: "2em"}}>The performance can be evaluated with benchmark scores. Here are two helpful websites I have utilized before purchasing my CPU: </p>
                 <ul>

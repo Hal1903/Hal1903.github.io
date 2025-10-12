@@ -20,7 +20,7 @@ function Home() {
             <Link smooth to="#about">About</Link>
             <Link smooth to="#projects">Projects</Link>
             <Link smooth to="#contact">Contact</Link>
-          <Link to="/course">Resources</Link>
+          {/* <Link to="/course">Resources</Link> */}
         </nav>
       </header>
 
@@ -35,7 +35,7 @@ function Home() {
               </p>
               <p>
                 My goals are to foster academic curiosity and enjoyment in learning and to earn a Ph.D. in computer science. 
-                My works explaining math and CS is in Resources section. Feel free to check them out:)
+                My works explaining math and CS is in Resources section. Feel free to check them out:) (temporarily unavailable)
               </p>
               <p>
                 Here is my journey of academic and engineering landscapes:

@@ -1,8 +1,7 @@
 import '../../css/post.css';
-import {Block, Inline} from "../../components/KatexBox";
-import "katex/dist/katex.min.css";
 
-export const title = "Inevitable Unfairness in Ordering";
+
+export const title = "Determinant";
 // export const category = "elementary_math";
 
 export default function Article1() {
@@ -13,8 +12,10 @@ export default function Article1() {
                 </div>
             <div className="body">
 
-                
-
+                Coming soon.
+                <br></br>
+                I am stepping back to study historical background and proofs for existence of determinants.
+                The direction will be different from 3Blue1Brown's explanation.
             </div>
 
         </div>

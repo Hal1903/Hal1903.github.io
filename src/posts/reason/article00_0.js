@@ -36,15 +36,15 @@ export default function Article1() {
             </section>
             <section>
                 <p>
-                    The reason I bring this up is that, I sometimes see people making fun of others 
-                    who boldly claim themselves to be experts in a certain field. Sometimes it is 
-                    just Dunning-Kruger effect, but it also happens for the people who are objectively experts in their fields.
+                    The reason I bring this up is that, I sometimes see people who boldly claim themselves to be experts in a certain field 
+                    making fun of others. Sometimes it is just Dunning-Kruger effect, 
+                    but it also happens for the people who are objectively experts in their fields.
                     Nonetheless, they are still human beings whose understanding of the world is limited.
                     Although mathematical statements are always correct as long as they are proven,
                     there is no excuse for them to call themselves superior to others in general by subjective standards, 
                     no matter how sophisticated knowledge they have in one or two area.
                     This applies to personalities or culture as well. 
-                    We should always be humble and open-minded, as we can never be sure that we are right.
+                    We should be humble and open-minded, as we can never be sure that we are right.
                     This is fundamental policy that I want to share with you for learning and life in general,
                     which may help you with being cautious about making claims, reasons, and judgements.
                 </p>

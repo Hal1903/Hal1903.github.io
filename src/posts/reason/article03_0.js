@@ -68,6 +68,16 @@ export default function Article1() {
 
                 </p>
 
+                <h3>Conclusion</h3>
+                <p>
+                    In short, the mean is useful for understanding the overall level of a dataset,
+                    while the median is better for understanding the typical value, 
+                    especially <u>when the data is skewed.</u>
+                    The mode can be useful for identifying the most common value(s) in a dataset.
+                    Depends on the situation, you may want to use different measures 
+                    to get a good picture of the data.
+                </p>
+
                 <h3>Practice Problems</h3>
 
                 <p>
@@ -82,6 +92,21 @@ export default function Article1() {
                     Shohei Ohtani's annual salary is about 2 billion yen (which is, incredibly enormous). 
                     If you want to know the average income of people who graduated the same high school at the same time as him, 
                     should you use the mean or the median?
+                </p>
+
+                <p>
+                    <strong>Problem 3: </strong>  
+                    The mean and median of a dataset are both 50.
+                    Which of the following is always true statements about the dataset? If none, why?
+                    <ol>
+                        <li>The dataset is perfectly symmetrical. (i.e. it looks the same when flipped left to right)</li>
+                        <li>The dataset has a few extremely high or low values.</li>
+                        <li>The dataset has an even number of values.</li>
+                        <li>The dataset has an odd number of values.</li>
+                        <li>The dataset has a mode.</li>
+                        <li>The dataset contains a single middle value within itself.</li>
+                    </ol>
+                    
                 </p>
 
             </div>

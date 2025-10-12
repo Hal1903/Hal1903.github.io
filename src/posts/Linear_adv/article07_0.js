@@ -1,8 +1,7 @@
 import '../../css/post.css';
-import {Block, Inline} from "../../components/KatexBox";
-import "katex/dist/katex.min.css";
 
-export const title = "Inevitable Unfairness in Ordering";
+
+export const title = "Stability";
 // export const category = "elementary_math";
 
 export default function Article1() {
@@ -13,7 +12,8 @@ export default function Article1() {
                 </div>
             <div className="body">
 
-                
+                This is where the div text of your article will go. You can write about anything you want here.
+
 
             </div>
 
