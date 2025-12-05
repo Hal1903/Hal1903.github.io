@@ -1,4 +1,4 @@
-# Documentation on Structure
+# Documentation on Structure and Updates
 
 ### App.js
 Defines routing config: what pages to display, URL path, and URL parameters/variables needed to route.
@@ -18,17 +18,20 @@ module i.e. context(key) is a dict-like object: keys={__esModule, default, title
 articleMap is a nested object of articleName: {default: ..., variable1: ..., ...}. 
 Ordering logic is done by naming system of article js files.
 
-### ArticleList.js
+### pages/Home.js
+contains Slideshow, Timeline, and Gacha.
+
+### pages/ArticleList.js
 
 
-### MarkdownArticle.js
+### pages/MarkdownArticle.js
 This is a framework of articles, containing UI miscellaneous and actual post components.
 
-### Timeline.js
-
+### components/Timeline.js
+The content is hard coded here.
 
 ### Slideshow.js
-
+This includes all the paths to the images for slideshow.
 
 ### src/posts/SUBJECT/articleX_Y
 
@@ -36,7 +39,7 @@ This is a framework of articles, containing UI miscellaneous and actual post com
 ### public
 Contains all the images and blog posts in html format.
 Academic resources are in .js because they are more likely to get shared hence should have better UI, 
-while blogs are less interested.
+
 
 
 ### posts katex

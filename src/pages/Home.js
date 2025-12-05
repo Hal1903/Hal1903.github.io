@@ -39,7 +39,7 @@ function Home() {
                 My works explaining math and CS is in Resources section. Feel free to check them out:) (not yet fully ready though)
               </p>
               <p>
-                Here is my journey of academic and engineering landscapes:
+                Here is my journey of academic and engineering landscapes, followed by my projects:
               </p>
             </div>
 
@@ -69,11 +69,24 @@ function Home() {
                 title="Physics-Informed Neural Networks for Tensegrity Analysis (accepted to NAECON 2025 conference!)"
                 description="Neural networks with an inductive bias of physics laws predict the nodal coordinates of dynamic tensegrity structures."
                 detail=
-                {`This project explores the use of Physics-Informed Neural Networks (PINNs) to analyze tensegrity structures.
+                {`
+                This project explores the use of Physics-Informed Neural Networks (PINNs) to analyze tensegrity structures.
                 The goal is to predict the nodal coordinates of these structures under dynamic conditions, 
                 leveraging the principles of physics, described by a 2nd-order ODE with ill-conditioned matrices, to inform the NN's learning process. 
                 Our experiments demosntrate the optimally tuned PINN model is capable of achieving
                 the same accuracy as the traditional numerical methods, FEM. 
+                `}
+            />
+            <Panel
+                imageSrc="/images/projects/vba.png"
+                title="Automated Table Transcription Tool (VBA) during Intern"
+                description="After assigned to a data processing task at FPI, I developed a VBA application to automate the repetitive work on my own."
+                detail=
+                {`
+                  During my internship at FPI, I developed several VBA applications to streamline business processes.
+                  One notable component was an automated table transcription tool that saves 75-90% (1.5+ hours out of 2 hours) of time taken for manual, repetitive work daily.
+                  This includes extracting data from another file, inserting the dates corresponds to the weekdays, updating summary statistics, and formatting the table for presentation.
+                  This initialized the macro developer role at FPI temporarily for me, leading to more projects and giving lectures.
                 `}
             />
             <Panel
