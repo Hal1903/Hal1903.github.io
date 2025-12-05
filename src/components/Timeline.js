@@ -53,8 +53,8 @@ export default function Timeline() {
             <div>
             <ul>
                 <li>Completed GCI (DS + Analytics) from UofTokyo</li>
-                <li>Started research on PINN and blogs</li>
-                <li>MathLab seminar on Chipfiring at UKY</li>
+                <li>Started research on PINN</li>
+                <li>MathLab reseach on Chipfiring at UKY</li>
             </ul>
             </div>
             <div>
@@ -63,6 +63,7 @@ export default function Timeline() {
                 <li>Paper accepted by IEEE NAECON</li>
                 <li>Finished B.S. in CS and Math</li>
                 <li>Experimental math curriculum begins</li>
+                <li>Finished a senior project (Human Domino)</li>
             </ul>
             </div>
             <div>

@@ -66,7 +66,7 @@ function Home() {
           {/* at some point, isolate the list of panels to another file */}
             <Panel
                 imageSrc="/images/projects/PINN.png"
-                title="Physics-Informed Neural Networks for Tensegrity Analysis"
+                title="Physics-Informed Neural Networks for Tensegrity Analysis (accepted to NAECON 2025 conference!)"
                 description="Neural networks with an inductive bias of physics laws predict the nodal coordinates of dynamic tensegrity structures."
                 detail=
                 {`This project explores the use of Physics-Informed Neural Networks (PINNs) to analyze tensegrity structures.
@@ -74,6 +74,19 @@ function Home() {
                 leveraging the principles of physics, described by a 2nd-order ODE with ill-conditioned matrices, to inform the NN's learning process. 
                 Our experiments demosntrate the optimally tuned PINN model is capable of achieving
                 the same accuracy as the traditional numerical methods, FEM. 
+                `}
+            />
+            <Panel
+                imageSrc="/images/projects/human.png"
+                title="Human Domino Effect educational platform"
+                description="For a school in Lexington, I contributed to the dev. of an educational platform supports parents."
+                detail=
+                {`
+                As a group of five, we developed an educational platform for a local school to support parents in their children's learning journey.
+                My contributions are mainly building a forum from a scratch using flask, SQLite, and HTML/CSS/JS.
+                The forum is managed by moderator accounts who have post deletion privilege, ensuring a safe and supportive environment for parents.
+                The platform allows parents to discuss various topics, share resources, and seek advice on supporting their children's education.
+                I also embedded a shared calendar hosted by the school and implemented a booking system for parent-teacher meetings using Google API.
                 `}
             />
             <Panel
