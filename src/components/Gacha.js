@@ -14,7 +14,7 @@ const items = [
 
     {rank: 2, title: "09. The lowest test score", desc: "8/100 (examining the ability to draw straight lines using a ruler.)" },
     {rank: 2, title: "10. My Computer", desc: "Ryzen5 7600X + NVIDIA 4060 Ti + 32GB RAM"},
-    {rank: 2, title: "11. Favorite quote", desc: "Hobbies are means that became the goals. 趣味とは手段と目的が逆転したものである。" },
+    {rank: 2, title: "11. Favorite quote", desc: "Hobbies are means that became the goals. 趣味とは手段が目的となったものである。" },
     {rank: 2, title: "12. My travel habits", desc: "Going to universities nearby and buy some gifts, visit tech companies nearby, and buy a Starbucks mug if it is a state I have never visited." },
     {rank: 2, title: "13. Favorite Programming Language", desc: "Python, C++, and Prolog. I want to learn Haskell at some point."},
     
@@ -26,9 +26,9 @@ const items = [
     {rank: 4, title: "17. The most elegant physics equations and proofs I saw (as a hobby)", desc: "Lagrangian and Action principles and Noether's theorem" },
     {rank: 4, title: "18. Favorite ML Models", desc: "Autoencoder, variations of GAN, XGB/LGB, and Gaussian Process. Not a model, but dropout regularization is intriguing to me." },
     
-    {rank: 5, title: "19. Favorite math theorems", desc: "Universal Approximation theorem, Matrix-Tree theorem, Taylor's theorem, Binomial/Generating Function theorem, and Fermat's Square Sum theorem"},
+    {rank: 5, title: "19. Favorite math theorems", desc: "Universal Approximation theorem, Matrix-Tree theorem, Taylor's theorem, Binomial/Generating Function, and Fermat's Square Sum theorem, ..."},
 
-    {rank: 6, title: "20. Things I want to study outside my career", desc: "GNN, MARL, SSL, Measure theory, Manifolds, ITP, Axiom of Choice (= Nash Equilibrium (2023)), Godel's Incompleteness Theorems, ..." },
+    {rank: 6, title: "20. Things I want to study outside my career", desc: "GNN, MARL, SSL, Diffusion, more on Transformer, Measure theory, Manifolds, ITP, Axiom of Choice (= Nash Equilibrium (2023)), Godel's thms, ..." },
 
 
 ]
@@ -73,11 +73,25 @@ export default function Gacha() {
     }
   }, [storage]);
 
+  // Scroll to bottom "on mobile only" when storage changes
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    // Mobile only
+    if (window.innerWidth < 768) {
+      containerRef.current.scrollTop = containerRef.current.scrollHeight;
+    }
+  }, [storage]); // runs each time new item is added
+
+
   const containerRef = useRef(null);
   return (
-    <div style={{ display: "flex", gap: "2rem", width: "90%", height: "375px"}}>
+    
+    // <div style={{ display: "flex", gap: "2rem", width: "90%", height: "375px"}}>
+    <div className="gacha-container">
+
       {/* Left: Gacha machine (40%) */}
-      <div
+      {/* <div
         className="machine"
         style={{
           flex: "0 0 40%",
@@ -85,7 +99,9 @@ export default function Gacha() {
           alignItems: "center",
           justifyContent: "center",
         }}
-      >
+      > */}
+      <div className="gacha-machine">
+
         <img
           src="images/icons/gachagacha.png"
           alt="Gacha Machine"
@@ -100,7 +116,7 @@ export default function Gacha() {
         className="gacha-items"
         style={{
           flex: "0 0 60%",
-          maxHeight: "550px",
+          // maxHeight: "550px",
           overflowY: "auto",
           border: "1px solid #ccc",
           borderRadius: "8px",

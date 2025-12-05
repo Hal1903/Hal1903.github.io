@@ -31,11 +31,12 @@ function Home() {
             <div className="about-text">
               <h2>About Me</h2>
               <p>
-                Welcome! I'm Haruku, an undergraduate researcher and developer interested in math, computer science, and education at University of Kentucky.
+                Welcome! I'm Haruku, a researcher and developer interested in math, computer science, and education graduated from University of Kentucky.
               </p>
               <p>
                 My goals are to foster academic curiosity and enjoyment in learning and to earn a Ph.D. in computer science. 
-                My works explaining math and CS is in Resources section. Feel free to check them out:) (temporarily unavailable)
+                Since my primary language is Japanese, I also aim to bridge the gap between Japanese and English resources in STEM fields.
+                My works explaining math and CS is in Resources section. Feel free to check them out:) (not yet fully ready though)
               </p>
               <p>
                 Here is my journey of academic and engineering landscapes:
@@ -72,7 +73,7 @@ function Home() {
                 The goal is to predict the nodal coordinates of these structures under dynamic conditions, 
                 leveraging the principles of physics, described by a 2nd-order ODE with ill-conditioned matrices, to inform the NN's learning process. 
                 Our experiments demosntrate the optimally tuned PINN model is capable of achieving
-                the same accuracy as the traditional numerical methods, FEM. The generous supervision was given from Dr. Jing Qin at University of Kentucky.
+                the same accuracy as the traditional numerical methods, FEM. 
                 `}
             />
             <Panel
@@ -82,9 +83,9 @@ function Home() {
               detail = {`
               Time of death (TOD) is a crucial factor in forensic science, particularly in circadian gene analysis, 
               but it is often missing from post-mortem sample records unlike circadian gene expression data. 
-              Our aim is to predict the expected TOD and its uncertainty range from post-mortem samples using probabilistic models.
-              We conducted experiments with tuned six models and found that the Gaussian Energy-Based Model (GEBM) outperformed others in terms of probabilistic metrics: NLL, CRPS, and ECE.
-              This research is supported by WPI, NSF, and UMass Chan Medical School.
+              Our aim is to predict the expected TOD and its uncertainty range from post-mortem human samples using probabilistic models.
+              We found that the Gaussian Energy-Based Model (GEBM) outperformed others in terms of probabilistic metrics: NLL, CRPS, and ECE.
+              Achieved < 1 hour MAE, which is significant.
               `}
             />
             <Panel
@@ -96,7 +97,6 @@ function Home() {
               Leading a group of four, I developed a stochastic tic-tac-toe game environment, MinMax Tree verifier, symmetric-aware Q-learning algorithm, 
               and lower bound estimation with binomial coefficients for the required number of episodes to make an effective agent.
               Our agent effectively learned the optimal strategy when stochasticity was introduced, which is, avoiding the center and preferring the corner at the beginning.
-              The future work is DQN for n*n boards and extension to POMDP.
               `}
             />
             <Panel
@@ -108,7 +108,7 @@ function Home() {
               First, we performed EDA on the dataset to understand the features, leading to feature creation that increases ROC_AUC by at least 0.03 (which is significant!).
               The features permitted are data available only before hiring, excluding job satisfaction, work environment, etc.
               My project assesses the likelihood of an applicant leaving the company within the first few years of employment. 
-              Raw data is limited and imbalanced, so using synthetic data augmentation library doubled the F1 score from 0.4 to 0.8.
+              Raw data is limited and imbalanced, so using synthetic data augmentation library doubled the F1 score from 0.4 to 0.9.
             `}/>
             <Panel
               imageSrc="/images/projects/cgan.png"
