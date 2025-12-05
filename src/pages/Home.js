@@ -20,7 +20,7 @@ function Home() {
             <Link smooth to="#about">About</Link>
             <Link smooth to="#projects">Projects</Link>
             <Link smooth to="#contact">Contact</Link>
-          {/* <Link to="/course">Resources</Link> */}
+          <Link to="/course">Resources</Link>
         </nav>
       </header>
 
