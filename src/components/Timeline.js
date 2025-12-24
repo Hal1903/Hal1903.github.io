@@ -61,15 +61,13 @@ export default function Timeline() {
             <ul>
                 <li>Completed REU at WPI</li>
                 <li>Paper accepted by IEEE NAECON</li>
-                <li>Finished B.S. in CS and Math</li>
+                <li>Finished B.S. in CS and Math; graduated from UKY</li>
                 <li>Experimental math curriculum begins</li>
                 <li>Finished a senior project (Human Domino)</li>
             </ul>
             </div>
             <div>
             <ul>
-                <li>Planning some internship</li>
-                <li>Graduation from UKY</li>
                 <li>More is coming soon...</li>
             </ul>
             </div>
