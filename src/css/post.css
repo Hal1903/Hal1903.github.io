@@ -1,22 +1,27 @@
-.container,
-.body {
-  min-width: 0;
+/* Ensure body and html allow centering */
+.main {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: flex-start; /* Aligns to top */
+    margin-left: auto;   /* Explicitly set both */
+    margin-right: auto;  /* Explicitly set both */
 }
-
-.body {
-  width: 100%;
-}
-
 
 .container {
-    max-width: 900px;
-    min-width: 0;
-
-    margin: 120px auto 2rem auto;
+    max-width: 1000px;
+    width: 100%;
+    margin-left: auto;   /* Explicitly set both */
+    margin-right: auto;  /* Explicitly set both */
+    margin-top: 120px;
+    margin-bottom: 2rem;
     padding: 0 1.5rem;
-
     overflow-wrap: break-word;
     word-break: break-word;
+    box-sizing: border-box;
+}
+.body {
+  width: 100%;
+  box-sizing: border-box;  /* Add this */
 }
 
 .title {

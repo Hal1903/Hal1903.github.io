@@ -1,7 +1,7 @@
 import '../../css/post.css';
 
 
-export const title = "Clustering";
+export const title = "Image Compression";
 // autoencoder
 // export const category = "elementary_math";
 
@@ -13,8 +13,7 @@ export default function Article1() {
                 </div>
             <div className="body">
 
-                This is where the div text of your article will go. You can write about anything you want here.
-
+                Low rank approximation and autoencoders are two powerful techniques for compressing data, each with its own strengths and applications.
 
             </div>
 

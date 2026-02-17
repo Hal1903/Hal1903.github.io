@@ -1,8 +1,8 @@
 mobile:
-- fix navbar: freeze pane
+resolved - fix navbar: freeze pane
 - gacha side-scrollable
 - makiing sure to load slides every time
 
 - favicon / logo: apparently finished
-- article format. margin is too large and not centered: finished I guess.
+resolved - article format. margin is too large and not centered: finished I guess.
 - getting slowed, explore and implement lazy loading for articles: finished I guess.

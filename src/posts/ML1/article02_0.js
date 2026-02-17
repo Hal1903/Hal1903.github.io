@@ -126,20 +126,100 @@ export default function Article1() {
                     however, we will proceed to what we can do with machine learning and how we can implement it, without going into the math details.
                 </p>
 
-                <h3>Example Result</h3>
+                <h3>Manual Step-by-Step Computation</h3>
 
                 <p>
-                    For the study data above, the fitted line might look approximately like:
+                    Let's see how we could compute the slope <Inline math="m" /> and intercept <Inline math="b" /> manually for a small dataset:
+                </p>
+
+                <ul>
+                    <li>Data points: (x, y) = (2, 56), (4, 75), (6, 85)</li>
+                </ul>
+
+                <p>
+                    Step 1: Compute the means of <Inline math="x" /> and <Inline math="y" />:
                 </p>
 
                 <div className="latex-center">
                     <Block math={String.raw`
-                        y = 7x + 43
+                        \bar{x} = \frac{2+4+6}{3} = 4
+                    `} />
+                </div>
+
+                <div className="latex-center">
+                    <Block math={String.raw`
+                        \bar{y} = \frac{56+75+85}{3} = 72
+                    `} />
+                </div>
+
+                <p>
+                    Step 2: Compute the slope using the formula:
+                </p>
+
+                <div className="latex-center">
+                    <Block math={String.raw`
+                        m = \frac{\sum_i (x_i - \bar{x})(y_i - \bar{y})}{\sum_i (x_i - \bar{x})^2}
+                    `} />
+                </div>
+
+                <p>
+                    Step 3: Plug in the values:
+                </p>
+
+                <div className="latex-center">
+                    <Block math={String.raw`
+                        \sum_i (x_i - \bar{x})(y_i - \bar{y}) = (2-4)(56-72) + (4-4)(75-72) + (6-4)(85-72) = (-2)(-16) + 0 + (2)(13) = 32 + 26 = 58
+                    `} />
+                </div>
+
+                <div className="latex-center">
+                    <Block math={String.raw`
+                        \sum_i (x_i - \bar{x})^2 = (2-4)^2 + (4-4)^2 + (6-4)^2 = 4 + 0 + 4 = 8
+                    `} />
+                </div>
+
+                <div className="latex-center">
+                    <Block math={String.raw`
+                        m = \frac{58}{8} = 7.25
+                    `} />
+                </div>
+
+                <p>
+                    Step 4: Compute the intercept:
+                </p>
+
+                <div className="latex-center">
+                    <Block math={String.raw`
+                        b = \bar{y} - m \bar{x} = 72 - 7.25 \cdot 4 = 72 - 29 = 43
+                    `} />
+                </div>
+
+                <p>
+                    So the manually fitted line is approximately:
+                </p>
+
+                <div className="latex-center">
+                    <Block math={String.raw`
+                        y = 7.25x + 43
+                    `} />
+                </div>
+
+
+                <h3>Example Result</h3>
+
+                <p>
+                    For the first study data above, the fitted line might look approximately like:
+                </p>
+
+                <div className="latex-center">
+                    <Block math={String.raw`
+                        y = 7.5x + 41.5
                     `} />
                 </div>
 
                 <p>
                     This means each additional hour increases predicted score by about 7 points.
+                    Notice that the obtained line is not perfect; it does not go through all points, but it captures the overall trend.
                 </p>
 
 
@@ -148,7 +228,23 @@ export default function Article1() {
                 Implementation 1: Linear Regression from Scratch (Click to Expand)
             </summary>
 
-            <pre>
+              <SyntaxHighlighter
+                language="python"
+                style={oneDark}
+                wrapLongLines={true}
+                customStyle={{
+                margin: 0,
+                padding: "1rem",
+                maxWidth: "100%",
+                overflowX: "auto",
+                }}
+                codeTagProps={{
+                style: {
+                    whiteSpace: "pre-wrap",
+                    wordBreak: "break-word",
+                }
+                }}
+            >
             {`
             import numpy as np
             from sklearn.linear_model import LinearRegression
@@ -179,8 +275,9 @@ export default function Article1() {
             plt.xlabel("Hours Studied")
             plt.ylabel("Exam Score")
             plt.title("Linear Regression Example")
-            plt.show()`}
-            </pre>
+            plt.show()
+            `}
+            </SyntaxHighlighter>
 
             <p>
                 This computes the best-fitting line:
