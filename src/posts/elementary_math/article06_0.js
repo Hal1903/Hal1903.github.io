@@ -1,7 +1,7 @@
 import '../../css/post.css';
 
 
-export const title = "Advanced Excercise";
+export const title = "Advanced Excercise（発展問題）";
 // export const category = "elementary_math";
 
 export default function Article1() {

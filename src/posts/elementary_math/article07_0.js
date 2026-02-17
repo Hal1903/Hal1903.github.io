@@ -1,7 +1,7 @@
 import '../../css/post.css';
 
 
-export const title = "Intro to Graph Theory";
+export const title = "Intro to Graph Theory（グラフ理論入門）";
 // export const category = "elementary_math";
 
 export default function Article1() {

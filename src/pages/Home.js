@@ -47,8 +47,30 @@ function Home() {
             {/* Right column: Slideshow */}
             <div className="about-slideshow">
               <AboutSlideshow /> {/* edit src/component to add images */}
-            </div>
+              
+              {/* Resume Buttons */}
+              <div className="resume-buttons">
+                <a
+                  href="/Resume_inPerson_JPN.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resume-btn"
+                >
+                  📄 Resume (JP)
+                </a>
 
+                <a
+                  href="/Resume_inPerson.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resume-btn"
+                >
+                  📄 Resume (EN)
+                </a>
+              </div>
+
+            </div>
+            
         </section>
 
         <section className="timeline-section">
@@ -78,15 +100,7 @@ function Home() {
         </section>
         {/* <section>
           
-          <div>
-          <p style={{fontSize: "20px", marginTop: "1rem", marginBottom: "3rem"}}>
-              Also, here is my sister's website. She provides you a portrait of your house, please check this out if you want one as a trait of your invaluable memory:
-              <br></br>
-              <a href="http://aono.my.canva.site/watercolor-house-portrait-website">
-              http://aono.my.canva.site/watercolor-house-portrait-website
-              </a>
-          </p>
-          </div>
+
 
         </section> */}
           <p style={{fontSize: "20px", marginTop: "2rem", marginBottom: "3rem"}}> 
@@ -106,16 +120,16 @@ function Home() {
             <li>Email: hahikeyuaono0419@gmail.com</li>
             <li>GitHub: <a href="https://github.com/Hal1903">Hal1903</a></li>
           </ul> */}
-          <div style={{align: "center", marginBottom: "2rem"}}>
-            Email: hahikeyuaono0419@gmail.com
-            <br></br>
-            GitHub: <a href="https://github.com/Hal1903">Hal1903</a>
-          </div>
+          {/* <div style={{align: "center", marginBottom: "2rem"}}> */}
+
+            {/* <br></br> */}
+            {/* GitHub: <a href="https://github.com/Hal1903">Hal1903</a>
+          </div> */}
           
           <div className='social-icons'>
             <SocialIcon url="https://github.com/Hal1903"></SocialIcon>
             <SocialIcon url="https://www.linkedin.com/in/haruku-aono-b656661a9/"></SocialIcon>
-            <SocialIcon url="mailto:hahikeyuaono0419@gmail.com/"></SocialIcon>
+            
             <a
               href="https://scholar.google.com/citations?hl=en&user=0vYSmiwAAAAJ"
               target="_blank"

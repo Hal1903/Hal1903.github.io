@@ -115,13 +115,13 @@ const ProjectList = () => {
             />
             <Panel
                 imageSrc="/images/projects/bibloop-icon.png"
-                title="Bibloop: Bible Study App with Light Interactive Communities"
+                title="Bibloop: Bible Study App with Light Interactive Communities (Full-Stack)"
                 description="Can be found on App store: https://apps.apple.com/jp/app/bibloop/id6751510418"
                 detail=
                 {`
                   This app provides a daily verse, friend connection feature to motivate one another, and the collection of bible chapters to study full contents of the bible.
                   You can make a prayer request that will be sent to your friends, and your friends can react to this on their convenience.
-                  I am planning to contribute to authentication, UI refinement, and additional profile feature.
+                  As a full-stack collaborator, I contributed to authentication, refining error handling, notifications, and other minor improvements.                
                 `}
             />
             

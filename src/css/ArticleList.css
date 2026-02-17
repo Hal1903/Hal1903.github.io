@@ -1,6 +1,7 @@
 .article-container {
   max-width: 1080px;
-  margin: 2rem auto;
+  /* margin: 2rem auto; */
+  margin: 120px auto 0 auto;
   padding: 1rem;
   display: flex;
   flex-direction: column;

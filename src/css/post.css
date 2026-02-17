@@ -1,15 +1,32 @@
+.container,
+.body {
+  min-width: 0;
+}
+
+.body {
+  width: 100%;
+}
+
+
 .container {
-    margin: 5rem;
-    padding-bottom: 1rem;
+    max-width: 900px;
+    min-width: 0;
+
+    margin: 120px auto 2rem auto;
+    padding: 0 1.5rem;
+
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .title {
     margin-bottom: 2rem;
 }
 
-.container p, li {
+.container p, .container li {
     line-height: 1.6;
     margin-bottom: 1rem;
+    overflow-wrap: anywhere;
 }
 
 .hanging-bullet {
@@ -24,12 +41,62 @@
     gap: 0.5rem;
 }
 
+details pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: auto;
+  max-width: 100%;
+}
+.code-block {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.code-block pre {
+  margin: 0 !important;
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  max-width: 100% !important;
+}
+
+.code-block code {
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+}
+
+
+.latex-center {
+  width: 100%;
+  padding: 0.5rem 0;   /* add vertical breathing room */
+  overflow-x: auto;
+}
+
+.latex-center .katex-display {
+  margin: 0;
+  padding: 0.5rem 0;   /* add vertical breathing room */
+}
+
+.image-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.image-scroll img,
+.wide-image {
+  display: block;
+  max-width: 100%;   
+  height: auto;
+}
+
 
 @media (max-width: 600px) {
     .container {
-        margin: 1.5rem;
-        padding: 1rem;
+        margin-top: 120px;
+        padding: 0 1rem;
     }
+
 }
 
 .table-container {

@@ -13,7 +13,8 @@ body, html, #root {
 
 .content {
     max-width: 1200px; /* or whatever width you prefer */
-    margin: 0 auto;
+    margin: 120px auto 0 auto;  /* pushes content below navbar */
+
     padding: 2rem;
     padding-bottom: 4rem;
 }
@@ -40,10 +41,47 @@ body, html, #root {
 
 .about-slideshow {
     flex: 1 1 200px;
+    flex-direction: column;   /* stack vertically */
+    align-items: center;      /* center horizontally */
     display: flex;
     justify-content: center;
-    align-items: center;
+
 }
+
+.resume-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;   /*  creates space between buttons */
+}
+
+
+.resume-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;                 /* space between icon and text */
+    padding: 8px 18px;
+    background-color: #222;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.resume-btn:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+.resume-btn:active {
+    transform: translateY(0px);
+}
+
+
 
 .slideshow-image {
     max-width: 100%;
@@ -52,11 +90,6 @@ body, html, #root {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.navbar{
-    top: 0;
-    position: sticky; /* freeze nav bar */
-    z-index: 999; /* stays on top, so slide does not overlay */
-}
 
 .social-icons {
     display: flex;
@@ -99,7 +132,24 @@ body, html, #root {
     .about-slideshow {
         order: -1; /* Move slideshow to the top on mobile */
         flex: 1 1 100%;
+        flex-direction: column;   /* stack vertically */
+        align-items: center;      /* center horizontally */
+        justify-content: center;
     }
+
+    .slideshow-container {
+        width: 100%;
+        max-width: 600px;  /* optional limit */
+    }
+
+
+    .resume-buttons {
+        margin-top: 20px;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
 
     .about-text p {
         padding: 0 1rem;

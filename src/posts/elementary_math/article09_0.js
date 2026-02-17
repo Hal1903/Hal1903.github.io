@@ -1,7 +1,7 @@
 import '../../css/post.css';
 
 
-export const title = "Spanning Tree and Algorithms";
+export const title = "Spanning Tree and Algorithms（全域木とアルゴリズム）";
 // export const category = "elementary_math";
 
 export default function Article1() {

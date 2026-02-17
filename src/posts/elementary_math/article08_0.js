@@ -1,7 +1,7 @@
 import '../../css/post.css';
 
 
-export const title = "Planer Graph and Euler's Formula";
+export const title = "Planer Graph and Euler's Formula（平面グラフとオイラーの公式）";
 // export const category = "elementary_math";
 
 export default function Article1() {
