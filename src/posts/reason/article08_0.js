@@ -2,7 +2,7 @@ import '../../css/post.css';
 import {Block, Inline} from "../../components/KatexBox";
 import "katex/dist/katex.min.css";
 
-export const title = "More Logic: Circular Logic and Syllogism";
+export const title = "Logic: Truth Tables and Logical Connectives";
 // export const category = "elementary_math";
 
 export default function Article1() {

@@ -1,7 +1,7 @@
 import '../../css/post.css';
 
 
-export const title = "Office Software: Presentation";
+export const title = "Why you should learn Slides";
 // export const category = "elementary_math";
 
 export default function Article1() {

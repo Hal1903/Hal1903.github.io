@@ -2,7 +2,7 @@ import '../../css/post.css';
 import {Block, Inline} from "../../components/KatexBox";
 import "katex/dist/katex.min.css";
 
-export const title = "Inevitable Unfairness in Ordering";
+export const title = "Predicate Logic and Quantifiers";
 // export const category = "elementary_math";
 
 export default function Article1() {

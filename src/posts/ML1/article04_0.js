@@ -5,6 +5,7 @@ import SideScrollableWrapper from '../../utils/SideScrollableWrapper';
 import "katex/dist/katex.min.css";
 import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import CodeDownloader from '../../components/CodeDownloader';
 
 export const title = "Demo Walkthrough + Data Preprocessing";
 
@@ -577,19 +578,22 @@ print(results_df)
 </p>
 
 <div className="button-container">
-  <button
+  {/* <button
     className="download-button"
     onClick={() => {
       const link = document.createElement("a");
-      link.href = "/images/housePrice.ipynb";
-      link.download = "housePrice.ipynb";
+      link.href = "/code/housePrice.ipynb";
+      link.download = "CaliforniaHousePrice.ipynb";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
     }}
   >
     Download Full Code
-  </button>
+  </button> */}
+  <CodeDownloader href="/code/housePrice.ipynb" fileName="CaliforniaHousePrice.ipynb">
+    Download Full Code
+  </CodeDownloader>
 </div>
 
 
