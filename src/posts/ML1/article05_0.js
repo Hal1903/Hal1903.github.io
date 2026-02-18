@@ -1,7 +1,7 @@
 import '../../css/post.css';
 
 
-export const title = "Feature Engineering";
+export const title = "EDA and Data Visualization";
 // export const category = "elementary_math";
 
 export default function Article1() {
