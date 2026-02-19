@@ -67,6 +67,14 @@ print(f"You added donuts: {cart}")
 cart.remove("apple")
 print(f"You are dropped an apple: {cart}")
 
+# Array indexing
+numbers = [10, 20, 30, 40]
+
+print(numbers[0])   # first element
+print(numbers[1])   # second element
+print(numbers[-1])  # last element
+
+print(numbers[1:3]) # slicing (index 1 to 2)
 
 # length and sum? easy
 print(f"number of elements in a cart: {len(cart)}")
@@ -86,6 +94,19 @@ print("shop_list:", shop_list)
 print("shop_list dtype =", type(shop_list))
 print("shop cart dtype =", type(cart))
 
+# Dictionary example
+student = {
+    "name": "Alice", # key: value
+    "score": 95,
+    "passed": True
+}
+
+print(student["name"]) # like an index, key serves as a index to retrieve the value
+print(student["score"])
+
+student["score"] = 100  # modify value
+
+
 # Condition: you want to change the output for a different situation?
 # then you need to specify "under what condition" and "what to execute" for each case.
 
@@ -99,6 +120,15 @@ if (test_score > 67):
     print("you passed!")
 else:
     print("you failed") # what is the highest grade you can fail at?
+
+# boolean review
+x = True
+y = False
+
+print(x and y)   # False
+print(x or y)    # True
+print(not x)     # False
+
 
 # want more branches? sure, use elif
 
@@ -201,3 +231,33 @@ print("Likes neither:", likes_neither)
 
 
 
+# Exercise 3:
+
+todo = {
+    "Abel": ["write proof", "review notes"],
+    "Borel": ["buy groceries", "reply to email", "clean desk"],
+    "Cayley": ["read chapter 1", "solve exercises", "prepare slides", "meet advisor"]
+}
+
+# 1. Abel's final task
+abel_last_task = todo["Abel"][-1]
+print("Abel's final task:", abel_last_task)
+
+# 2. Remove Borel's first task (by index, not by name)
+todo["Borel"].pop(0)
+
+# 3. Append new task to Cayley
+todo["Cayley"].append("study linear algebra")
+
+# 4. Swap Borel and Cayley's task lists
+todo["Borel"], todo["Cayley"] = todo["Cayley"], todo["Borel"]
+
+# or you can do like
+# intermediate = todo["Borel"]
+# todo["Borel"] = todo["Cayley"]
+# todo["Cayley"] = intermediate
+
+# 5. Print names with more than 2 tasks
+for person, tasks in todo.items():
+    if len(tasks) > 2:
+        print(person)
