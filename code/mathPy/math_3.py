@@ -170,7 +170,7 @@ def analyze_statistics(record, sides):
     print(f"Total Rolls: {total_rolls}")
     
     theoretical_prob = 1 / sides # uniform
-    tolerance = 0.025 * sides   # per your specification
+    tolerance = 0.02  # absolute tolerance
     
     converged = True
     
