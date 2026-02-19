@@ -1,7 +1,7 @@
 import '../../css/post.css';
 
 
-export const title = "Image Compression";
+export const title = "Low Rank Approximation for Image Compression";
 // autoencoder
 // export const category = "elementary_math";
 

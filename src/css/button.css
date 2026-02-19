@@ -1,6 +1,8 @@
 .button-container {
-  margin: 40px 0;
+  margin: 20px 0 0px 0; /* no bottom margin for figcaption */
+  padding-bottom: 10px; 
   display: flex;
+  flex-direction: column;  /* stack vertically */
   justify-content: center;
 }
 

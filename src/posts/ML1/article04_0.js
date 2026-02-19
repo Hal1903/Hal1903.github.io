@@ -578,19 +578,6 @@ print(results_df)
 </p>
 
 <div className="button-container">
-  {/* <button
-    className="download-button"
-    onClick={() => {
-      const link = document.createElement("a");
-      link.href = "/code/housePrice.ipynb";
-      link.download = "CaliforniaHousePrice.ipynb";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }}
-  >
-    Download Full Code
-  </button> */}
   <CodeDownloader href="/code/housePrice.ipynb" fileName="CaliforniaHousePrice.ipynb">
     Download Full Code
   </CodeDownloader>

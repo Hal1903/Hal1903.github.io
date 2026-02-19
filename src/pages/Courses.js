@@ -23,12 +23,12 @@ const courses = [
     description: 'Primer to critical thinking and reasoning via causation/correlation distinction, bias/fallacies, and logics.',
     image: '../images/Courses/thinker.jpg',
   },
-  // {
-  //   id: 'mathComp',
-  //   title: 'Introduction to Programming and Mathematics',
-  //   description: 'Learning programming and computation using mathematics.',
-  //   image: '../images/Courses/py.png',
-  // },
+  {
+    id: 'mathComp',
+    title: 'Introduction to Programming and Mathematics',
+    description: 'Learning programming and computation using mathematics.',
+    image: '../images/Courses/py.png',
+  },
   // {
   //   id: 'Discrete',
   //   title: 'Introduction to Discrete Math',
