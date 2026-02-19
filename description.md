@@ -48,7 +48,7 @@ No more than 2 matrices in the same block should be added. It will overflow.
 
 ### Resource Creation
 Run on git bash in the project root folder:
-for i in {3..10}; do touch src/posts/reason/article${i}_0.js; done
+for i in {3..10}; do touch src/posts/{topic}/article${i}_0.js; done
 
 
 ### Building + Deploying + Uploading to GitHub

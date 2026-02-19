@@ -98,8 +98,8 @@ export default function Article1() {
                 <h2>4. Linear Independence</h2>
 
                 <p>
-                    Vectors <Inline math="v_1, \dots, v_k" /> are <strong>linearly independent</strong> 
-                    if the only solution to
+                    Vectors <Inline math="v_1, \dots, v_k" /> are <strong>linearly independent</strong> if
+                    the only solution to
                 </p>
 
                 <div className="latex-center">
@@ -152,6 +152,12 @@ export default function Article1() {
                 <p>
                     Every vector in <Inline math="\mathbb{R}^n" /> can be written uniquely
                     as a linear combination of basis vectors.
+                    By the way, does every vector space have basis?
+                    This may sound trivial, but the proof is actually quite nontrivial
+                    unless you admit all Axiom of Choice, Zorn's lemma, and well-ordering theorem
+                    without hesitance. If you suspect one of them, you are suspecting all of them because
+                    these propositions are proven to be logically equivalent! 
+                    However, this is beyond the scope of this article, so we will move on to what dimensions are.
                 </p>
 
                 <h2>6. Dimension</h2>

@@ -1,8 +1,8 @@
 import '../../css/post.css';
+import {Block, Inline} from "../../components/KatexBox";
+import "katex/dist/katex.min.css";
 
-
-export const title = "Vector Space and Subspace";
-// export const category = "elementary_math";
+export const title = "Vector Operations and Norm";
 
 export default function Article1() {
     return (

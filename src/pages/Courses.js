@@ -24,6 +24,12 @@ const courses = [
     image: '../images/Courses/thinker.jpg',
   },
   // {
+  //   id: 'mathComp',
+  //   title: 'Introduction to Programming and Mathematics',
+  //   description: 'Learning programming and computation using mathematics.',
+  //   image: '../images/Courses/py.png',
+  // },
+  // {
   //   id: 'Discrete',
   //   title: 'Introduction to Discrete Math',
   //   description: 'Starting point of proof-based mathematics and getting interesting perspectives to mathematics.',

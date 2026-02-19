@@ -94,7 +94,16 @@ export default function Article1() {
                     Notice something important:
                     if the two rows are proportional (linearly dependent),
                     then <Inline math="ad - bc = 0" />.
-                    Thus the determinant tells us about dependence.
+                    Thus the determinant tells us about dependence. 
+                    You can try a 3D case, too, and the result should match the result in the following section: 
+                </p>
+
+                <p>
+Since matrix multiplication corresponds to composing linear systems,
+and since the determinant detects whether a system loses uniqueness,
+ the determinant must behave compatibly with composition. 
+This leads to the multiplicative property—or a theorem
+<Block math="\det(AB)=\det(A)\det(B)" />
                 </p>
 
                 <hr />
@@ -148,6 +157,17 @@ export default function Article1() {
                     This leads to the cofactor (Laplace) expansion.
                 </p>
 
+                <p>
+                    In the 3×3 case, the determinant is built from 2×2 sub-determinants, and vanishes whenever one row can be written as a linear combination of the others.
+
+                    This pattern continues in general: 
+                    the determinant measures whether the rows (or columns) span the full space.
+                    If they collapse into a lower-dimensional subspace, the determinant becomes zero.
+                </p> 
+                <p>
+                    This geometric interpretation make the next theorem (1) easier to follow.
+                </p>
+
                 {/* <p>
                     We also observe that the number of terms grows:
                     2 for 2×2,
@@ -155,16 +175,133 @@ export default function Article1() {
                     and 24 for 4×4.
                     This factorial growth suggests a deeper combinatorial structure.
                 </p> */}
+    <hr />
 
+    <h4>Theorems:</h4>
+    <p> 1. <Inline math="\det(A)=0" /> if and only if the rows or columns of A are linearly dependent. </p>
+    <p> 2. <Inline math="\det(AB)=\det(A)\det(B)" /> </p>
+    <p> 3. If A is n×n diagonal or triangular, </p>
+        <Block math="\det(A)=\prod_{i=1}^{n} a_{ii}"/>
+
+<br></br>
+{/* <p>
+Although I understand the proof for theorem 1 using the discussion in the latter half of this article,
+ChatGPT gave me one conceptual proof outline: fix a matrix A and define a function of B as <Inline math="f(B):=\det(AB)" /> 
+thus <Inline math="f(I):=\det(A)" />. AB is just B of whose basis were linearly transformed by A.
+<Inline math="f(B):=\det(AB)" /> satisfies determinant properties, which is straightforward to check or find resources.
+Then we just need to show the uniqueness...but this part should rely on the definition of determinant discussed soon later.
+I will not write the full proof, but you can find one fairly easily.
+</p> */}
+{/* <br></br> */}
+
+<h3>Exercise 1</h3>
+<p>Prove that if <Inline math="\det(AB)=0"/> then A or B is singular. </p>
+<details>
+  <summary>
+    <b>Solution:</b>
+  </summary>
+
+  <p>
+    Suppose <Inline math="\det(AB)=0"/>.  
+    By the multiplicative property of the determinant,
+  </p>
+
+  <p>
+    <Inline math="\det(AB)=\det(A)\det(B)"/>.
+  </p>
+
+  <p>
+    Hence
+  </p>
+
+  <p>
+    <Inline math="\det(A)\det(B)=0"/>.
+  </p>
+
+  <p>
+    Over the real (or rational) numbers, a product is zero if and only if at least one factor is zero. 
+    Therefore,
+  </p>
+
+  <p>
+    <Inline math="\det(A)=0 \quad \text{or} \quad \det(B)=0"/>.
+  </p>
+
+  <p>
+    By Theorem 1, a matrix has zero determinant if and only if it is singular. 
+    Hence A or B is singular.
+  </p>
+
+  <p>
+    Alternatively, one can argue directly: if both A and B were invertible, 
+    then their product AB would also be invertible (since <Inline math="(AB)^{-1}=B^{-1}A^{-1}"/>).  
+    But an invertible matrix has nonzero determinant, contradicting <Inline math="\det(AB)=0"/>.  
+    Therefore at least one of A or B must be singular.
+  </p>
+
+</details>
+
+
+<h3>Exercise 2</h3>
+<p>Prove <Inline math="\det(A)=0"/> if and only if A is singular.</p>
+<details>
+  <summary>
+    <b>Solution:</b>
+  </summary>
+  <p>
+    We prove both directions.
+  </p>
+
+  <p>
+    (<b>⇒</b>) Suppose <Inline math="\det(A)=0"/>.  
+    If <Inline math="A"/> were invertible, then there would exist <Inline math="A^{-1}"/> 
+    such that <Inline math="AA^{-1}=I"/>. Taking determinants on both sides gives
+  </p>
+
+  <p>
+    <Inline math="\det(A)\det(A^{-1})=\det(I)=1"/>.
+  </p>
+
+  <p>
+    Since <Inline math="\det(A)=0"/>, the left-hand side equals 0, which is impossible.  
+    Therefore <Inline math="A"/> cannot be invertible. Hence <Inline math="A"/> is singular.
+  </p>
+
+  <p>
+    (<b>⇐</b>) Suppose <Inline math="A"/> is singular.  
+    Then <Inline math="A"/> is not invertible, so there exists a nonzero vector 
+    <Inline math="x \neq 0"/> such that
+  </p>
+
+  <p>
+    <Inline math="Ax=0"/>.
+  </p>
+
+  <p>
+    This means the columns of <Inline math="A"/> are linearly dependent.  
+    But the determinant of a matrix is zero if its columns are linearly dependent.  
+    Therefore,
+  </p>
+
+  <p>
+    <Inline math="\det(A)=0"/>.
+  </p>
+
+  <p>
+    Hence <Inline math="\det(A)=0"/> if and only if <Inline math="A"/> is singular.
+  </p>
+</details>
+
+<br></br> <hr></hr> <br></br>
                 <p>
                     From here, we will dive into a more abstract discussion of the determinant function.
                     You may skip the next sections if you are only interested in computational techniques.
-                    Even if you decided to proceed and get lost in the abstraction, don't worry — 
+                    Even if you decided to proceed and get lost, don't worry — 
                     the next article will be more concrete again. You can come back to determinant anytime afterwards.
                     Now, let's get into "construction" of determinant.
                 </p>
 
-                <hr />
+
 
                 <h2>3. What Should a Determinant Be?</h2>
 
@@ -295,8 +432,14 @@ export default function Article1() {
                     alternation, and normalization.
                     These properties uniquely determine the determinant function, 
                     but the proof is beyond the scope of this article. 
-                    It is not insanely difficult, so if you are interested, 
+                    It is not insanely difficult once you understand above, so if you are interested, 
                     you can check it out in any linear algebra textbook or online resources. Wikipedia includes the proofs as well.
+                </p>
+
+                <p>
+                From the understanding of these three characteristics, it is also possible to 
+                prove the therem <Inline math="\det(AB)=\det(A)\det(B)" />, so 
+                if you are interested, try to prove this as well.
                 </p>
 
                 <hr />

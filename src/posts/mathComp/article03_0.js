@@ -1,7 +1,8 @@
 import '../../css/post.css';
+import {Block, Inline} from "../../components/KatexBox";
+import "katex/dist/katex.min.css";
 
-
-export const title = "Functions: Injection, Surjection, and Bijection";
+export const title = "Iteration, Function, Files, Libraries";
 // export const category = "elementary_math";
 
 export default function Article1() {
