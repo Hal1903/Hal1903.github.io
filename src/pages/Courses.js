@@ -26,7 +26,7 @@ const courses = [
   {
     id: 'mathComp',
     title: 'Introduction to Programming and Mathematics',
-    description: 'Learning programming and computation using mathematics.',
+    description: 'Learning programming and computation using high-school level mathematics.',
     image: '../images/Courses/py.png',
   },
   // {

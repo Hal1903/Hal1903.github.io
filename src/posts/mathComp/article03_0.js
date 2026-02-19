@@ -431,7 +431,7 @@ Your program must:
     <li>Count how many times each face appears.</li>
     <li>Compute empirical probability: <code>count / total_rolls</code>.</li>
     <li>Compare it to the theoretical value.</li>
-    <li>Check whether the difference is within ± <code>0.025 × n</code>.</li>
+    <li>Check whether the difference is within ± <code>0.02</code>.</li>
 </ul>
 
 <p>

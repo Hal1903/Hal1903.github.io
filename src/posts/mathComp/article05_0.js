@@ -2,7 +2,7 @@ import '../../css/post.css';
 import {Block, Inline} from "../../components/KatexBox";
 import "katex/dist/katex.min.css";
 
-export const title = "SymPy: Binomial Theorem";
+export const title = "Permutations and Probability";
 
 export default function Article1() {
     return (

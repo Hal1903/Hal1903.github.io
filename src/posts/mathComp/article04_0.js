@@ -2,7 +2,7 @@ import '../../css/post.css';
 import {Block, Inline} from "../../components/KatexBox";
 import "katex/dist/katex.min.css";
 
-export const title = "Eratosthenes' Sieve: Primes";
+export const title = "Vectors";
 
 export default function Article1() {
     return (

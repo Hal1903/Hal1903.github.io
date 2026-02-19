@@ -2,7 +2,7 @@ import '../../css/post.css';
 import {Block, Inline} from "../../components/KatexBox";
 import "katex/dist/katex.min.css";
 
-export const title = "Spanning Tree";
+export const title = "CapStone:";
 
 export default function Article1() {
     return (
