@@ -18,7 +18,7 @@ fi
 
 echo "Building and deploying the project..."
 npm run build
-npm run deploy
+# npm run deploy
 
 
 ## The Git Operations
