@@ -18,7 +18,8 @@ fi
 
 echo "Building and deploying the project..."
 npm run build
-# npm run deploy
+# needed to publish non-static type using gh-page based method
+npm run deploy
 
 
 ## The Git Operations
