@@ -1,0 +1,144 @@
+.markdown-body {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: flex-start;
+}
+
+aside {
+  background-color: #f9f9f9;       /* light background */
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  /* width: 250px;                    fixed width */
+  height: 100%
+}
+
+aside h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #333;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+aside ul {
+  list-style: none;                /* remove bullets */
+  padding-left: 0;
+  margin: 1rem 0 0 0;
+}
+
+aside li {
+  margin-bottom: 0.75rem;
+}
+
+aside a {
+  color: #3366cc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+aside a:hover {
+  text-decoration: underline;
+}
+
+.navbar {
+  /* background-color: #1e1e1e; */
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column; /* stack title and bottom row */
+  align-items: center;    /* center title */
+}
+
+.navbar-title {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* bottom row with side button (left) + nav (center) */
+.navbar-bottom {
+  margin-top: 1rem;
+  width: 100%;                  /* span full width */
+  display: flex;
+  align-items: center;
+  justify-content: center;      /* center nav links */
+  position: relative;
+}
+
+.sidebar-btn {
+  position: absolute;
+  left: 0;
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  /* border-radius: 6px; */
+  cursor: pointer;
+  font-size: 20pt;
+}
+
+.navbar-bottom nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-bottom nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar-bottom nav a:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar as a fixed drawer */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background: #f5f5f5;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+/* Hidden state: move it off screen */
+.sidebar.collapsed {
+  transform: translateX(-100%);
+}
+
+/* Open state: visible */
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* Main article */
+.main {
+  transition: margin-left 0.3s ease;
+}
+
+.main.shifted {
+  margin-left: 250px;  /* only when sidebar open */
+}
+
+.navbar {
+  transition: transform 0.3s ease;
+}
+
+.navbar.shifted {
+  transform: translateX(125px); /* same width as your sidebar */
+}
+
+/* .sidebar-header {
+    display: flex;
+    gap: 2rem;
+}
+
+.close-btn {
+    width: 3rem;
+    height: 2rem;
+} */

@@ -1,0 +1,72 @@
+.article-container {
+  max-width: 1080px;
+  /* margin: 2rem auto; */
+  margin: 120px auto 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center the cards */
+  box-sizing: border-box;
+}
+
+.article-panel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 600px;          /* fixed width on desktop */
+  flex-shrink: 0;        /* don’t shrink to fit content */
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+.article-panel:hover {
+  transform: scale(1.02);
+  background-color: #f0f0f0;
+}
+
+.article-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.article-info {
+  flex: 1;  /* forces text block to take remaining width */
+}
+
+.article-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  word-wrap: break-word;
+}
+
+.article-description {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Mobile: make them all same width (full screen) */
+@media (max-width: 640px) {
+  .article-panel {
+    min-width: 400px;
+    width: 100%;       /* stretch across screen */
+    max-width: 100%;   /* prevent overflow */
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .article-image {
+    margin-bottom: 0.5rem;
+  }
+}

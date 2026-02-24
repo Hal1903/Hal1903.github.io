@@ -1,0 +1,30 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  align-items: stretch;
+}
+
+/* @media (max-width: 1000px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+} */
+
+@media (max-width: 1200px) {
+  .projects-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .panel {
+    min-width: 300px;
+    scroll-snap-align: start;
+    flex-shrink: 1;
+  }
+}

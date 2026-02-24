@@ -1,0 +1,77 @@
+.panel {
+  perspective: 1000px;
+  width: 350px;
+  height: 425px;
+  cursor: pointer;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.panel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.panel.flipped .panel-inner {
+  transform: rotateY(180deg);
+}
+
+.panel-front,
+.panel-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  /* left: 0; */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.panel-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.panel-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.panel-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.panel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.panel-content {
+  padding: 0.5rem;
+  padding-top: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.panel:hover {
+  transform: scale(1.05);
+}
+
+.h3, p {
+  margin: 0.1rem 0;
+}

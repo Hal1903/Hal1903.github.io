@@ -1,0 +1,12 @@
+.side-scroll-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.side-scroll-wrapper table {
+  border-collapse: collapse;
+  width: max-content; /* important */
+  min-width: 100%;    /* prevents shrinking too much */
+}

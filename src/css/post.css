@@ -1,0 +1,174 @@
+/* Ensure body and html allow centering */
+.main {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: flex-start; /* Aligns to top */
+    margin-left: auto;   /* Explicitly set both */
+    margin-right: auto;  /* Explicitly set both */
+    min-width: 0;   
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+    margin-left: auto;   /* Explicitly set both */
+    margin-right: auto;  /* Explicitly set both */
+    margin-top: 120px;
+    margin-bottom: 2rem;
+    padding: 0 1.5rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    box-sizing: border-box;
+    min-width: 0; 
+}
+.body {
+  width: 100%;
+  box-sizing: border-box;  /* Add this */
+}
+
+.title {
+    margin-bottom: 2rem;
+}
+
+.container p, .container li {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    overflow-wrap: anywhere;
+}
+
+.hanging-bullet {
+    list-style: none; /* remove bullets */
+    margin: 0;
+    padding: 0;
+}
+
+.hanging-bullet li {
+    display: grid;
+    grid-template-columns: minmax(80px, 25%) 1fr; /* responsive */
+    gap: 0.5rem;
+}
+
+details pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: auto;
+  max-width: 100%;
+}
+.code-block {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.code-block pre {
+  margin: 0 !important;
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  max-width: 100% !important;
+}
+
+.code-block code {
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+}
+
+
+.latex-center {
+  width: 100%;
+  padding: 0.5rem 0;   /* add vertical breathing room */
+  overflow-x: auto;
+}
+
+.latex-center .katex-display {
+  margin: 0;
+  padding: 0.5rem 0;   /* add vertical breathing room */
+}
+
+.image-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.image-scroll img,
+.wide-image {
+  display: block;
+  max-width: 100%;   
+  height: auto;
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        margin-top: 120px;
+        padding: 0 1rem;
+    }
+
+}
+
+.table-container {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;   /* ensures equal-width columns */
+  word-wrap: break-word; /* allow breaking long words */
+  white-space: normal;   /* allow line breaks */
+}
+
+
+/* .container table {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+} side scrollable */
+
+
+.container table tr {
+    margin-bottom: 1rem;
+}
+
+.container h2 {
+    margin-top: 2.5rem;
+}
+
+table, table td, 
+table th {
+    padding: 12px 8px; /* top/bottom, left/right */
+    border: 1px solid black;
+    border-collapse: collapse;
+    /* word-break: break-word;  /* break long words if needed */
+    /* white-space: normal;     wrap text */
+}
+
+.quote {
+    font-style: italic;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #444;
+    margin: 2rem 0rem;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid #ccc;
+    border-right: 4px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.image-center {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically (if needed) */
+    flex-direction: column;  /* stack vertically */
+}
+
+figcaption {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+    text-align: center;
+}
