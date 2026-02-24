@@ -6,9 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "build": "react-scripts build"
   },
   "repository": {
     "type": "git",
@@ -26,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/Hal1903/Hal1903.github.io/issues"
   },
-  "homepage": "https://hal1903.github.io",
+  "homepage": "https://Hal1903.github.io",
   "dependencies": {
     "better-react-mathjax": "^2.3.0",
     "flowbite-react": "^0.12.6",
