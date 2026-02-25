@@ -164,6 +164,8 @@ table th {
     justify-content: center; /* Centers horizontally */
     align-items: center;     /* Centers vertically (if needed) */
     flex-direction: column;  /* stack vertically */
+    width: 100%;
+    margin-bottom: 1rem;
 }
 
 figcaption {
@@ -171,4 +173,12 @@ figcaption {
     color: #666;
     margin-top: 0.5rem;
     text-align: center;
+}
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+img {
+  max-width: 95%;
 }
