@@ -214,7 +214,50 @@ print(die)`}
                     Instead of modifying external variables directly,
                     we return a new value.
                 </p>
+<p>
+To improve readability and make your code easier to understand,
+you can add <strong>type hints</strong>.
+</p>
 
+<SyntaxHighlighter language="python" style={oneDark}>
+{`def roll_n_count(counter: int) -> int:
+    print("Rolling...")
+    return counter + 1`}
+</SyntaxHighlighter>
+
+<p>
+In Python, you can specify the expected type of a parameter
+by writing:
+</p>
+
+<p>
+<code>variable_name: type_name</code>
+</p>
+
+<p>
+For example, <code>counter: int</code> indicates that
+<code>counter</code> is expected to be an integer.
+</p>
+
+<p>
+You can also specify the return type of the function
+using an arrow:
+</p>
+
+<p>
+<code>{`-> type_name`}</code>
+</p>
+
+<p>
+In this example, <code>{`-> int`}</code> tells readers that
+the function is expected to return an integer.
+</p>
+
+<p>
+Type hints do not enforce types at runtime,
+but they improve readability, documentation,
+and editor support (such as auto-completion and static analysis).
+</p>
                 <h2>4. Scope — Why Returning Matters</h2>
 
                 <p>

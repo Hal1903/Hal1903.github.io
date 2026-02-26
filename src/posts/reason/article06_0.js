@@ -29,13 +29,13 @@ export default function Article1() {
                     pattern called Lagrange interpolation polynomial shown below, 
                     it indeed computes 1, 10, 100, 1000, then 3439.
                 </p>
-                            <div className='latex-center'>
+            <div className='latex-center'>
             <Block math="
-            f\left(x\right)=
-            \frac{\left(x-2\right)\left(x-3\right)\left(x-4\right)}{\left(1-2\right)\left(1-3\right)\left(1-4\right)}\left(1\right)
-            +\frac{\left(x-1\right)\left(x-3\right)\left(x-4\right)}{\left(2-1\right)\left(2-3\right)\left(2-4\right)}\left(10\right)
-            +\frac{\left(x-2\right)\left(x-1\right)\left(x-4\right)}{\left(3-2\right)\left(3-1\right)\left(3-4\right)}\left(100\right)
-            +\frac{\left(x-2\right)\left(x-3\right)\left(x-1\right)}{\left(4-1\right)\left(4-2\right)\left(4-3\right)}\left(1000\right)
+                f\left(x\right)=
+                \frac{\left(x-2\right)\left(x-3\right)\left(x-4\right)}{\left(1-2\right)\left(1-3\right)\left(1-4\right)}\left(1\right)
+                +\frac{\left(x-1\right)\left(x-3\right)\left(x-4\right)}{\left(2-1\right)\left(2-3\right)\left(2-4\right)}\left(10\right)
+                +\frac{\left(x-2\right)\left(x-1\right)\left(x-4\right)}{\left(3-2\right)\left(3-1\right)\left(3-4\right)}\left(100\right)
+                +\frac{\left(x-2\right)\left(x-3\right)\left(x-1\right)}{\left(4-1\right)\left(4-2\right)\left(4-3\right)}\left(1000\right)
             " />
             </div>
             <br></br>

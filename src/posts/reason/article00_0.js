@@ -18,41 +18,61 @@ export default function Article1() {
                     I know that I know nothing. - Socrates
                 </p>
                 <p>
-                In our journey to understand the world around us, 
-                we often encounter situations where we must make decisions 
-                based on incomplete information.
-                For example, we still do not know the Einstein's theory of relativity is correct or not,
-                although it is sophisticated enough to build GPS systems that we rely on every day.
-                We do not know Big Bang theory is correct or not — this is also a mere model that fits our observations so far.
-                We inherently can't build a computer that can determine if a given program will finish or not (Halting Problem).
-                We can't even be sure that our own senses are reliable, as they can be easily deceived by optical illusions, other phenomena, biological/neurological factors.
-                </p>
-                <p>
-                Even with the most advanced tools and technologies at our disposal,
-                we are still limited by our own knowledge and perspective.
-                It's crucial to recognize that our extent of knowledge and observation is limited,
-                and we should approach such situations with caution and humbleness.
-                </p>
-            </section>
-            <section>
-                <p>
-                    The reason I bring this up is that, I sometimes see people who boldly claim themselves to be experts in a certain field 
-                    making fun of others. Sometimes it is just Dunning-Kruger effect, 
-                    but it also happens for the people who are objectively experts in their fields.
-                    Nonetheless, they are still human beings whose understanding of the world is limited.
-                    Although mathematical statements are always correct as long as they are proven,
-                    there is no excuse for them to call themselves superior to others in general by subjective standards, 
-                    no matter how sophisticated knowledge they have in one or two area.
-                    This applies to personalities or culture as well. 
-                    We should be humble and open-minded, as we can never be sure that we are right.
-                    This is fundamental policy that I want to share with you for learning and life in general,
-                    which may help you with being cautious about making claims, reasons, and judgements.
-                </p>
-                <p>
-                    <b>P.S.</b> My personal habit is to always try to make a counter-argument for my own claims;
-                    I do not know this is effective or not, but it helps me to be more humble and open-minded.
-                    Feel free to try it out:)
-                </p>
+In our attempt to understand the world, 
+we constantly face situations where decisions must be made based on incomplete information.
+
+For example, we cannot say with absolute certainty that Einstein’s theory of relativity is ultimately correct,
+even though it is precise enough to make technologies like GPS possible — systems we rely on every day.
+
+Likewise, the Big Bang theory is still a model.
+It fits our observations remarkably well, but it remains a model nonetheless.
+
+In computer science, we know that it is fundamentally impossible to build a program that can determine, for every possible case, whether another program will eventually halt (the Halting Problem).
+
+Even our own senses are not fully reliable.
+Optical illusions, neurological limitations, and biological factors can easily mislead us.
+</p>
+
+<p>
+No matter how advanced our tools become, 
+our knowledge and perspective remain limited.
+
+Recognizing this limitation is essential.
+It calls for caution, intellectual humility, and a willingness to accept uncertainty.
+</p>
+
+</section>
+
+<section>
+
+<p>
+I bring this up because I sometimes see people confidently labeling themselves as experts in a field while dismissing or mocking others.
+
+In some cases, this may reflect the Dunning–Kruger effect.
+But even when someone is objectively an expert, they are still human — and therefore limited.
+
+Mathematical statements, once rigorously proven, are logically valid.
+However, expertise in one or two domains does not justify a sense of superiority in general.
+
+This applies not only to knowledge, but also to personality, culture, and worldview.
+
+Humility and open-mindedness are essential, because we can never be completely certain that we are right.
+</p>
+
+<p>
+This is a principle I try to follow in both learning and life:
+be cautious when making claims, offering reasons, or passing judgments.
+</p>
+
+<p>
+<b>P.S.</b> A personal habit of mine is to actively construct counterarguments to my own claims.
+
+I do not know whether this method is perfect,
+but it consistently reminds me of my own limitations
+and helps me remain more open-minded.
+
+You may find it worth trying.
+</p>
             </section>
             </div>
 

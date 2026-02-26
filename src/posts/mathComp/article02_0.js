@@ -246,6 +246,7 @@ else:
                     </SyntaxHighlighter>
                 </div>
 
+
                 <p>
                     Conditions use:
                 </p>
@@ -255,6 +256,10 @@ else:
                     <li><Inline math="and" /> for multiple conditions</li>
                     <li><Inline math="or" /> for alternative conditions</li>
                 </ul>
+    <h3>Flowchart (visual understanding of code):</h3>
+                <div className='image-center'>
+                        <img src="/images/articles/comp/flow1.png" />
+                </div>
 
 
 <h2>9. Boolean Logic (Formal View)</h2>
@@ -275,8 +280,8 @@ These rules are completely described by their <b>truth tables</b>.
 <h3>AND ( <Inline math="x \land y" /> )</h3>
 
 <p>
-The conjunction <Inline math="x \land y" /> is true <b>only if both</b> 
-<Inline math="x" /> and <Inline math="y" /> are true.
+The conjunction <Inline math="x \land y" /> is 
+true <b>only if both</b> <Inline math="x" /> and <Inline math="y" /> are true.
 </p>
 
 <Block math={`
@@ -297,8 +302,8 @@ Interpretation: AND models situations where multiple conditions must hold simult
 <h3>OR ( <Inline math="x \lor y" /> )</h3>
 
 <p>
-The disjunction <Inline math="x \lor y" /> is true if <b>at least one</b> 
-of <Inline math="x" /> or <Inline math="y" /> is true.
+The disjunction <Inline math="x \lor y" /> is true 
+if <b>at least one</b> of <Inline math="x" /> or <Inline math="y" /> is true.
 </p>
 
 <Block math={`
@@ -367,8 +372,8 @@ else:
 
 <p>
 Here, the condition is evaluated as a boolean expression. 
-The program executes different branches depending on whether the expression evaluates to 
-<Inline math="\texttt{True}" /> or <Inline math="\texttt{False}" />.
+The program executes different branches depending on 
+whether the expression evaluates to <Inline math="\texttt{True}" /> or <Inline math="\texttt{False}" />.
 </p>
 
 <h3>Why Boolean Logic Matters</h3>

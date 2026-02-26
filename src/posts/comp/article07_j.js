@@ -58,6 +58,7 @@ export default function Article1() {
                     <li>動画生成： Adobe Fireflyなど</li>
                     <li>音声合成：Coefont、Voicevox、ElevenLabs、Murf AIなど</li>
                     <li>自動文字起こし：ReazonSpeech、ChatGPT/Whisper、Google Geminiなど</li>
+                    <li>音楽生成：Suno、AIVAなど</li>
                 </ul>
                 <p>
                     これらの技術により、

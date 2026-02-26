@@ -7,26 +7,26 @@ const courses = [
   // Maybe sister for drawing.
   {
     id: 'comp',
-    title: 'Introduction to Using Computers',
+    title: 'Intro to Office Works (JPN+EN)',
     description: 'Navigation to the basic knowledge of core computer systems and essential skills for beginners.',
     image: '../images/Courses/pc.png',
   },
   {
     id: 'elementary_math',
     title: 'Elementary Mathematics (JPN): 算数応用',
-    description: 'Exposure to advanced topics and abstraction in arithmetics, number theory, graph theory, and algorithms. 8 chapters are open.',
+    description: 'Exposure to advanced topics and abstraction in arithmetics, number theory, graph theory, and algorithms.',
     image: '../images/Courses/elem.png',
   },
     {
     id: 'reason',
-    title: 'Elementary Reasoning (JPN): 推論基礎',
+    title: 'Elementary Reasoning',
     description: 'Primer to critical thinking and reasoning via causation/correlation distinction, bias/fallacies, and logics.',
     image: '../images/Courses/thinker.jpg',
   },
   {
     id: 'mathComp',
     title: 'Introduction to Programming and Mathematics',
-    description: 'Learning programming and computation using high-school level mathematics.',
+    description: 'Programming and mathematics with proofs.',
     image: '../images/Courses/py.png',
   },
   // {
@@ -38,7 +38,7 @@ const courses = [
   {
     id: 'Linear',
     title: 'Linear Algebra',
-    description: 'Introduction to vectors and matrices to build a strong foundation for ML and various other fields of mathematics.',
+    description: 'Introduction to vectors and matrices to build a foundation for ML and various other fields of mathematics.',
     image: '../images/Courses/linear.png',
   },
   {

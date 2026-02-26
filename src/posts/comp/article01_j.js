@@ -1,22 +1,21 @@
 import '../../css/post.css';
 
-
 export const title = "タイピングを練習するには";
-// export const category = "elementary_math";
 
 export default function Article1() {
     return (
         <div className="container">
             <div className="title">
                 <h1>{title}</h1>
-                </div>
+            </div>
             <div className="body">
+
 <p>
-    Touch typing is a fundamental skill for becoming comfortable with computers.
-    Just like arithmetic is essential for enjoying advanced mathematics,
-    touch typing is a foundational step toward programming and technical work.
-    It removes friction between your thoughts and the screen.
-    But how should we practice?
+    タッチタイピングは、パソコンを快適に使いこなすための基礎スキルです。
+    算数ができることで高度な数学を楽しめるようになるのと同じように、
+    タイピングが身についていると、プログラミングや技術的な作業がぐっと身近になります。
+    思考と画面のあいだにある「摩擦」を取り除いてくれるからです。
+    では、どのように練習すればよいのでしょうか。
 </p>
 
 <div className='image-center'>
@@ -26,11 +25,12 @@ export default function Article1() {
 <h3>0. Typing.com</h3>
 
 <p>
-    For absolute beginners, 
-    <a href="https://www.typing.com/student/lessons">Typing.com</a> 
-    offers structured, step-by-step lessons.
-    It starts with individual keys, then gradually moves to words and full sentences.
-    There is also a test mode that evaluates your paragraph-level typing speed and accuracy.
+    まったくの初心者であれば、
+    <a href="https://www.typing.com/student/lessons">Typing.com</a> がおすすめです。
+    キーの配置から一つひとつ丁寧に学び、
+    徐々に単語、文章へと進んでいく構成になっています。
+    段階的に練習できるため、独学でも安心です。
+    また、テストモードでは文章単位でのスピードと正確性を測ることもできます。
 </p>
 
 <div className='image-center'>
@@ -40,10 +40,12 @@ export default function Article1() {
 <h3>1. Sushida / 寿司打</h3>
 
 <p>
-    If you are learning (or interested in learning) Japanese, 
-    <a href="https://sushida.net/">Sushida</a> is one of the most enjoyable typing games I can recommend.
-    It combines typing practice with a fun sushi-themed challenge,
-    making repetition much less boring.
+    日本語を学んでいる方、あるいは興味がある方には、
+    <a href="https://sushida.net/">寿司打（Sushida）</a> もとても楽しい選択肢です。
+    お寿司をテーマにしたゲーム形式で、
+    タイピング練習を飽きずに続けることができます。
+    反復練習が必要なタイピングだからこそ、
+    「楽しさ」は大きな武器になります。
 </p>
 
 <div className='image-center'>
@@ -53,47 +55,55 @@ export default function Article1() {
 <h3>2. MonkeyType</h3>
 
 <p>
-    If you prefer practicing in English, 
-    <a href="https://monkeytype.com/">MonkeyType</a> is a fantastic option.
-    You can choose from different modes such as word lists, quotes, or timed challenges.
-    It gives detailed feedback on both speed and accuracy.
-    My personal favorite is the “English 450k” word set, 
-    which includes less common vocabulary and makes the practice more challenging.
+    英語で練習したい場合は、
+    <a href="https://monkeytype.com/">MonkeyType</a> が非常に優れています。
+    単語モード、名言モード、時間制限モードなど、
+    さまざまな練習形式を選ぶことができます。
+    スピードだけでなく、正確性の詳細なフィードバックも得られます。
+    個人的には “English 450k” の単語セットがおすすめで、
+    やや難易度の高い語彙が含まれているため、良いトレーニングになります。
 </p>
 
 <div className='image-center'>
     <img alt="mk gif" src="https://raw.githubusercontent.com/Hal1903/media/master/monkeytype.gif" />
 </div>
 
-<h3> Typical Level </h3>
+<h3>Typical Level</h3>
+
 <p>
-    Of course, standards vary, but in my view, 
-    an average typing speed falls somewhere between 25 and 45 WPM. 
-    From there, many people can gradually reach around 60-65 WPM with moderate amount of practice. 
-    At this level, typing usually stops feeling stressful or effortful.
+    基準は人それぞれですが、
+    一般的な平均は 25〜45 WPM（1分あたりの単語数）程度でしょう。
+    そこから少し練習を重ねると、
+    60〜65 WPMあたりに到達する人も多いです。
+    このあたりの速度になると、
+    タイピングそのものにストレスを感じることはほとんどなくなります。
 </p>
 
 <p>
-    While 60-70 WPM may not be considered “excellent,” 
-    it aligns quite well with normal thinking speed. 
-    You no longer need to consciously focus on the keyboard — 
-    your thoughts can flow naturally onto the screen. 
-    You should be able to type and think simultaneously like verbal communicaiton.
-    And that is when typing truly becomes a tool, rather than an obstacle.
+    60〜70 WPMは「卓越している」とまでは言えないかもしれませんが、
+    人間の思考スピードとかなりよく一致する領域です。
+    キーボードを意識せず、
+    考えながらそのまま文章を打てるようになります。
+    まるで会話をするように、
+    思考と入力が同時に進む状態です。
+    そのとき、タイピングは単なる作業ではなく、
+    本当の意味での「道具」になります。
 </p>
 
-<h2>Conclusion</h2>
+<h2>まとめ</h2>
         
 <p>
-    When your fingers move effortlessly, your thoughts can flow without interruption. 
-    Just like mastering arithmetic opens the door to higher mathematics, 
-    mastering typing removes a hidden barrier between you and deeper work on the computer. 
-    A small daily practice compounds into a powerful skill, so, do your best!
+    指が自然に動くようになると、
+    思考は途切れることなく流れます。
+    算数を身につけることで高度な数学への扉が開くように、
+    タイピングを習得することで、
+    コンピュータ作業における見えない壁が取り払われます。
+    毎日の少しの練習が積み重なり、
+    やがて大きな力になります。
+    ぜひ継続してみてください。
 </p>
+
             </div>
-
         </div>
-
-
     );
 }
