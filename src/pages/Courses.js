@@ -7,26 +7,26 @@ const courses = [
   // Maybe sister for drawing.
   {
     id: 'comp',
-    title: 'Intro to Office Works (JPN+EN)',
-    description: 'Navigation to the basic knowledge of core computer systems and essential skills for beginners.',
+    title: 'Intro to Computers (JPN+EN)',
+    description: 'The basic knowledge of core computer systems and essential skills for beginners.',
     image: '../images/Courses/pc.png',
   },
   {
     id: 'elementary_math',
     title: 'Elementary Mathematics (JPN): 算数応用',
-    description: 'Exposure to advanced topics and abstraction in arithmetics, number theory, graph theory, and algorithms.',
+    description: 'Covers advanced topics in arithmetics, number theory, graph theory, and algorithms.',
     image: '../images/Courses/elem.png',
   },
     {
     id: 'reason',
     title: 'Elementary Reasoning',
-    description: 'Primer to critical thinking and reasoning via causation/correlation distinction, bias/fallacies, and logics.',
+    description: 'Example-based introduction to critical thinking, logic, and reasoning.',
     image: '../images/Courses/thinker.jpg',
   },
   {
     id: 'mathComp',
     title: 'Introduction to Programming and Mathematics',
-    description: 'Programming and mathematics with proofs.',
+    description: 'Connecting programming and middle-high school math with proofs.',
     image: '../images/Courses/py.png',
   },
   // {

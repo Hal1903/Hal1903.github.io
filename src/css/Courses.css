@@ -24,8 +24,8 @@
 
 .course-image {
   display: block; /* Prevent alt text from influencing text flow */
-  width: 120px;
-  height: 120px;
+  width: 115px;
+  height: 125px;
   object-fit: cover;
   border-radius: 12px;
   margin-right: 1.5rem;

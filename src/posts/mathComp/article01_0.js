@@ -38,7 +38,7 @@ export default function Article1() {
                 </pre>
 
                 <p>
-                    Click the ▶ button to run the code.
+                    Click the ▶ button to run the code, or press Shift+Enter.
                 </p>
 
                 <p>
@@ -179,8 +179,9 @@ export default function Article1() {
                         Right-click inside the editor and click “Run 'hello'”
                     </li>
                     <li>
-                        Or click the green ▶ run button at the top-right corner
+                        Or click the green ▶ run button at the top-right corner.
                     </li>
+                    <li>There may be a shrotcut key, too.</li>
                 </ul>
 
                 <p>

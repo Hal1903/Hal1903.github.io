@@ -234,7 +234,7 @@ Many real programs use them to represent objects or records.
                 <h2>8. Conditions</h2>
 
                 <div className="code-block">
-                    <SyntaxHighlighter language="python" style={oneDark} wrapLongLines={true}>
+<SyntaxHighlighter language="python" style={oneDark} wrapLongLines={true}>
 {`test_score = 67
 
 if (test_score > 67):
@@ -261,6 +261,51 @@ else:
                         <img src="/images/articles/comp/flow1.png" />
                 </div>
 
+<h3>Exercise</h3>
+<p>
+Prepare a dictionary with the keys "food", "drink", and "snacks".
+Each key should store a list of specific items belonging to that category.
+</p>
+<p>
+Then:
+<ul>
+    <li>Ask the user to enter a category name.</li>
+    <li>Ask the user to enter an integer index.
+        Make sure the input is an integer. You may want to use
+        <code>{`int_var.isdigit()`}</code> method that returns True 
+        if the content of the variable is an integer.
+    </li>
+    <li>If the category exists and the index is within range, print the corresponding item.</li>
+    <li>Otherwise, print "INVALID".</li>
+</ul>
+</p>
+
+<details>
+<summary><b>Solution (Click to Expand)</b></summary>
+<SyntaxHighlighter language="python" style={oneDark} wrapLongLines={true}>
+{`# Prepare the dictionary
+menu = {
+    "food": ["pizza", "burger", "pasta"],
+    "drink": ["water", "juice", "coffee"],
+    "snacks": ["chips", "cookies", "nuts"]
+}
+
+# Take user input
+category = input("Enter a category (food, drink, snacks): ")
+index_input = input("Enter an index: ")
+
+# Validate index is an integer
+if not index_input.isdigit():
+    print("INVALID")
+else:
+    index = int(index_input)
+    # Check if category exists and index is valid
+    if category in menu and 0 <= index < len(menu[category]):
+        print(menu[category][index])
+    else:
+        print("INVALID")`}
+</SyntaxHighlighter>
+</details>
 
 <h2>9. Boolean Logic (Formal View)</h2>
 
@@ -361,11 +406,11 @@ We can also combine expressions:
 </p>
 
 <SyntaxHighlighter language="python" style={oneDark} wrapLongLines={true}>
-{`age = 20
+{`age = 22
 has_id = True
 
-if age >= 18 and has_id:
-    print("Access granted")
+if age >= 15 and has_id:
+    print("Social Media allowed")
 else:
     print("Access denied")`}
 </SyntaxHighlighter>
