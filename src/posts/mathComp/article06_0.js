@@ -66,66 +66,7 @@ c x + d y &= f
                     must be their intersection point.
                 </p>
 
-                <h3>Allowed Operations (Elementary Row Operations)</h3>
-
-                <ul>
-                    <li>Multiply an equation by a nonzero scalar</li>
-                    <li>Swap two equations</li>
-                    <li>Add a multiple of one equation to another</li>
-                </ul>
-<p>
-    The first two are straightforward.
-    If we multiply both sides by a nonzero scalar, we are simply scaling the equation,
-    and the equality remains unchanged.
-    Swapping the order of the equations also does not affect the solution,
-    although it may influence clarity or readability
-    (this becomes especially important in Gaussian elimination).
-</p>
-
-<p>
-    What about the second operation? This is actually quite natural operation.
-    You can add two true equalities into one. 
-    Consider a situation that you get 2 apples and 3 oranges per day, how many fruits do you "have" for each day, given you initially have none?
-    You think of <Inline math="5x"/> because you computed <Inline math="2x+3x"/>, 
-    but this is already a addition of 2 lines.
-</p><p>
-    Since <Inline math="x" /> and <Inline math="y" /> are shared across the equations,
-    any solution that satisfies both original equations must also satisfy
-    any linear combination of them.
-</p>
-
-<p>
-    Consider two lines. If 
-</p>
-
-                <p>
-                    These operations do not change the solution set.
-                </p>
-
-                <h2>3. Solving and Visualizing with SymPy</h2>
-
-                <h3>Symbolic Solution</h3>
-
-                <SyntaxHighlighter language="python" style={oneDark}>
-{`from sympy import symbols, Eq, solve
-
-x, y = symbols('x y')
-
-a, b, c, d, e, f = symbols('a b c d e f')
-
-eq1 = Eq(a*x + b*y, e)
-eq2 = Eq(c*x + d*y, f)
-
-solution = solve((eq1, eq2), (x, y))
-
-print(solution)`}
-                </SyntaxHighlighter>
-
-                <p>
-                    SymPy automatically computes the symbolic solution.
-                </p>
-
-                <h3>Visualization with matplotlib</h3>
+<h3>Visualization with matplotlib</h3>
 
                 <SyntaxHighlighter language="python" style={oneDark}>
 {`import numpy as np
@@ -145,35 +86,196 @@ plt.plot(x_vals, y2)
 
 plt.axhline(0)
 plt.axvline(0)
-
+# will show that the intersection point = the solution to the system
 plt.show()`}
                 </SyntaxHighlighter>
 
-                <p>
-                    The intersection of the two lines is the solution.
-                </p>
+
+                <h3>Allowed Operations (Elementary Row Operations)</h3>
+<p> That means, the following operations do not change the solution set: </p>
+                <ul>
+                    <li>Multiply an equation by a nonzero scalar</li>
+                    <li>Swap two equations</li>
+                    <li>Add (a multiple of) one equation to another</li>
+                </ul>
+<p>
+    The first two are straightforward.
+    If we multiply both sides by a nonzero scalar, we are simply scaling the equation 
+    (only the coefficient parts change), and the solution remains unchanged.
+    Swapping the order of the equations also does not affect the solution
+    but clarity or readability
+    (this becomes especially important in Gaussian elimination).
+</p>
+
+<p>
+    What about the second operation? 
+    If you add two true equalities into one, 
+    this addition has nothing to do with solutions, too. 
+    Since <Inline math="x" /> and <Inline math="y" /> are shared across the equations,
+    any solution that satisfies both original equations must also satisfy
+    any linear combination of them:
+    <Block math={String.raw`
+(c + ka)x + (d + kb)y = f + ke
+`} />
+</p>
+<p>
+If you just want to verify that numerically, 
+consider a situation that you get 2 apples and 3 oranges per day. 
+How many fruits do you "have" for each day, given you initially have none?
+    You think of <Inline math="5x"/> because you computed <Inline math="2x+3x"/>, 
+    but this is already a addition of 2 lines, and your intuition is actually correct.
+</p>
+
+<h2>3. Solving and Visualizing with SymPy</h2>
+
+<h3>A Numerical Example (Step-by-Step)</h3>
+
+<p>
+    Consider the system:
+</p>
+
+<Block math={String.raw`
+\begin{aligned}
+2x + y &= 5 \\
+x - y &= 1
+\end{aligned}
+`} />
+
+<p>
+    We'd like to eliminate <Inline math="x" /> or <Inline math="y" /> from 
+    the first line using row scaling and row addition,
+    because solving one equation in one variable is simpler
+    than solving two equations in two variables.
+</p>
+
+<h4>Step 1: Eliminate one variable</h4>
+
+<p>
+    The coefficients of <Inline math="y" /> are already
+    <Inline math="+1" /> and <Inline math="-1" />.
+    This suggests adding the equations to eliminate <Inline math="y" />.
+</p>
+
+<Block math={String.raw`
+(2x + y) + (x - y) = 5 + 1
+`} />
+
+<Block math={String.raw`
+3x = 6
+`} />
+
+<p>
+    The variable <Inline math="y" /> disappears.
+    That is exactly why we chose addition.
+</p>
+
+<h4>Step 2: Solve for the remaining variable</h4>
+
+<Block math={String.raw`
+x = 2
+`} />
+
+<p>
+    Now that we know <Inline math="x" />,
+    we substitute it back into one of the original equations.
+    This works because any solution must satisfy both equations.
+</p>
+
+<h4>Step 3: Substitute back</h4>
+
+<Block math={String.raw`
+2(2) + y = 5
+`} />
+
+<Block math={String.raw`
+4 + y = 5
+`} />
+
+<Block math={String.raw`
+y = 1
+`} />
+
+<p>
+    Therefore, the solution is:
+</p>
+
+<Block math={String.raw`
+(x, y) = (2, 1)
+`} />
+
+<h3>Summary of the Process</h3>
+
+<ol>
+    <li>Use row operations to eliminate one variable.</li>
+    <li>Solve the resulting single-variable equation.</li>
+    <li>Substitute the value back into one original equation.</li>
+    <li>State the ordered pair solution.</li>
+    <li>Optionally verify in the second equation.</li>
+</ol>
+
+<h3>Exercise:</h3>
+<p>Solve the systems:</p>
+    <div className='image-center'>
+        <img src="/images/articles/math_comp/sysEx.png" alt="sys img" />
+    </div>
+
+<h3>Python for the Algebra</h3>
+
+<p>
+    Python provides SymPy library that handles symbolic manipulation.
+    Let us explore how we can apply that to solving system of equations.
+</p>
+
+<h3>Symbolic Solution for 2D System</h3>
+<p>We again use the system</p>
+<Block math={String.raw`
+\begin{aligned}
+2x + y &= 5 \\
+x - y &= 1
+\end{aligned}
+`} />
+
+<p>You can solve the system in Python with exact precision using the following code:</p>
+
+<SyntaxHighlighter language="python" style={oneDark}>
+{`from sympy import symbols, Eq, solve
+
+x, y = symbols('x y')
+
+# Define the equations
+eq1 = Eq(2*x + y, 5) # 2x+y=5
+eq2 = Eq(x - y, 1) # x-y=1
+
+# Solve for x and y in the system formed by eq1 and eq2
+solution = solve((eq1, eq2), (x, y)) 
+
+# Print the solutions
+print(f"x = {solution[x]}")
+print(f"y = {solution[y]}")`}
+</SyntaxHighlighter>
+
+<p>You may try to extend this code to 3D or include variables.</p>
 
                 <h2>4. Consistency and Dependency</h2>
 
-                <p>
-                    A system is <strong>consistent</strong> if it has at least one solution.
-                </p>
+            <p>
+                A system is <strong>consistent</strong> if it has at least one solution.
+            </p>
 
-                <p>
-                    There are three possibilities:
-                </p>
+            <p>
+                There are three possibilities:
+            </p>
 
-                <ul>
-                    <li>One unique solution (lines intersect once)</li>
-                    <li>Infinitely many solutions (lines coincide)</li>
-                    <li>No solution (parallel distinct lines)</li>
-                </ul>
+            <ul>
+                <li>One unique solution (lines intersect once i.e. the system is <b>independent + consistent</b>)</li>
+                <li>Infinitely many solutions (lines coincide i.e. the system is <b>dependent</b>)</li>
+                <li>No solution (parallel distinct lines i.e. the system is <b>inconsistent</b>)</li>
+            </ul>
 
-                <p>
-                    Infinitely many solutions occur when one equation
-                    is a scalar multiple of the other:
-                </p>
-
+            <p>
+                Infinitely many solutions occur when one equation
+                is a scalar multiple of the other:
+            </p>
                 <Block math={String.raw`
 a x + b y = e
 `} />
@@ -185,6 +287,18 @@ k a x + k b y = k e
                 <p>
                     These represent the same line.
                 </p>
+            <p>
+                No solution occurs when the equations have proportional coefficients
+                but different constant terms (The term <Inline math="b" /> in <Inline math="y=mx+b" />).
+            </p>
+
+<h3>Exercise:</h3>
+<p>
+    Create your own two <Inline math="2\times 2" /> consistent systems. 
+    Verify that they both have unique solutions.
+    Similarly, create two <Inline math="2\times 2" /> dependent and inconsistent systems.
+
+</p>
 
                 <h2>5. When Is There a Unique Solution?</h2>
 
@@ -199,14 +313,23 @@ c x + d y &= f
 \end{aligned}
 `} />
 
-                <p>
-                    Solve using elimination.
-                </p>
+<p>
+Try to show that, for a <Inline math="2\times 2" /> system,
+nonzero <Inline math="ad-bc" /> implies that 
+the system has a unique solution, and/or its converse that 
+the existence of a unique solution implies <Inline math="ad-bc\neq 0" />.
+</p>
 
-                <p>
-                    Multiply the first equation by <Inline math="d" /> and
-                    the second by <Inline math="b" />:
-                </p>
+<details>
+<summary><b>Solution</b></summary>
+            <p>
+                Solve using elimination.
+            </p>
+
+            <p>
+                Multiply the first equation by <Inline math="d" /> and
+                the second by <Inline math="b" />:
+            </p>
 
                 <Block math={String.raw`
 \begin{aligned}
@@ -236,16 +359,18 @@ x = \frac{de - bf}{ad - bc}
                 </p>
 
                 <p>
-                    Therefore:
+                    <Inline math="x" /> is wel-defined 
+                    unless the denominator is zero. Hence, 
                 </p>
 
-                <Block math={String.raw`
+<Block math={String.raw`
 ad - bc \neq 0
 `} />
 
                 <p>
                     implies a unique solution.
                 </p>
+</details>
 
                 <h2>6. Determinant of a 2×2 System</h2>
 
@@ -262,7 +387,7 @@ c & d
 `} />
 
                 <p>
-                    is called the determinant.
+                    is called the determinant (of a 2D system).
                 </p>
 
                 <p>
@@ -312,6 +437,32 @@ c & d
                     This is known as Cramer's Rule.
                 </p>
 
+<h3>Exercise</h3>
+<p>
+Write a code to compute the 
+determinant of <Inline math="2\times 2" /> and <Inline math="3\times 3" /> using SymPy.
+You may want to use <code>sol.denom</code> property to output where <code>sol = solve(...)</code>.
+</p>
+<details>
+    <summary><b>Solution</b></summary>
+<SyntaxHighlighter language="python" style={oneDark}>
+{`from sympy import symbols, Eq, solve
+
+x, y = symbols('x y')
+
+a, b, c, d, e, f = symbols('a b c d e f')
+
+eq1 = Eq(a*x + b*y, e)
+eq2 = Eq(c*x + d*y, f)
+
+solution = solve((eq1, eq2), (x, y))
+
+print(solution)
+sol_x1 = simplify(solution[x1])
+print("Determinant = Denominator of a solution =", sol_x1.denom)
+`}
+</SyntaxHighlighter>
+</details>
                 <h2>Conclusion</h2>
 
                 <p>
@@ -326,7 +477,7 @@ c & d
 
                 <p>
                     Algebra, geometry, and computation all connect beautifully
-                    in this simple 2×2 system.
+                    in simple system of equations.
                 </p>
 
             </div>

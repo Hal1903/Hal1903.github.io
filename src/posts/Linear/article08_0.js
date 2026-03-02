@@ -1,4 +1,8 @@
 import '../../css/post.css';
+import {Block, Inline} from "../../components/KatexBox";
+import "katex/dist/katex.min.css";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 
 export const title = "Eigenvalues, Eigenvectors";
