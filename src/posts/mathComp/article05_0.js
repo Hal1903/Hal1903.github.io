@@ -184,7 +184,6 @@ print(gcd(3968, 976))  # 16`}
 <p>
     Now here is the important observation:
 </p>
-
 <p>
     Any number that divides 
     both <Inline math="a" /> and <Inline math="b" /> must 
@@ -196,35 +195,52 @@ print(gcd(3968, 976))  # 16`}
 </p>
 
 <p>
-    Because if a number divides <Inline math="a" /> and 
-    it also divides <Inline math="b \times q" /> (such a number 
-    always exist, because 1 always divides two numbers!),
-    then it must divide the difference between them.
+    Suppose some number <Inline math="d" /> divides both 
+    <Inline math="a" /> and <Inline math="b" />.
+</p>
+
+<p>
+    Since <Inline math="d" /> divides <Inline math="b" />, it must also
+    divide <Inline math="b \\times q" />, because multiplying a number
+    by <Inline math="q" /> does not change its divisibility.
+</p>
+
+<p>
+    Now we know that <Inline math="d" /> divides both 
+    <Inline math="a" /> and <Inline math="b \\times q" />.
+</p>
+
+<p>
+    Any number that divides two numbers must also divide
+    their difference.
 </p>
 
 <Block math={`r = a - b \\times q`} />
 
 <p>
-    So every common divisor of <Inline math="a" /> and <Inline math="b" /> is
-    also a divisor of <Inline math="b" /> and <Inline math="r" />.
+    So <Inline math="d" /> must also divide <Inline math="r" />.
+</p>
+
+<p>
+    This means every common divisor of 
+    <Inline math="a" /> and <Inline math="b" /> is also
+    a divisor of <Inline math="b" /> and <Inline math="r" />.
 </p>
 
 <p>
     And the reverse is also true:
     if a number divides <Inline math="b" /> and <Inline math="r" />,
-    then it also divides <Inline math="a" />, by the same logic!
+    then it also divides <Inline math="a" />, because
+</p>
+
+<Block math={`a = b \\times q + r`} />
+
+<p>
+    So the set of common divisors does not change.
 </p>
 
 <p>
-    That means:
-</p>
-
-<p>
-    <b>The common divisors do not change.</b>
-</p>
-
-<p>
-    So the greatest one does not change either.
+    <b>The greatest common divisor stays the same.</b>
 </p>
 
 <p>

@@ -78,9 +78,8 @@ export default function Article1() {
 
                 <p>
                     By stacking row vectors, we form a matrix <Inline math="A" />, enabling us to write 
-                    the system in the linear form <Inline math="Ax = b" /> where 
-                    <Inline math="A \in \mathbb{R}^{2 \times n}" /> and 
-                    <Inline math="b \in \mathbb{R}^2" /> in this case.
+                    the system in the linear 
+                    form <Inline math="Ax = b" /> where <Inline math="A \in \mathbb{R}^{2 \times n}" /> and <Inline math="b \in \mathbb{R}^2" /> in this case.
                 </p>
 
                 <p>

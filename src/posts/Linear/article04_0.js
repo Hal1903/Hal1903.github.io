@@ -12,7 +12,13 @@ export default function Article1() {
                 <h1>{title}</h1>
             </div>
             <div className="body">
-
+                <p>
+                First, I highly recommend to read through this article 
+                connecting the system of equations and matrix multiplication:
+                <a href="https://hal1903.github.io/#/course/mathComp/article06_1">
+                https://hal1903.github.io/#/course/mathComp/article06_1</a>.
+                </p>
+                <br />
                 <p>
                     Matrix addition is straightforward; it is just entry-wise addition. 
                     However, matrix multiplication is tricky — simply put, it comes from 
