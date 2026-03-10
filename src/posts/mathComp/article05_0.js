@@ -174,7 +174,7 @@ print(gcd(3968, 976))  # 16`}
     Suppose we divide a number like this:
 </p>
 
-<Block math={`a = b \times q + r`} />
+<Block math={`a = b \\times q + r`} />
 
 <p>
     This just means:
@@ -206,8 +206,8 @@ print(gcd(3968, 976))  # 16`}
 </p>
 
 <p>
-    Now we know that <Inline math="d" /> divides both 
-    <Inline math="a" /> and <Inline math="b \times q" />.
+    Now we know that <Inline math="d" /> divides
+    both <Inline math="a" /> and <Inline math="b \times q" />.
 </p>
 
 <p>
@@ -215,15 +215,15 @@ print(gcd(3968, 976))  # 16`}
     their difference.
 </p>
 
-<Block math={`r = a - b \times q`} />
+<Block math={`r = a - b \\times q`} />
 
 <p>
     So <Inline math="d" /> must also divide <Inline math="r" />.
 </p>
 
 <p>
-    This means every common divisor of 
-    <Inline math="a" /> and <Inline math="b" /> is also
+    This means every common divisor 
+    of <Inline math="a" /> and <Inline math="b" /> is also
     a divisor of <Inline math="b" /> and <Inline math="r" />.
 </p>
 
@@ -233,7 +233,7 @@ print(gcd(3968, 976))  # 16`}
     then it also divides <Inline math="a" />, because
 </p>
 
-<Block math={`a = b \times q + r`} />
+<Block math={`a = b \\times q + r`} />
 
 <p>
     So the set of common divisors does not change.
