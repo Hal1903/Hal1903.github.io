@@ -3,6 +3,7 @@ import {React, Suspense, lazy} from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
+import FamilyHome from './pages/FamilyHome';
 import Courses from './pages/Courses';
 import './App.css';
 import MarkdownArticle from './pages/MarkdownArticle';
@@ -15,7 +16,8 @@ function App() {
     <MathJaxContext>
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<FamilyHome />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/course" element={<Courses />} />
         <Route path="/course/:topic/:articleId" element={<MarkdownArticle />} />
         <Route path="/course/:topic" element={<ArticleList />} />

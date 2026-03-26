@@ -69,7 +69,7 @@ function Courses() {
       <header className="navbar">
         <h1>MAX-STUDIES</h1>
         <nav>
-          <a href="/">Home</a>
+          <a href="/home">Home</a>
         </nav>
       </header>
 

@@ -2,6 +2,7 @@ import React from 'react';
 import '../css/Home.css';
 import { SocialIcon } from 'react-social-icons'
 // import { Link } from 'react-router-dom'; 
+
 import { HashLink as Link } from 'react-router-hash-link'; // This works for github.io, static web
 import AboutSlideshow from '../components/Slideshow'; // Adjust the import path as necessary
 import HorizontalTimeline from '../components/Timeline';
@@ -16,8 +17,11 @@ function Home() {
   return (
     <div className="App">
       <header className="navbar">
-        <h1>MAX-STUDIES</h1>
+        <h1 style={{ marginBottom: '0.5rem' }}>
+      Family Home
+        </h1>
         <nav>
+            <a href="/">Home</a>
             <Link smooth to="#about">About</Link>
             <Link smooth to="#projects">Projects</Link>
             <Link smooth to="#contact">Contact</Link>
