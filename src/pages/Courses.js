@@ -1,65 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Courses.css';
+import { Link } from "react-router-dom"
+import Courses_list from "./Courses.json"
 
-const courses = [
-  // Ask my sibling for accounting and finance.
-  // Maybe sister for drawing.
-  {
-    id: 'comp',
-    title: 'Intro to Computers (JPN+EN)',
-    description: 'The basic knowledge of core computer systems and essential skills for beginners.',
-    image: '../images/Courses/pc.png',
-  },
-  {
-    id: 'elementary_math',
-    title: 'Elementary Mathematics (JPN): 算数応用',
-    description: 'Covers advanced topics in arithmetics, number theory, graph theory, and algorithms.',
-    image: '../images/Courses/elem.png',
-  },
-    {
-    id: 'reason',
-    title: 'Elementary Reasoning',
-    description: 'Example-based introduction to critical thinking, logic, and reasoning.',
-    image: '../images/Courses/thinker.jpg',
-  },
-  {
-    id: 'mathComp',
-    title: 'Introduction to Programming and Mathematics',
-    description: 'Connecting programming and middle-high school math with proofs.',
-    image: '../images/Courses/py.png',
-  },
-  // {
-  //   id: 'Discrete',
-  //   title: 'Introduction to Discrete Math',
-  //   description: 'Starting point of proof-based mathematics and getting interesting perspectives to mathematics.',
-  //   image: '../images/Courses/discrete.png',
-  // },
-  {
-    id: 'Linear',
-    title: 'Linear Algebra',
-    description: 'Introduction to vectors and matrices to build a foundation for ML and various other fields of mathematics.',
-    image: '../images/Courses/linear.png',
-  },
-  {
-    id: 'ML1',
-    title: 'Introduction to Data Science and Machine Learning',
-    description: 'Example-based machine learning with mathematical backgrounds and Python programs.',
-    image: '../images/Courses/ml1.png',
-  },
-  // {
-  //   id: 'toc',
-  //   title: 'Introduction to Theory of Computing',
-  //   description: 'Introduction to fundamental capabilities and limitations of computers to deepen the knowledge of the mathematical background of computers.',
-  //   image: '../images/Courses/DFA.png',
-  // },
-  // {
-  //   id: 'nlinear',
-  //   title: 'Introduction to Numerical Linear Algebra',
-  //   description: '',
-  //   image: '../images/Courses/DFA.png',
-  // },
-];
+const courses = Courses_list.Courses
 
 function Courses() {
   const navigate = useNavigate();
@@ -69,7 +14,9 @@ function Courses() {
       <header className="navbar">
         <h1>MAX-STUDIES</h1>
         <nav>
-          <a href="/home">Home</a>
+          {/* <a href="/home">Home</a> */}
+          <Link to="/home">About Me</Link>
+          <Link to="/">Family Home</Link>
         </nav>
       </header>
 

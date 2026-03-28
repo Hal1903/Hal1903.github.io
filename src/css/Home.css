@@ -12,8 +12,8 @@ body, html, #root {
 
 
 .content {
-    max-width: 1200px; /* or whatever width you prefer */
-    margin: 120px auto 0 auto;  /* pushes content below navbar */
+    /* max-width: 1200px; /* or whatever width you prefer */
+    /* margin: 120px auto 0 auto;  /* pushes content below navbar */
 
     padding: 2rem;
     padding-bottom: 4rem;
@@ -45,7 +45,6 @@ body, html, #root {
     align-items: center;      /* center horizontally */
     display: flex;
     justify-content: center;
-
 }
 
 .resume-buttons {
@@ -115,7 +114,7 @@ body, html, #root {
 }
 
 
-/* 👇 Mobile: stack columns vertically */
+/*  Mobile: stack columns vertically */
 @media (max-width: 768px) {
     .about-container {
         flex-direction: column;

@@ -17,19 +17,19 @@ function Home() {
   return (
     <div className="App">
       <header className="navbar">
-        <h1 style={{ marginBottom: '0.5rem' }}>
+        <h1>
       Family Home
         </h1>
         <nav>
             <a href="/">Home</a>
             <Link smooth to="#about">About</Link>
             <Link smooth to="#projects">Projects</Link>
-            <Link smooth to="#contact">Contact</Link>
+            {/* <Link smooth to="#contact">Contact</Link> */}
           <Link to="/course">Resources</Link>
         </nav>
       </header>
 
-        <main className="content">
+        <main className="content" style={{marginTop: "4rem"}}>
       {/* ADD a big slide show of fancy STEM images: Videos are acceptable too. */}
           <section id="about" className="about-container">
             {/* Left column: Text */}

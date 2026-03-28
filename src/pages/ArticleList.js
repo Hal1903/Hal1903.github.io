@@ -28,7 +28,8 @@ function ArticleList() {
       <header className="navbar">
         <h1>MAX-STUDIES</h1>
         <nav>
-          <a href="/home">Home</a>
+          {/* <a href="/home">Home</a> */}
+          <Link to="/home">Home</Link>
           <Link to="/course/">Course List</Link>
         </nav>
       </header>

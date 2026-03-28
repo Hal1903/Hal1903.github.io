@@ -1,0 +1,40 @@
+{
+    "Courses": [
+    {
+        "id": "comp",
+        "title": "Intro to Computers (JPN+EN)",
+        "description": "The basic knowledge of core computer systems and essential skills for beginners.",
+        "image": "../images/Courses/pc.png"
+    },
+    {
+        "id": "elementary_math",
+        "title": "Elementary Mathematics (JPN): 算数応用",
+        "description": "Covers advanced topics in arithmetics, number theory, graph theory, and algorithms.",
+        "image": "../images/Courses/elem.png"
+    },
+        {
+        "id": "reason",
+        "title": "Elementary Reasoning",
+        "description": "Example-based introduction to critical thinking, logic, and reasoning.",
+        "image": "../images/Courses/thinker.jpg"
+    },
+    {
+        "id": "mathComp",
+        "title": "Introduction to Programming and Mathematics",
+        "description": "Connecting programming and middle-high school math with proofs.",
+        "image": "../images/Courses/py.png"
+    },
+    {
+        "id": "Linear",
+        "title": "Linear Algebra",
+        "description": "Introduction to vectors and matrices to build a foundation for ML and various other fields of mathematics.",
+        "image": "../images/Courses/linear.png"
+    },
+    {
+        "id": "ML1",
+        "title": "Introduction to Data Science and Machine Learning",
+        "description": "Example-based machine learning with mathematical backgrounds and Python programs.",
+        "image": "../images/Courses/ml1.png"
+    }
+    ]
+}

@@ -7,20 +7,27 @@ import FamilyHome from './pages/FamilyHome';
 import Courses from './pages/Courses';
 import './App.css';
 import MarkdownArticle from './pages/MarkdownArticle';
+import FAQ from './pages/FAQ';
+import Houses from './pages/Houses';
 import ArticleList from './pages/ArticleList';
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 // import ReactMarkdown from 'react-markdown';
+
+import ScrollToTop from './utils/ScrollToTop';
 
 function App() {
   return (
     <MathJaxContext>
     <Router>
+    <ScrollToTop /> 
       <Routes>
         <Route path="/" element={<FamilyHome />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/faq/:category" element={<FAQ />} />
+          <Route path="/houses" element={<Houses />} />
         <Route path="/course" element={<Courses />} />
         <Route path="/course/:topic/:articleId" element={<MarkdownArticle />} />
         <Route path="/course/:topic" element={<ArticleList />} />
+        
       </Routes>
     </Router>
     </MathJaxContext>

@@ -3,96 +3,204 @@ import '../css/FamilyHome.css';
 import { SocialIcon } from 'react-social-icons'
 import { Link } from 'react-router-dom';         //  for page navigation
 import { HashLink } from 'react-router-hash-link'; //  for scrolling
+import FAQ_list from './FAQ_list.json';
+import House_list from './Houses.json';
+import Courses_list from './Courses.json';
+import {useState} from 'react'
 
-// Reusable Section Component
-function Section({ id, title, route, items }) {
+
+import { useNavigate } from 'react-router-dom';
+
+function Section({ id, title, items, category }) {
+    const navigate = useNavigate();
+
     return (
         <section id={id} className="section">
 
-            {/* Clickable title → route page */}
+            <Link to={`/faq/${category}`} className="section-title">
+                {title}
+            </Link>
+
+            <div className="scroll-container">
+                {items.map((item, index) => (
+<div
+    className="card faq-card"
+    key={index}
+    onClick={() => navigate(`/faq/${category}`)}
+    style={{ cursor: "pointer", backgroundColor: "#fcfcfc" }}
+>
+    <div className="faq-text">
+        <p>
+            <strong>Question:</strong> <br /> 
+            {item.question}
+        </p>
+
+        <p style={{ marginTop: "0.5rem" }}>
+            <strong>Answer:</strong><br />
+            {item.answer}
+        </p>
+    </div>
+</div>
+                ))}
+            </div>
+            <hr />
+
+        </section>
+    );
+}
+
+
+function SectionImg({ id, title, route, items }) {
+    const navigate = useNavigate();
+
+    return (
+        <section id={id} className="section">
+
             <Link to={route} className="section-title">
                 {title}
             </Link>
 
-            {/* Horizontal scroll */}
             <div className="scroll-container">
                 {items.map((item, index) => (
-                    <div className="card" key={index}>
+                    <div
+                        className="card"
+                        key={index}
+                        onClick={() => navigate(route)} 
+                        style={{ cursor: "pointer" }}
+                    >
                         <img src={item.image} alt={item.title} />
-                        <p>{item.title}</p>
+                        <div style={{}}>
+                            <ul style={{listStyle: "none", padding: "2px 20px 2px 20px"}}>
+                                <li style={{fontSize: "1.2rem"}}><b>{item.price}</b></li>
+                                <li>{item.address}</li>
+                                <li>{item.title}</li>
+                            </ul>
+                        </div>
                     </div>
                 ))}
             </div>
+            <hr />
 
         </section>
     );
 }
 
 export default function FamilyHome() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => setIsOpen(!isOpen);
+    const closeMenu = () => setIsOpen(false);
+
+    const faq = FAQ_list.faq
 
     // Placeholder data
-    const houses = [
-        { image: "https://via.placeholder.com/300x180", title: "Modern House" },
-        { image: "https://via.placeholder.com/300x180", title: "Minimal Home" },
-        { image: "https://via.placeholder.com/300x180", title: "Luxury Villa" },
-        { image: "https://via.placeholder.com/300x180", title: "Beach House" },
-    ];
+    const houses = House_list.Houses || [];
 
-    const life = [
-        { image: "https://via.placeholder.com/300x180", title: "Kitchen Hack" },
-        { image: "https://via.placeholder.com/300x180", title: "Cleaning Tip" },
-        { image: "https://via.placeholder.com/300x180", title: "Daily Routine" },
-        { image: "https://via.placeholder.com/300x180", title: "Storage Idea" },
-    ];
-
-    const education = [
-        { image: "https://via.placeholder.com/300x180", title: "Math Course" },
-        { image: "https://via.placeholder.com/300x180", title: "Programming" },
-        { image: "https://via.placeholder.com/300x180", title: "AI Basics" },
-        { image: "https://via.placeholder.com/300x180", title: "Data Science" },
-    ];
+    const life = FAQ_list.faq.Life || [];
+    const grocery = FAQ_list.faq.Grocery || [];
+    const troubles = FAQ_list.faq.Troubles || [];
+    const education = FAQ_list.faq.Education || [];
+    const academic = Courses_list.Courses || []; // Parse from Courses; separate the list to json first.
 
     return (
-        <div className="FamilyHome">
+        <div className="FamilyHome"  style={{backgroundColor: "#efefef"}}>
 
             {/*  NAVBAR */}
             <header className="navbar">
-                <h1 style={{ marginBottom: '0.5rem' }}>Family Home</h1>
-                <nav>
-                    {/* Scroll within page */}
-                    <HashLink smooth to="#houses">Houses</HashLink>
-                    <HashLink smooth to="#life">Life Hacks</HashLink>
-                    <HashLink smooth to="#education">Education</HashLink>
+            <div className="nav-container">
+                <h1 className="logo">Family Home</h1>
 
-                    {/* Navigate to different page */}
-                    <Link to="/home">About Us</Link>
+                {/* Hamburger Icon */}
+                <button className="menu-toggle" onClick={toggleMenu}>
+                    {isOpen ? '✕' : '☰'}
+                </button>
+
+                {/* Nav Links */}
+                <nav className={`nav-links ${isOpen ? 'open' : ''}`}>
+                    <HashLink smooth to="#Houses" onClick={closeMenu}>Houses</HashLink>
+                    <HashLink smooth to="#Life" onClick={closeMenu}>Life</HashLink>
+                    <HashLink smooth to="#Grocery" onClick={closeMenu}>Grocery</HashLink>
+                    <HashLink smooth to="#Troubles" onClick={closeMenu}>Troubles</HashLink>
+                    <HashLink smooth to="#Education" onClick={closeMenu}>Education</HashLink>
+                    <HashLink smooth to="#Academic" onClick={closeMenu}>Academic</HashLink>
+                    <Link to="/home" onClick={closeMenu}>About Us</Link>
                 </nav>
-            </header>
+            </div>
+        </header>
 
+{/*  TOP IMAGE */}
+    <img 
+        src="/images/family_top.png"
+        alt="Top Pic"
+        className="full-width-image"
+    />
+    <div className='about-container' 
+    >
+    <p style={{textShadow: "1px 1px 2px rgba(0,0,0,0.1)"}}>
+        アメリカでの新生活に少し不安を感じている日本人の方々のため、生活を支える基本的な情報やケンタッキー周辺で役立つ情報をお届けします。
+    </p>
+    <p style={{textShadow: "1px 1px 2px rgba(0,0,0,0.1)"}}>
+        お子様の学校選びを含めた物件探しの困りごとから入居後に頻出する問題そして FAQ への回答をまとめているので、ぜひご活用ください。
+    </p>
+    <p style={{textShadow: "1px 1px 2px rgba(0,0,0,0.1)"}}>
+        日本人コミュニティをお探しの方はこちらのFacebookグループにご参加ください： <br />
+    </p>
+
+
+<div className="link-card">
+    <img 
+        src="/images/fb.jpg" 
+        alt="Facebook Group"
+        className="link-image"
+    />
+
+    <div className="link-content">
+        <p className="link-title">Community Facebook Group</p>
+        <p className="link-description">
+            現地の生活情報やお得な情報が共有されているコミュニティです。ぜひ参加してみてください。
+        </p>
+        <p style={{textAlign: "center"}}>
+        <a 
+            href="https://www.facebook.com/share/g/18JmGCy58C/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+        >
+            Visit Group →
+        </a>
+        </p>
+    </div>
+</div>
+
+
+    </div>
+<hr />
             {/*  MAIN CONTENT */}
-            <main className="content">
+            <main className="content" style={{backgroundColor: "#efefef"}}>
 
-                <Section
-                    id="houses"
+                <SectionImg
+                    id="Houses"
                     title="Houses"
-                    route="/houses"
+                    route="/Houses"
                     items={houses}
                 />
 
                 <Section
-                    id="life"
+                    id="Life"
                     title="Life Hacks"
-                    route="/life"
+                    route="/Life"
                     items={life}
+                    category="Life"
                 />
+<Section id="Grocery" title="Grocery" items={grocery} category="Grocery" />
+<Section id="Troubles" title="Troubles"  items={troubles} category="Troubles" />
+<Section id="Education" title="Education" items={education} category="Education" />
 
-                <Section
-                    id="education"
-                    title="Education"
+                <SectionImg
+                    id="Academic"
+                    title="Academic"
                     route="/course"
-                    items={education}
+                    items={academic}
                 />
-
             </main>
 
 
