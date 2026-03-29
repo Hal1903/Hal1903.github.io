@@ -39,12 +39,36 @@ body, html, #root {
     line-height: normal;
 }
 
+
+.about-container2 {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.about-text2 {
+    flex: 1 1 300px;
+    max-width: 600px;
+}
+
+.about-text2 p {
+    margin-bottom: 1vh;
+    font-size: 1.1rem;
+    line-height: normal;
+}
+
+
 .about-slideshow {
     flex: 1 1 200px;
     flex-direction: column;   /* stack vertically */
     align-items: center;      /* center horizontally */
     display: flex;
     justify-content: center;
+
 }
 
 .resume-buttons {
@@ -114,7 +138,7 @@ body, html, #root {
 }
 
 
-/*  Mobile: stack columns vertically */
+/* 👇 Mobile: stack columns vertically */
 @media (max-width: 768px) {
     .about-container {
         flex-direction: column;

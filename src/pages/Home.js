@@ -31,16 +31,19 @@ function Home() {
 
         <main className="content" style={{marginTop: "4rem"}}>
       {/* ADD a big slide show of fancy STEM images: Videos are acceptable too. */}
-          <section id="about" className="about-container">
+          <section id="about" className="about-container2">
             {/* Left column: Text */}
-            <div className="about-text">
+            <div className="about-text2">
               <h2>About Me</h2>
               <p>
-                Welcome! I'm Haruku, a researcher and developer interested in math, computer science, and education graduated from University of Kentucky.
+                Welcome to my portfolio! I'm Haruku, a student researcher and developer interested in math, computer science, and education graduated from University of Kentucky.
               </p>
               <p>
-                My goals are to foster academic curiosity and enjoyment in learning and to earn a Ph.D. in computer science. 
+                My goals are to foster academic curiosity and enjoyment in learning and to contribute to the field of computer science, 
+                with hope to earn to a Ph.D. in computer science. 
                 Since my primary language is Japanese, I also aim to bridge the gap between Japanese and English resources in STEM fields.
+              </p>
+              <p>
                 My works explaining math and CS is in Resources section. Feel free to check them out:) (not yet fully ready though)
               </p>
               <p>

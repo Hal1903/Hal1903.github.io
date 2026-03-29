@@ -20,6 +20,16 @@
     margin-left: calc(-1 * (100vw - 100%) / 2);
 }
 
+@media (min-width: 1024px) {
+    .full-width-image {
+        width: 60%;          /* or 60%, adjust as you like */
+        max-width: 800px;    /* optional cap */
+        height: 70%;
+        margin-left: auto;   /* center it */
+        margin-right: auto;
+    }
+}
+
 /* SECTION */
 .section {
     margin-bottom: 60px;
@@ -265,7 +275,9 @@
 
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin-top: 1rem;
+    width: 75vw;
 }
+
 
 /* Image (left) */
 .link-image {
