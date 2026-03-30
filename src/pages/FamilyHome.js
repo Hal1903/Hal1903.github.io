@@ -171,30 +171,6 @@ export default function FamilyHome() {
     <p style={{textShadow: "1px 1px 2px rgba(0,0,0,0.1)"}}>
         お子様の学校選びを含めた物件探しの困りごとから入居後に頻出する問題そして FAQ への回答をまとめているので、ご活用ください。
     </p>
-    <p style={{textShadow: "1px 1px 2px rgba(0,0,0,0.1)"}}>
-        日本人コミュニティをお探しの場合は以下から参加が可能です： <br />
-    </p>
-
-<FBGroupCard 
-    name="日本人 in Kentucky"
-    image="https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/513902666_1250203020107602_6795357682946854395_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=25d718&_nc_ohc=cXgTXUcSBBgQ7kNvwHZLWvA&_nc_oc=Adrlw_duNPdQM0dlYGeQITQwXDtupHC7W0RCv67w5FtaVqdBWu9NONX1YvYg5gicYFmKzPzddkjQFpNVTVmEClPu&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&_nc_gid=5KUb7r1rS0IZj8NKDMYIcQ&_nc_ss=7a32e&oh=00_AfzmX_O88fQiIH4KwdDak8V7uQvORibZrRn44ui4wgvWZA&oe=69CE2A71"
-    url="https://www.facebook.com/share/g/18JmGCy58C/"
-    description="現地の生活情報やお得な情報が共有されているコミュニティです。ぜひ参加してみてください。"
-/>
-<FBGroupCard 
-    name="セントラルケンタッキー在住日本人グループ"
-    image="https://scontent-atl3-2.xx.fbcdn.net/v/t1.6435-9/131454369_10158063071748111_2289784090943501382_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=25d718&_nc_ohc=3iAYnq6EKz8Q7kNvwFzkuQQ&_nc_oc=AdrpEFAJ27tAv9XLiJiSJKW3jpxRRFXNLuNAuVwP80twkbT5zSGW2JU7Dw9Zki3YYOjyX3tDdT9iOl0gGmfceW8i&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&_nc_gid=rEq3zs3qlDNvVLFG8lgtBQ&_nc_ss=7a32e&oh=00_AfxNZo7G01V9HxJ8WcsMaGrXy3gMlq8jyCy0DYZdMbRmGg&oe=69EFC8DB"
-    url="https://www.facebook.com/share/g/1D6YcoFZXy/"
-    description="レキシントン付近での生活情報やお得な情報が共有されているコミュニティです。"
-/>
-<FBGroupCard 
-    name="ソーラン in Kentucky"
-    image="https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/595198062_4242834959318000_1413714240785491276_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=25d718&_nc_ohc=TVonNqOmR-oQ7kNvwHqLccx&_nc_oc=AdrAlxeuQ0c_AE1F2giCc6EORF7ogLZq2gQycQlLq_kVASDRXohZ2OtQ80mf29nBxueuh91EaT7IIPbMjaxluI_G&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&_nc_gid=c9FfsZyocW5HBD1fIMb9Kw&_nc_ss=7a32e&oh=00_AfzhreUIIZNt6J5CXiLZ99Utaa7BhOgF5ztzSMiH6qOzLg&oe=69CE35D2"
-    url="https://www.facebook.com/share/g/1FnmqUahdW/"
-    description="ソーラン節を通して築く日本人コミュニティです。様々な場所で披露しています、興味があれば練習にご参加ください。"
-/>
-
-
 
 {/* https://www.facebook.com/share/g/18b5oRYzLv/ */}
 {/* https://www.facebook.com/share/g/1DsoJxu2MN/ */}
@@ -229,6 +205,33 @@ export default function FamilyHome() {
                 />
 
 <h1>Video Resources</h1>
+
+<h1>Community</h1>
+<div className='about-container'>
+<p style={{textShadow: "1px 1px 2px rgba(0,0,0,0.1)"}}>
+    日本人コミュニティをお探しの場合は以下から参加が可能です： <br />
+</p>
+
+<FBGroupCard 
+    name="日本人 in Kentucky"
+    image="https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/513902666_1250203020107602_6795357682946854395_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=25d718&_nc_ohc=cXgTXUcSBBgQ7kNvwHZLWvA&_nc_oc=Adrlw_duNPdQM0dlYGeQITQwXDtupHC7W0RCv67w5FtaVqdBWu9NONX1YvYg5gicYFmKzPzddkjQFpNVTVmEClPu&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&_nc_gid=5KUb7r1rS0IZj8NKDMYIcQ&_nc_ss=7a32e&oh=00_AfzmX_O88fQiIH4KwdDak8V7uQvORibZrRn44ui4wgvWZA&oe=69CE2A71"
+    url="https://www.facebook.com/share/g/18JmGCy58C/"
+    description="現地の生活情報やお得な情報が共有されているコミュニティです。ぜひ参加してみてください。"
+/>
+<FBGroupCard 
+    name="セントラルケンタッキー在住日本人グループ"
+    image="https://scontent-atl3-2.xx.fbcdn.net/v/t1.6435-9/131454369_10158063071748111_2289784090943501382_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=25d718&_nc_ohc=3iAYnq6EKz8Q7kNvwFzkuQQ&_nc_oc=AdrpEFAJ27tAv9XLiJiSJKW3jpxRRFXNLuNAuVwP80twkbT5zSGW2JU7Dw9Zki3YYOjyX3tDdT9iOl0gGmfceW8i&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&_nc_gid=rEq3zs3qlDNvVLFG8lgtBQ&_nc_ss=7a32e&oh=00_AfxNZo7G01V9HxJ8WcsMaGrXy3gMlq8jyCy0DYZdMbRmGg&oe=69EFC8DB"
+    url="https://www.facebook.com/share/g/1D6YcoFZXy/"
+    description="レキシントン付近での生活情報やお得な情報が共有されているコミュニティです。"
+/>
+<FBGroupCard 
+    name="ソーラン in Kentucky"
+    image="https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/595198062_4242834959318000_1413714240785491276_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=25d718&_nc_ohc=TVonNqOmR-oQ7kNvwHqLccx&_nc_oc=AdrAlxeuQ0c_AE1F2giCc6EORF7ogLZq2gQycQlLq_kVASDRXohZ2OtQ80mf29nBxueuh91EaT7IIPbMjaxluI_G&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&_nc_gid=c9FfsZyocW5HBD1fIMb9Kw&_nc_ss=7a32e&oh=00_AfzhreUIIZNt6J5CXiLZ99Utaa7BhOgF5ztzSMiH6qOzLg&oe=69CE35D2"
+    url="https://www.facebook.com/share/g/1FnmqUahdW/"
+    description="ソーラン節を通して築く日本人コミュニティです。様々な場所で披露しています、興味があれば練習にご参加ください。"
+/>
+</div>
+
 
 
 
