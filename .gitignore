@@ -3,4 +3,3 @@ code/ml/data/
 *.tar.gz
 *.zip
 src/utils/*.py
-*.sh
