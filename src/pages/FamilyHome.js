@@ -4,10 +4,12 @@ import { SocialIcon } from 'react-social-icons'
 import { Link } from 'react-router-dom';         //  for page navigation
 import { HashLink } from 'react-router-hash-link'; //  for scrolling
 import FAQ_list from './FAQ_list.json';
-import House_list from './Houses.json';
+// import House_list from './Houses.json';
 import Courses_list from './Courses.json';
-import {useState} from 'react'
-
+import {useEffect, useState} from 'react'
+import { useData } from '../utils/DataContext';
+import {Section, SectionImg, VocabSection} from '../components/HomeSections';
+import { loadVocabData } from '../utils/loadVocabData';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -40,80 +42,6 @@ function FBGroupCard({ name, image, url, description }) {
     )
 }
 
-function Section({ id, title, items, category }) {
-    const navigate = useNavigate();
-
-    return (
-        <section id={id} className="section">
-
-            <Link to={`/faq/${category}`} className="section-title">
-                {title}
-            </Link>
-
-            <div className="scroll-container">
-                {items.map((item, index) => (
-<div
-    className="card faq-card"
-    key={index}
-    onClick={() => navigate(`/faq/${category}`)}
-    style={{ cursor: "pointer", backgroundColor: "#fcfcfc" }}
->
-    <div className="faq-text">
-        <p>
-            <strong>Question:</strong> <br /> 
-            {item.question}
-        </p>
-
-        <p style={{ marginTop: "0.5rem" }}>
-            <strong>Answer:</strong><br />
-            {item.answer}
-        </p>
-    </div>
-</div>
-                ))}
-            </div>
-            <hr />
-
-        </section>
-    );
-}
-
-
-function SectionImg({ id, title, route, items }) {
-    const navigate = useNavigate();
-
-    return (
-        <section id={id} className="section">
-
-            <Link to={route} className="section-title">
-                {title}
-            </Link>
-
-            <div className="scroll-container">
-                {items.map((item, index) => (
-                    <div
-                        className="card"
-                        key={index}
-                        onClick={() => navigate(route)} 
-                        style={{ cursor: "pointer" }}
-                    >
-                        <img src={item.image} alt={item.title} />
-                        <div style={{}}>
-                            <ul style={{listStyle: "none", padding: "2px 20px 2px 20px"}}>
-                                <li style={{fontSize: "1.2rem"}}><b>{item.price}</b></li>
-                                <li>{item.address}</li>
-                                <li>{item.title}</li>
-                            </ul>
-                        </div>
-                    </div>
-                ))}
-            </div>
-            <hr />
-
-        </section>
-    );
-}
-
 export default function FamilyHome() {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -122,14 +50,25 @@ export default function FamilyHome() {
 
     const faq = FAQ_list.faq
 
-    // Placeholder data
-    const houses = House_list.Houses || [];
+    // excel loaded
+    const { data, loading } = useData();
 
-    const life = FAQ_list.faq.Life || [];
-    const grocery = FAQ_list.faq.Grocery || [];
-    const troubles = FAQ_list.faq.Troubles || [];
-    const education = FAQ_list.faq.Education || [];
+    const houses = data.houses;
+    const faqData = data.faq;
+
+    const categories = Object.keys(faqData);
+
     const academic = Courses_list.Courses || []; // Parse from Courses; separate the list to json first.
+
+    const [vocabPanels, setVocabPanels] = useState([]);
+    useEffect(() => {
+    loadVocabData().then(data => {
+        setVocabPanels(data.panels);
+        console.log("VOCAB PANELS:", data.panels);
+    });
+    }, []);
+
+    if (loading) return <p>Loading...</p>;
 
     return (
         <div className="FamilyHome"  style={{backgroundColor: "#efefef"}}>
@@ -146,13 +85,18 @@ export default function FamilyHome() {
 
                 {/* Nav Links */}
                 <nav className={`nav-links ${isOpen ? 'open' : ''}`}>
-                    <HashLink smooth to="#Houses" onClick={closeMenu}>Houses</HashLink>
-                    <HashLink smooth to="#Life" onClick={closeMenu}>Life</HashLink>
-                    <HashLink smooth to="#Grocery" onClick={closeMenu}>Grocery</HashLink>
-                    <HashLink smooth to="#Troubles" onClick={closeMenu}>Troubles</HashLink>
-                    <HashLink smooth to="#Education" onClick={closeMenu}>Education</HashLink>
-                    <HashLink smooth to="#Academic" onClick={closeMenu}>Academic</HashLink>
-                    <HashLink smooth to="#AboutUs" onClick={closeMenu}>About Us</HashLink>
+<HashLink smooth to="#Houses" onClick={closeMenu}>物件</HashLink>
+
+{categories.map(cat => (
+  <HashLink
+    key={cat}
+    smooth
+    to={`#${cat}`}
+    onClick={closeMenu}
+  >
+    {cat}
+  </HashLink>
+))}
                 </nav>
             </div>
         </header>
@@ -166,36 +110,37 @@ export default function FamilyHome() {
     <div className='about-container' 
     >
     <p style={{textShadow: "1px 1px 2px rgba(0,0,0,0.1)"}}>
-        アメリカ、特にケンタッキー州での新生活に少し不安を感じている日本人の方々のため、生活を支える基本的な情報やケンタッキー周辺で役立つ情報をお届けします。
+        アメリカ、特にケンタッキー州での新生活に少し不安を感じている日本人の方々のため、
+        生活を支える基本的な情報やケンタッキー周辺で役立つ情報をお届けします。
     </p>
     <p style={{textShadow: "1px 1px 2px rgba(0,0,0,0.1)"}}>
         お子様の学校選びを含めた物件探しの困りごとから入居後に頻出する問題そして FAQ への回答をまとめているので、ご活用ください。
     </p>
 
-{/* https://www.facebook.com/share/g/18b5oRYzLv/ */}
-{/* https://www.facebook.com/share/g/1DsoJxu2MN/ */}
+
     </div>
 <hr />
             {/*  MAIN CONTENT */}
             <main className="content" style={{backgroundColor: "#efefef"}}>
 
-                <SectionImg
-                    id="Houses"
-                    title="Houses"
-                    route="/Houses"
-                    items={houses}
-                />
+                <SectionImg id="Houses" title="Houses" route="/Houses" items={houses} />
 
-                <Section
-                    id="Life"
-                    title="Life Hacks"
-                    route="/Life"
-                    items={life}
-                    category="Life"
+                {categories.map(category => (
+                    <Section
+                        key={category}
+                        id={category}
+                        title={category}
+                        items={faqData[category]}
+                        category={category}
+                    />
+                ))}
+
+                <SectionImg
+                    id="Vocab"
+                    title="英単語"
+                    route="/vocab"
+                    items={vocabPanels}
                 />
-<Section id="Grocery" title="Grocery" items={grocery} category="Grocery" />
-<Section id="Troubles" title="Troubles"  items={troubles} category="Troubles" />
-<Section id="Education" title="Education" items={education} category="Education" />
 
                 <SectionImg
                     id="Academic"
@@ -203,6 +148,8 @@ export default function FamilyHome() {
                     route="/course"
                     items={academic}
                 />
+
+
 
 <h1>Video Resources</h1>
 
@@ -291,6 +238,7 @@ Currently teaching at a Japanese school (CKJS).
               // style={{ width: '35px', height: '35px', marginTop: '6px'}}
             />
             </a>
+
            
           </div>
 

@@ -320,3 +320,12 @@ h1 {
 .link-card a:hover {
     text-decoration: underline;
 }
+
+
+.NavExt:hover {
+  color: #0984e3;
+}
+
+.NavExt:hover::after {
+  transform: scaleX(1);
+}

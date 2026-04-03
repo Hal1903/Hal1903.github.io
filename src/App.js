@@ -10,20 +10,26 @@ import MarkdownArticle from './pages/MarkdownArticle';
 import FAQ from './pages/FAQ';
 import Houses from './pages/Houses';
 import ArticleList from './pages/ArticleList';
+import VocabPage from './pages/VocabPage';
+
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 // import ReactMarkdown from 'react-markdown';
-
+import { DataProvider } from './utils/DataContext';
 import ScrollToTop from './utils/ScrollToTop';
 
 function App() {
   return (
+    <DataProvider>
     <MathJaxContext>
     <Router>
     <ScrollToTop /> 
       <Routes>
+
         <Route path="/" element={<FamilyHome />} />
         <Route path="/faq/:category" element={<FAQ />} />
         <Route path="/houses" element={<Houses />} />
+        <Route path="/vocab/:category" element={<VocabPage />} />
+
         <Route path="/home" element={<Home />} />
         <Route path="/course" element={<Courses />} />
         <Route path="/course/:topic/:articleId" element={<MarkdownArticle />} />
@@ -32,6 +38,7 @@ function App() {
       </Routes>
     </Router>
     </MathJaxContext>
+    </DataProvider>
   );
 }
 
