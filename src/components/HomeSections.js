@@ -1,13 +1,20 @@
 import '../css/Home.css';
 import '../css/FamilyHome.css';
 import { Link } from 'react-router-dom';         //  for page navigation
-
+import { HashLink } from 'react-router-hash-link'; //  for scrolling
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function VocabSection({ vocabs }) {
     const navigate = useNavigate();
 
     const sheetNames = Object.keys(vocabs);
+
+    // ADD THIS
+    if (sheetNames.length === 0) {
+        return <p style={{ padding: "20px" }}>Loading vocabulary...</p>;
+    }
 
     return (
         <section id="Vocab" className="section">
@@ -18,11 +25,11 @@ function VocabSection({ vocabs }) {
                     <div
                         className="card"
                         key={index}
-                        onClick={() => navigate(`/vocab/${name}`)}
+                        onClick={() => navigate(`/vocab/${encodeURIComponent(name)}`)}
                         style={{ cursor: "pointer" }}
                     >
                         <img
-                            src={`/vocabs/images/${name}.png`} // naming convention
+                            src={`/vocabs/images/${name}.png`}
                             alt={name}
                         />
 

@@ -21,6 +21,7 @@ body, html, #root {
 
 .about-container {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 2rem;
     align-items: center;
@@ -30,7 +31,7 @@ body, html, #root {
 
 .about-text {
     flex: 1 1 300px;
-    max-width: 600px;
+    max-width: 768px;
 }
 
 .about-text p {
@@ -41,18 +42,19 @@ body, html, #root {
 
 
 .about-container2 {
-    margin-top: 1rem;
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: center;
+    flex-direction: column;
+    align-items: center;      
     justify-content: center;
-    padding: 1rem;
+    gap: 1.5rem;
+
+    padding: 3rem 2rem;       /* safer horizontal padding */
+    line-height: 1.5rem;
 }
 
 .about-text2 {
     flex: 1 1 300px;
-    max-width: 600px;
+    max-width: 768px;
 }
 
 .about-text2 p {
