@@ -60,13 +60,22 @@ export default function FamilyHome() {
 
     const academic = Courses_list.Courses || []; // Parse from Courses; separate the list to json first.
 
-    const [vocabPanels, setVocabPanels] = useState([]);
+    const [vocabData, setVocabData] = useState({});
+
     useEffect(() => {
     loadVocabData().then(data => {
-        setVocabPanels(data.panels);
-        console.log("VOCAB PANELS:", data.panels);
+        console.log("VOCAB DATA:", data.vocabData);
+        setVocabData(data.vocabData);
     });
     }, []);
+
+    // const [vocabPanels, setVocabPanels] = useState([]);
+    // useEffect(() => {
+    // loadVocabData().then(data => {
+    //     setVocabPanels(data.panels);
+    //     console.log("VOCAB PANELS:", data.panels);
+    // });
+    // }, []);
 
     if (loading) return <p>Loading...</p>;
 
@@ -135,12 +144,13 @@ export default function FamilyHome() {
                     />
                 ))}
 
-                <SectionImg
+                <VocabSection vocabs={vocabData} />
+                {/* <VocabSection
                     id="Vocab"
                     title="英単語"
                     route="/vocab"
                     items={vocabPanels}
-                />
+                /> */}
 
                 <SectionImg
                     id="Academic"
@@ -154,14 +164,15 @@ export default function FamilyHome() {
 <h1>Video Resources</h1>
 
 <h1>Community</h1>
-<div className='about-container'>
+<div className='about-container2'>
 <p style={{textShadow: "1px 1px 2px rgba(0,0,0,0.1)"}}>
     日本人コミュニティをお探しの場合は以下から参加が可能です： <br />
 </p>
 
 <FBGroupCard 
     name="日本人 in Kentucky"
-    image="https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/513902666_1250203020107602_6795357682946854395_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=25d718&_nc_ohc=cXgTXUcSBBgQ7kNvwHZLWvA&_nc_oc=Adrlw_duNPdQM0dlYGeQITQwXDtupHC7W0RCv67w5FtaVqdBWu9NONX1YvYg5gicYFmKzPzddkjQFpNVTVmEClPu&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&_nc_gid=5KUb7r1rS0IZj8NKDMYIcQ&_nc_ss=7a32e&oh=00_AfzmX_O88fQiIH4KwdDak8V7uQvORibZrRn44ui4wgvWZA&oe=69CE2A71"
+    image="https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/513902666_1250203020107602_6795357682946854395_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=101&ccb=1-7&_nc_sid=25d718&_nc_ohc=gKBZCKHHjxgQ7kNvwHJ70q1&_nc_oc=Adomf_by6L8k4Dyff7wCG3kcMZvejZizprt0v6f4tnv0oWhZ4CqqzIOtFC4eBaXFI2k&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&_nc_gid=V-CAx0MkeOBbP9OcqzK54g&_nc_ss=7a389&oh=00_Af1IS5ex-l3N9yKMUag62wuaC3fBCylKQ6sLss_LRpU-tQ&oe=69D79D31"
+    
     url="https://www.facebook.com/share/g/18JmGCy58C/"
     description="現地の生活情報やお得な情報が共有されているコミュニティです。ぜひ参加してみてください。"
 />
@@ -173,7 +184,7 @@ export default function FamilyHome() {
 />
 <FBGroupCard 
     name="ソーラン in Kentucky"
-    image="https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/595198062_4242834959318000_1413714240785491276_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=25d718&_nc_ohc=TVonNqOmR-oQ7kNvwHqLccx&_nc_oc=AdrAlxeuQ0c_AE1F2giCc6EORF7ogLZq2gQycQlLq_kVASDRXohZ2OtQ80mf29nBxueuh91EaT7IIPbMjaxluI_G&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&_nc_gid=c9FfsZyocW5HBD1fIMb9Kw&_nc_ss=7a32e&oh=00_AfzhreUIIZNt6J5CXiLZ99Utaa7BhOgF5ztzSMiH6qOzLg&oe=69CE35D2"
+    image="https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/595198062_4242834959318000_1413714240785491276_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=25d718&_nc_ohc=bZ3FUABpUbIQ7kNvwHyAs_i&_nc_oc=AdotB6QBQbCuj1_iZ179N7TD4suHZEcdOCog_6i18H2eI5FUetqHY-5LXBnOIuQZ1lU&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&_nc_gid=PHpCF-PsrKy38Y3z01rvUQ&_nc_ss=7a389&oh=00_Af1wmX3RtgnBW6K-U7nWIAEwHVvcSJqWyGX4vaxgzin6dA&oe=69D7A892"
     url="https://www.facebook.com/share/g/1FnmqUahdW/"
     description="ソーラン節を通して築く日本人コミュニティです。様々な場所で披露しています、興味があれば練習にご参加ください。"
 />

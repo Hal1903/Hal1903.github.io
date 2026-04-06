@@ -243,9 +243,6 @@ h1 {
 }
 
 
-
-
-
 .about-container p {
     text-align: center;
 }
@@ -265,6 +262,9 @@ h1 {
     .about-container {
         padding: 3rem 2rem 3rem 2rem;  /* top right bottom left */
     }
+    * {
+        box-sizing: border-box;
+    }
 }
 
 
@@ -279,7 +279,29 @@ h1 {
 
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin-top: 1rem;
-    width: 75vw;
+
+    width: 120%;
+    max-width: 80vw;
+    /* margin-left: 0.1rem;
+    margin-right: 0.1rem; */
+}
+
+@media (max-width: 768px) {
+    .link-card {
+        flex-direction: column;   /* stack vertically */
+        align-items: center;
+        text-align: center;
+    }
+
+    .link-image {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+
+    .link-content {
+        align-items: center;
+    }
 }
 
 

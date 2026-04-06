@@ -28,7 +28,7 @@ function App() {
         <Route path="/" element={<FamilyHome />} />
         <Route path="/faq/:category" element={<FAQ />} />
         <Route path="/houses" element={<Houses />} />
-        <Route path="/vocab/:category" element={<VocabPage />} />
+        <Route path="/vocab/:sheetName" element={<VocabPage />} />
 
         <Route path="/home" element={<Home />} />
         <Route path="/course" element={<Courses />} />
