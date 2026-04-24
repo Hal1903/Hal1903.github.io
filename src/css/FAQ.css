@@ -1,0 +1,119 @@
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.faq-page {
+  padding: 2rem;
+}
+
+.faq-header {
+  margin-top: 9rem;
+}
+
+.faq-title {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* =========================
+   FAQ CARD
+========================= */
+
+.faq-item {
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* =========================
+   QUESTION ROW
+========================= */
+
+.faq-question {
+  padding: 1rem;
+  cursor: pointer;
+  background: #f5f5f5;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+/* arrow */
+.faq-arrow {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.faq-arrow.open {
+  transform: rotate(-45deg);
+}
+
+/* =========================
+   ANSWER ANIMATION WRAPPER
+========================= */
+
+.faq-answer {
+  height: 0;
+  overflow: hidden;
+
+  padding: 0 1rem;
+
+  transition:
+    height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* when open */
+.faq-answer.open {
+  padding: 1rem;
+}
+
+/* inner content (measured) */
+.faq-content-wrapper {
+  padding-bottom: 0.5rem;
+}
+
+.faq-content {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+/* =========================
+   MOBILE FIX (IMPORTANT)
+========================= */
+
+@media (max-width: 768px) {
+  .faq-page {
+    padding: 1rem;
+  }
+
+  .faq-header {
+    margin-top: 6rem;
+  }
+
+  .faq-question {
+    padding: 1.1rem;
+  }
+
+  .faq-content {
+    font-size: 1.05rem;
+    line-height: 1.7; /* fixes “cut off feeling” */
+  }
+
+  .faq-answer.open {
+    padding: 1.25rem 1rem; /* more breathing room on mobile */
+  }
+}
