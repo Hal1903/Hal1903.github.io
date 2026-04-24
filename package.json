@@ -1,7 +1,7 @@
 {
-  "name": "portfolio",
+  "name": "my-ky-home",
   "version": "1.0.0",
-  "description": "portfolio",
+  "description": "Resources and Real Estate for the Japanese Community in Kentucky",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,18 +15,27 @@
     "url": "git+https://github.com/Hal1903/Hal1903.github.io.git"
   },
   "keywords": [
+    "Kentucky",
+    "Lexington",
+    "Japanese Community",
+    "Real Estate",
+    "Education",
+    "ケンタッキー",
+    "レキシントン",
+    "不動産",
     "math",
     "computer",
     "ai",
-    "blog",
-    "education"
+    "教育",
+    "アメリカ",
+    "留学"
   ],
   "author": "Hal1903",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Hal1903/Hal1903.github.io/issues"
   },
-  "homepage": "https://hal1903.github.io",
+  "homepage": "https://mykyhome.us",
   "dependencies": {
     "better-react-mathjax": "^2.3.0",
     "flowbite-react": "^0.12.6",
