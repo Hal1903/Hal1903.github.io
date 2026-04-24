@@ -36,7 +36,7 @@ export default function MarkdownArticle() {
   return (
     <div>
       <header className={`navbar ${isOpen ? "shifted" : ""}`}>
-        <h1 className="navbar-title">MAX STUDIES</h1>
+        <h1 className="navbar-title">My KY Home</h1>
         <div className="navbar-bottom">
           <button 
             className="sidebar-btn" 

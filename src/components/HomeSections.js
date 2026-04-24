@@ -19,7 +19,7 @@ function VocabSection({ vocabs = {}, vocabImages = {} }) {
 
   return (
     <section id="Vocab" className="section">
-      <h2 className="section-title">Vocabulary</h2>
+      <h2 className="section-title">英単語</h2>
 
       <div className="scroll-container">
         {categories.map((cat, index) => {
