@@ -212,3 +212,8 @@ body, html, #root {
     }
 
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 160px; /* adjust to navbar height */
+}

@@ -1,0 +1,65 @@
+.vocab-page {
+  padding: 20px;
+}
+
+/* Loading */
+.loading {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Header */
+.vocab-header {
+  text-align: center;
+  margin-top: 7rem;
+  margin-bottom: 30px;
+}
+
+.vocab-header-img {
+  width: 200px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Grid layout */
+.vocab-grid {
+  display: grid;
+  gap: 15px;
+  justify-content: center;
+
+  /* default = mobile */
+  grid-template-columns: 1fr;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Desktop = 2 columns */
+@media (min-width: 768px) {
+  .vocab-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Card */
+.vocab-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  background: white;
+}
+
+/* Text styles */
+.jp {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.en {
+  color: #666;
+}
+
+/* Empty state */
+.empty {
+  text-align: center;
+  color: #777;
+}

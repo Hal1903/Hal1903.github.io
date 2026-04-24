@@ -17,12 +17,14 @@ import { MathJax, MathJaxContext } from "better-react-mathjax";
 import { DataProvider } from './utils/DataContext';
 import ScrollToTop from './utils/ScrollToTop';
 
+
 function App() {
   return (
     <DataProvider>
     <MathJaxContext>
     <Router>
     <ScrollToTop /> 
+
       <Routes>
 
         <Route path="/" element={<FamilyHome />} />

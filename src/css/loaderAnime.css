@@ -1,0 +1,7 @@
+.loader-container {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;     /* Vertical centering */
+  height: 100vh;           /* 100% of the Viewport Height */
+  width: 100vw;            /* 100% of the Viewport Width */
+}

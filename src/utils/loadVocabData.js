@@ -1,37 +1,44 @@
-import * as XLSX from 'xlsx';
+export const loadVocabData = async (url) => {
+  const res = await fetch(url);
+  const text = await res.text();
 
-// For loading the vocab data for family home page to list the panels
+  const rows = text
+    .trim()
+    .split("\n")
+    .map(r => r.split(","));
 
-export const loadVocabData = async () => {
-  const response = await fetch('/vocabs/vocabularies.xlsx');
-  const arrayBuffer = await response.arrayBuffer();
+  const headers = rows[0].map(h => h.trim());
 
-  const workbook = XLSX.read(arrayBuffer, { type: 'array' });
-  const sheets = workbook.SheetNames;
-
-  const panels = sheets.map(name => ({
-    title: name,
-    image: `/vocabs/images/${name}.png`,
-  }));
-
-  const vocabData = {};
-
-  sheets.forEach(name => {
-    const sheet = workbook.Sheets[name];
-
-    // KEY FIX: read raw rows (no header assumption)
-    const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-
-    // Skip first 2 rows → start from A3/B3
-    const dataRows = rows.slice(2);
-
-    vocabData[name] = dataRows
-      .filter(row => row[0] && row[1]) // remove empty rows
-      .map(row => ({
-        Japanese: row[0],
-        English: row[1],
-      }));
+  const data = rows.slice(1).map(row => {
+    const obj = {};
+    headers.forEach((h, i) => {
+      obj[h] = row[i] ?? "";
+    });
+    return obj;
   });
 
-  return { panels, vocabData };
+  const grouped = {};
+  const panelImages = {};
+
+  for (const row of data) {
+    const cat = row.Category?.trim();
+    if (!cat) continue;
+
+    // CASE 1: Link row → panel image
+    if (cat.startsWith("Link_")) {
+      const realCat = cat.replace("Link_", "").trim();
+      panelImages[realCat] = row.Japanese; // image URL
+      continue;
+    }
+
+    // CASE 2: normal vocab row
+    if (!grouped[cat]) grouped[cat] = [];
+
+    grouped[cat].push({
+      Japanese: row.Japanese,
+      English: row.English,
+    });
+  }
+
+  return { grouped, panelImages };
 };

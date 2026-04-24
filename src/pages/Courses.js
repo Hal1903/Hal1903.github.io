@@ -16,7 +16,7 @@ function Courses() {
         <nav>
           {/* <a href="/home">Home</a> */}
           <Link to="/home">About Me</Link>
-          <Link to="/">Family Home</Link>
+          <Link to="/">My KY Home</Link>
         </nav>
       </header>
 

@@ -18,10 +18,10 @@ function Home() {
     <div className="App">
       <header className="navbar">
         <h1>
-      Family Home
+      About Me
         </h1>
         <nav>
-            <a href="/">Home</a>
+            <a href="/">My-KY-Home</a>
             <Link smooth to="#about">About</Link>
             <Link smooth to="#projects">Projects</Link>
             {/* <Link smooth to="#contact">Contact</Link> */}

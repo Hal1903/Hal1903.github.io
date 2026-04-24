@@ -1,66 +1,55 @@
-import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { loadVocabData } from '../utils/loadVocabData'; // Verify path
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import { useData } from '../utils/DataContext';
+import '../css/VocabPage.css';
 
 export default function Vocab() {
-  // const { sheetName } = useParams();
   const { sheetName } = useParams();
   const decodedSheet = decodeURIComponent(sheetName);
-  const [vocabs, setVocabs] = useState([]);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      const { vocabData } = await loadVocabData();
+  const { data, loading } = useData();
 
-      console.log("LOOKUP:", decodedSheet);
-      console.log("AVAILABLE:", Object.keys(vocabData));
+  const vocabData = data.vocab || {};
+  const vocabs = vocabData[decodedSheet] || [];
 
-      setVocabs(vocabData[decodedSheet] || []);
-      setLoading(false);
-    };
-
-    fetchData();
-  }, [decodedSheet]);
-
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className="loading">Loading...</div>;
 
   return (
-    
-    <div style={{ padding: "20px" }}>
+    <div className="vocab-page">
+
       <header className="navbar">
         <h1>Family Home</h1>
-        <nav><Link to="/">Back</Link></nav>
+        <nav>
+          <Link to="/">Back</Link>
+        </nav>
       </header>
-      {/* Header with the Category Image */}
-      <div style={{ textAlign: 'center', marginTop: '7rem', marginBottom: '30px' }}>
-        <img 
-          // src={`/vocabs/images/${sheetName}.png`} 
-          // alt={sheetName} 
+
+      {/* Header */}
+      <div className="vocab-header">
+        <img
           src={`/vocabs/images/${decodedSheet}.png`}
           alt={decodedSheet}
-          style={{ width: '200px', borderRadius: '10px' }}
-          onError={(e) => e.target.style.display = 'none'} // Hide if image fails
+          className="vocab-header-img"
+          onError={(e) => (e.target.style.display = 'none')}
         />
         <h1>{decodedSheet}</h1>
-        {/* <h1>{sheetName}</h1> */}
       </div>
 
-      <div className="vocab-grid" style={{ display: 'grid', gap: '15px' }}>
+      {/* Grid */}
+      <div className="vocab-grid">
         {vocabs.length > 0 ? (
           vocabs.map((vocab, i) => (
-            <div key={i} className="card" style={{ border: '1px solid #ddd', padding: '15px' }}>
-              {/* Note: Ensure 'Japanese' and 'English' match your CSV headers exactly */}
-              <p style={{ fontSize: '1.2rem' }}><b>{vocab.Japanese}</b></p>
-              <p style={{ color: '#666' }}>{vocab.English}</p>
+            <div key={i} className="vocab-card">
+              <p className="jp">
+                <b>{vocab.Japanese}</b>
+              </p>
+              <p className="en">{vocab.English}</p>
             </div>
           ))
         ) : (
-          <p>No vocabulary found for this category.</p>
+          <p className="empty">No vocabulary found for this category.</p>
         )}
       </div>
+
     </div>
   );
 }

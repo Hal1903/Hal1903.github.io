@@ -4,7 +4,11 @@ import '../css/Home.css';
 import '../css/FamilyHome.css';
 import '../css/Houses.css';
 import { Link } from 'react-router-dom';
+import { PulseLoader } from "react-spinners";
 // import { loadExcelData } from '../utils/loadExcel';
+// import { SHEET_URLS } from "../utils/sheetURLs";
+// import { loadCSV } from "../utils/loadCSV";
+
 
 export default function Houses() {
 
@@ -19,9 +23,22 @@ export default function Houses() {
   const [minBaths, setMinBaths] = useState('');
   const [showFilters, setShowFilters] = useState(false);
 
-  // Load Excel data
-  const { data } = useData();
+  const { data, loading } = useData();
   const allHouses = data.houses;
+
+  // const [allHouses, setAllHouses] = useState([]);
+  // const [loading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   const fetchHouses = async () => {
+  //     setLoading(true);
+  //     const data = await loadCSV(SHEET_URLS.houses);
+  //     setAllHouses(data);
+  //     setLoading(false);
+  //   };
+
+  //   fetchHouses();
+  // }, []);
 
   // useEffect(() => {
   //   loadExcelData().then(data => {
@@ -72,11 +89,20 @@ export default function Houses() {
     setMinBaths('');
   };
 
+  if (loading) {
+      return (
+          <div className="loader-container">
+          <PulseLoader color="#36d7b7" size={20} />
+          </div>
+      );
+  }
+
+
   return (
     <div className="family-home">
       <header className="navbar">
         <div className="nav-container">
-          <h1 className="logo">Family Home</h1>
+          <h1 className="logo">My KY Home</h1>
           <div className="nav-right">
             <Link to="/" className="back-btn">◀ Back</Link>
           </div>
@@ -113,7 +139,10 @@ export default function Houses() {
 
         {filteredHouses.map((house, index) => (
           <div key={index} className="house-card">
-            <img src={house.Image} alt={house.District} className="house-image" />
+            <img src={house.Image} alt={house.District} className="house-image" 
+              crossOrigin="anonymous"  /* Add this */
+              loading="lazy"           /* Good for performance */
+            />
 
             <div className="house-content">
               <h3 className="price">${house.Price}</h3>

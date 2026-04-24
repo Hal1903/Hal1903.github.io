@@ -1,41 +1,68 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { loadExcelData } from '../utils/loadExcel';
+import { loadCSV } from './loadCSV';
+import { SHEET_URLS } from './sheetURLs';
 
 const DataContext = createContext();
 
-// ✅ Provider
 export function DataProvider({ children }) {
   const [data, setData] = useState({
     houses: [],
-    faq: {}
+    faq: {},
+    vocab: {}
   });
 
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const cached = localStorage.getItem('excelData');
+useEffect(() => {
+  const loadData = async () => {
+    try {
+      const [housesData, faqRaw, vocabRaw] = await Promise.all([
+        loadCSV(SHEET_URLS.houses),
+        loadCSV(SHEET_URLS.faq),
+        loadCSV(SHEET_URLS.vocab)
+      ]);
 
-        if (cached) {
-          setData(JSON.parse(cached));
-          setLoading(false);
-        }
+      const groupedFAQ = {};
+      faqRaw.forEach(row => {
+        const cat = row.Category;
+        if (!groupedFAQ[cat]) groupedFAQ[cat] = [];
+        groupedFAQ[cat].push({
+          question: row.Question,
+          answer: row.Answer,
+        });
+      });
 
-        const freshData = await loadExcelData();
+      const vocabGrouped = {};
+      vocabRaw.forEach(row => {
+        const cat = row.Category?.trim();
+        if (!cat) return;
 
-        setData(freshData);
-        localStorage.setItem('excelData', JSON.stringify(freshData));
+        if (!vocabGrouped[cat]) vocabGrouped[cat] = [];
 
-      } catch (err) {
-        console.error("Excel load failed:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
+        vocabGrouped[cat].push({
+          Japanese: row.Japanese,
+          English: row.English
+        });
+      });
 
-    loadData();
-  }, []);
+      const freshData = {
+        houses: housesData,
+        faq: groupedFAQ,
+        vocab: vocabGrouped
+      };
+
+      setData(freshData);
+      localStorage.setItem('csvData', JSON.stringify(freshData));
+
+    } catch (err) {
+      console.error("CSV load failed:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  loadData();
+}, []);
 
   return (
     <DataContext.Provider value={{ data, loading }}>
@@ -44,5 +71,4 @@ export function DataProvider({ children }) {
   );
 }
 
-// THIS is what you are missing most likely
 export const useData = () => useContext(DataContext);
