@@ -1,64 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="ja"> <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.jpeg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Project showcase with a collection of educational resources in mathematics and computer science."
-    />
-    <meta property="og:title" content="Family Home" />
-    <meta property="og:description" content="Project showcase with a collection of educational resources in mathematics and computer science." />
+    
+    <title>My KY Home | ケンタッキー州生活・教育・不動産情報</title>
+    <meta name="description" content="ケンタッキー州へ移住・在住する日本人家族のための不動産、教育、医療、地域コミュニティ情報サイト。Real estate, schools, and healthcare resources for Japanese families in KY." />
+    <meta name="keywords" content="Kentucky, Lexington, Japanese, Education, Real Estate, ケンタッキー, レキシントン, 移住, 教育, 不動産" />
+
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://yourwebsite.com" />
-    <meta property="og:image" content="https://yourwebsite.com/your-image.png" />
+    <meta property="og:title" content="My KY Home - ケンタッキー日本人コミュニティガイド" />
+    <meta property="og:description" content="不動産から学校、医療まで。ケンタッキーでの生活をトータルでサポートする情報ポータルサイト。" />
+    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg" />
 
-    
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://yourwebsite.com" />
+    <meta property="twitter:title" content="My KY Home - Kentucky Japanese Community" />
+    <meta property="twitter:description" content="Supporting Japanese families relocating to or living in Kentucky." />
+    <meta property="twitter:image" content="https://yourwebsite.com/og-image.jpg" />
+
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.jpeg" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 
-    <title>Family Home</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "My KY Home",
+        "url": "https://yourwebsite.com",
+        "description": "Resources for Japanese families in Kentucky",
+        "publisher": {
+          "@type": "Organization",
+          "name": "My KY Home"
+        }
+      }
+    </script>
   </head>
   
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 
   <script>
-  if (location.pathname !== "/" && !location.hash) {
-    location.replace("/#"+location.pathname);
-  }
+    // Improved redirect script for SPAs
+    (function() {
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect != location.href) {
+        history.replaceState(null, null, redirect);
+      }
+    })();
+    
+    if (location.pathname !== "/" && !location.hash) {
+      location.replace("/#"+location.pathname);
+    }
   </script>
-
-
 </html>
