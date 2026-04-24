@@ -8,13 +8,10 @@ import { useNavigate } from 'react-router-dom';
 // import React
 import React from 'react';
 
-function VocabSection({ vocabs = {} }) {
+function VocabSection({ vocabs = {}, vocabImages = {} }) {
   const navigate = useNavigate();
 
-  // 1. Extract ONLY real categories (exclude Link_)
-  const categories = Object.keys(vocabs).filter(
-    cat => !cat.startsWith("Link_")
-  );
+  const categories = Object.keys(vocabs);
 
   if (categories.length === 0) {
     return <p style={{ padding: "20px" }}>Loading vocabulary...</p>;
@@ -26,16 +23,8 @@ function VocabSection({ vocabs = {} }) {
 
       <div className="scroll-container">
         {categories.map((cat, index) => {
-          const items = vocabs[cat] || [];
-
-          // 2. Look for corresponding Link_ category
-          const linkKey = `Link_${cat}`;
-          const linkItems = vocabs[linkKey];
-
           const image =
-            linkItems && linkItems[0]?.Japanese
-              ? linkItems[0].Japanese   // use spreadsheet image
-              : `/vocabs/images/${cat}.png`; // fallback local
+            vocabImages[cat] || `/vocabs/images/${cat}.png`;
 
           return (
             <div
@@ -44,7 +33,13 @@ function VocabSection({ vocabs = {} }) {
               onClick={() => navigate(`/vocab/${encodeURIComponent(cat)}`)}
               style={{ cursor: "pointer" }}
             >
-              <img src={image} alt={cat} />
+              <img
+                src={image}
+                alt={cat}
+                onError={(e) => {
+                  e.target.src = `/vocabs/images/${cat}.png`;
+                }}
+              />
 
               <div style={{ padding: "10px" }}>
                 <p style={{ fontSize: "1.1rem", fontWeight: 800, textAlign: "center" }}>

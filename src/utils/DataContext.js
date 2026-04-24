@@ -58,7 +58,8 @@ vocabRaw.forEach(row => {
       const freshData = {
         houses: housesData,
         faq: groupedFAQ,
-        vocab: vocabGrouped
+        vocab: vocabGrouped,
+        vocabImages: vocabImages 
       };
 
       setData(freshData);

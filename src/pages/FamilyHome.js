@@ -34,6 +34,7 @@ export default function FamilyHome() {
     const academic = Courses_list.Courses || []; // Parse from Courses; separate the list to json first.
 
     const vocabData = data.vocab || {};
+    const vocabImages = data.vocabImages || {};
 
     // if (loading) return <PulseLoader color="#36d7b7" size={15} />;
     if (loading) {
@@ -112,13 +113,7 @@ export default function FamilyHome() {
                     />
                 ))}
 
-                <VocabSection vocabs={vocabData} />
-                {/* <VocabSection
-                    id="Vocab"
-                    title="英単語"
-                    route="/vocab"
-                    items={vocabPanels}
-                /> */}
+                <VocabSection vocabs={vocabData} vocabImages={vocabImages} />
 
                 <SectionImg
                     id="Academic"
