@@ -21,7 +21,7 @@ function Courses() {
       </header>
 
       <main className="content">
-        <h2 style={{ textAlign: 'center' }}>Courses</h2>
+        <h2 style={{ textAlign: 'center', marginTop: '70px' }}>Courses</h2>
         <div className="course-container">
           {courses.map(course => (
             <div className="course-panel" key={course.id} onClick={() => navigate(`/course/${course.id}`)}>
