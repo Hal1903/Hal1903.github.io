@@ -55,6 +55,7 @@ vocabRaw.forEach(row => {
     English: row.English
   });
 });
+
       const freshData = {
         houses: housesData,
         faq: groupedFAQ,

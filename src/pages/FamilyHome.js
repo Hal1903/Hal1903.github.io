@@ -99,9 +99,9 @@ export default function FamilyHome() {
             {/*  MAIN CONTENT */}
             <main className="content" style={{backgroundColor: "#efefef"}}>
 
-                <SectionImg id="Houses" 
+                {/* <SectionImg id="Houses" 
                             title="物件 / Houses (affiliated by Golden 7 Realty)" 
-                            route="/Houses" items={houses} />
+                            route="/Houses" items={houses} /> */}
 
                 {categories.map(category => (
                     <Section
@@ -204,6 +204,7 @@ export default function FamilyHome() {
 同じくケンタッキー州に住む日本人の方々が
 少しでも安心して新生活をスタートできるよう、
 このサイトを作りました。
+まだプロトタイプであり問題も多いのですが、それらを解決しながら大人数にお届けできるようにしていきます。
 </p>
 <p>
 既存の、自己紹介と勉強資料のまとめを兼ねたサイトを改造して作りましたので、
