@@ -11,7 +11,10 @@ import React from 'react';
 function VocabSection({ vocabs = {} }) {
   const navigate = useNavigate();
 
-  const categories = Object.keys(vocabs || {});
+  // 1. Extract ONLY real categories (exclude Link_)
+  const categories = Object.keys(vocabs).filter(
+    cat => !cat.startsWith("Link_")
+  );
 
   if (categories.length === 0) {
     return <p style={{ padding: "20px" }}>Loading vocabulary...</p>;
@@ -25,13 +28,14 @@ function VocabSection({ vocabs = {} }) {
         {categories.map((cat, index) => {
           const items = vocabs[cat] || [];
 
-          const isLink = cat.startsWith("Link_");
-          const displayName = cat.replace("Link_", "");
+          // 2. Look for corresponding Link_ category
+          const linkKey = `Link_${cat}`;
+          const linkItems = vocabs[linkKey];
 
           const image =
-            isLink && items[0]?.Japanese
-              ? items[0].Japanese
-              : `/vocabs/images/${cat}.png`;
+            linkItems && linkItems[0]?.Japanese
+              ? linkItems[0].Japanese   // use spreadsheet image
+              : `/vocabs/images/${cat}.png`; // fallback local
 
           return (
             <div
@@ -40,11 +44,11 @@ function VocabSection({ vocabs = {} }) {
               onClick={() => navigate(`/vocab/${encodeURIComponent(cat)}`)}
               style={{ cursor: "pointer" }}
             >
-              <img src={image} alt={displayName} />
+              <img src={image} alt={cat} />
 
               <div style={{ padding: "10px" }}>
-                <p style={{ fontWeight: 600, textAlign: "center" }}>
-                  {displayName}
+                <p style={{ fontSize: "1.1rem", fontWeight: 800, textAlign: "center" }}>
+                  {cat}
                 </p>
               </div>
             </div>

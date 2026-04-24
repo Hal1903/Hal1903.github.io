@@ -32,19 +32,29 @@ useEffect(() => {
         });
       });
 
-      const vocabGrouped = {};
-      vocabRaw.forEach(row => {
-        const cat = row.Category?.trim();
-        if (!cat) return;
+const vocabGrouped = {};
+const vocabImages = {}; // optional (for cleaner image handling later)
 
-        if (!vocabGrouped[cat]) vocabGrouped[cat] = [];
+vocabRaw.forEach(row => {
+  const cat = row.Category?.trim();
+  if (!cat) return;
 
-        vocabGrouped[cat].push({
-          Japanese: row.Japanese,
-          English: row.English
-        });
-      });
+  // IGNORE Link_ rows from becoming categories
+  if (cat.startsWith("Link_")) {
+    const realCat = cat.replace("Link_", "").trim();
 
+    // store image separately (optional but recommended)
+    vocabImages[realCat] = row.Japanese;
+    return;
+  }
+
+  if (!vocabGrouped[cat]) vocabGrouped[cat] = [];
+
+  vocabGrouped[cat].push({
+    Japanese: row.Japanese,
+    English: row.English
+  });
+});
       const freshData = {
         houses: housesData,
         faq: groupedFAQ,
