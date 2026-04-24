@@ -191,14 +191,14 @@ body, html, #root {
         flex-wrap: wrap;
         box-sizing: border-box;
         top: 0;
-        position: sticky; /* freeze nav bar */
+        position: fixed; /* freeze nav bar */
         z-index: 999; /* stays on top, so slide does not overlay */
         /* background-color: white; or your theme color */
     }
 
     .navbar nav {
         display: flex;
-        margin-top: 1em;
+        margin-top: 0.75em;
         margin-left: 0;
         padding-left: 0;
         justify-content: center;
