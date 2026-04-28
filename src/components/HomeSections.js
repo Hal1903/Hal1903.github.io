@@ -94,80 +94,73 @@ function Section({ id, title, items, category }) {
     );
 }
 
-const PROXIES = [
-  (url) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
-  (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
-];
+// const PROXIES = [
+//   (url) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
+//   (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+// ];
 
-function ZillowImage({ src, alt, className }) {
-  const [attempt, setAttempt] = React.useState(0);
-  // attempt 0 = direct, 1 = proxy 1, 2 = proxy 2, 3 = placeholder
-  const PLACEHOLDER = "/images/placeholder.png"; // swap with your own
+// function ZillowImage({ src, alt, className }) {
+//   const [attempt, setAttempt] = React.useState(0);
+//   // attempt 0 = direct, 1 = proxy 1, 2 = proxy 2, 3 = placeholder
+//   const PLACEHOLDER = "/images/placeholder.png"; // swap with your own
 
-  const resolvedSrc = React.useMemo(() => {
-    if (!src || !src.startsWith("http")) return src || PLACEHOLDER;
-    if (attempt === 0) return src;
-    if (attempt <= PROXIES.length) return PROXIES[attempt - 1](src);
-    return PLACEHOLDER;
-  }, [src, attempt]);
+//   const resolvedSrc = React.useMemo(() => {
+//     if (!src || !src.startsWith("http")) return src || PLACEHOLDER;
+//     if (attempt === 0) return src;
+//     if (attempt <= PROXIES.length) return PROXIES[attempt - 1](src);
+//     return PLACEHOLDER;
+//   }, [src, attempt]);
 
+//   return (
+//     <img
+//       src={resolvedSrc}
+//       alt={alt}
+//       className={className}
+//       loading="lazy"
+//       // NO crossOrigin here — adding it forces CORS enforcement on plain image loads,
+//       // which breaks Zillow's CDN even through proxies
+//       onError={() => {
+//         if (attempt < PROXIES.length + 1) {
+//           setAttempt((a) => a + 1);
+//         }
+//       }}
+//     />
+//   );
+// }
+
+function SafeImage({ src, alt, className }) {
+  const PLACEHOLDER = "/images/placeholder.png";
+
+  // If no src → fallback
+  if (!src) {
+    return <img src={PLACEHOLDER} alt={alt} className={className} />;
+  }
+
+  // LOCAL image (your new case)
+  if (src.startsWith("/")) {
+    return (
+      <img
+        src={src}
+        alt={alt}
+        className={className}
+        loading="lazy"
+        onError={(e) => (e.target.src = PLACEHOLDER)}
+      />
+    );
+  }
+
+  // EXTERNAL image (optional fallback behavior)
   return (
     <img
-      src={resolvedSrc}
+      src={src}
       alt={alt}
       className={className}
       loading="lazy"
-      // NO crossOrigin here — adding it forces CORS enforcement on plain image loads,
-      // which breaks Zillow's CDN even through proxies
-      onError={() => {
-        if (attempt < PROXIES.length + 1) {
-          setAttempt((a) => a + 1);
-        }
-      }}
+      onError={(e) => (e.target.src = PLACEHOLDER)}
     />
   );
 }
 
-
-// In HomeSections.js
-// function SectionImg({ title, id, items }) {
-//     const proxy = "https://corsproxy.io/?";
-
-//     return (
-//         <section id={id} className="section">
-//             <h2 className="section-title">{title}</h2>
-//             <div className="scroll-container">
-//                 {items && items.map((item, index) => {
-//                     // Bypass ORB for Zillow/External images
-//                     const imageUrl = (item.Image && item.Image.startsWith('http')) 
-//                         ? `${proxy}${encodeURIComponent(item.Image)}` 
-//                         : (item.Image || item.image);
-
-//                     return (
-//                         <div className="card" key={index}>
-//                             <img
-//                                 src={imageUrl}
-//                                 alt={item.District || item.title}
-//                                 crossOrigin="anonymous"
-//                                 loading="lazy"
-//                             />
-//                             <div style={{ padding: "10px" }}>
-//                                 {item.Price ? (
-//                                     <>
-//                                         <b>${item.Price}</b>
-//                                         <p>{item.District}</p>
-//                                     </>
-//                                 ) : (
-//                                     <p>{item.title || item.name}</p>
-//                                 )}
-//                             </div>
-//                         </div>
-//                     );
-//                 })}
-//             </div>
-//         </section>
-//     );
-// }
 
 function SectionImg({ id, title, route, items }) {
   const navigate = useNavigate();
@@ -202,7 +195,7 @@ function SectionImg({ id, title, route, items }) {
                 style={{ cursor: route ? "pointer" : "default" }}
               >
                 {/* Image (with ORB-safe wrapper) */}
-                <ZillowImage
+                <SafeImage
                   src={imageUrl}
                   alt={item.District || item.title || "item"}
                   className="card-image"

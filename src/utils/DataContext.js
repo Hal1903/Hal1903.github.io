@@ -22,6 +22,34 @@ useEffect(() => {
         loadCSV(SHEET_URLS.vocab)
       ]);
 
+
+      // Sort houses by AvailableAt date (with robust handling of invalid/missing dates)
+      const parseDate = (dateStr) => {
+        if (!dateStr) return null;
+
+        const d = new Date(dateStr);
+        return isNaN(d.getTime()) ? null : d;
+      };
+
+      const sortedHouses = [...housesData].sort((a, b) => {
+        const dateA = parseDate(a.AvailableAt);
+        const dateB = parseDate(b.AvailableAt);
+
+        // Case 1: both valid → sort ascending
+        if (dateA && dateB) return dateA - dateB;
+
+        // Case 2: only A valid → A first
+        if (dateA && !dateB) return -1;
+
+        // Case 3: only B valid → B first
+        if (!dateA && dateB) return 1;
+
+        // Case 4: both invalid → keep original order
+        return 0;
+      });
+
+
+
       const groupedFAQ = {};
       faqRaw.forEach(row => {
         const cat = row.Category;
@@ -57,7 +85,7 @@ vocabRaw.forEach(row => {
 });
 
       const freshData = {
-        houses: housesData,
+        houses: sortedHouses, //housesData,
         faq: groupedFAQ,
         vocab: vocabGrouped,
         vocabImages: vocabImages 
