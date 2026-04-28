@@ -99,9 +99,9 @@ export default function FamilyHome() {
             {/*  MAIN CONTENT */}
             <main className="content" style={{backgroundColor: "#efefef"}}>
 
-                {/* <SectionImg id="Houses" 
+                <SectionImg id="Houses" 
                             title="物件 / Houses (affiliated by Golden 7 Realty)" 
-                            route="/Houses" items={houses} /> */}
+                            route="/Houses" items={houses} />
 
                 {categories.map(category => (
                     <Section
