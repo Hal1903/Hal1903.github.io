@@ -22,38 +22,33 @@ export default function Houses() {
   const [minBeds, setMinBeds] = useState('');
   const [minBaths, setMinBaths] = useState('');
   const [showFilters, setShowFilters] = useState(false);
-
+  const [filterMonth, setFilterMonth] = useState('');
+  const [filterYear, setFilterYear] = useState('');
+  
   const { data, loading } = useData();
   const allHouses = data.houses;
 
-  // const [allHouses, setAllHouses] = useState([]);
-  // const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   const fetchHouses = async () => {
-  //     setLoading(true);
-  //     const data = await loadCSV(SHEET_URLS.houses);
-  //     setAllHouses(data);
-  //     setLoading(false);
-  //   };
-
-  //   fetchHouses();
-  // }, []);
-
-  // useEffect(() => {
-  //   loadExcelData().then(data => {
-  //     setAllHouses(data.houses);
-  //     setFilteredHouses(data.houses);
-  //   });
-  // }, []);
-
-  useEffect(() => {
-    applyFilters(searchTerm);
-  }, [searchTerm, minPrice, maxPrice, minBeds, minBaths, allHouses]);
+useEffect(() => {
+  applyFilters(searchTerm);
+  }, [
+    searchTerm,
+    minPrice,
+    maxPrice,
+    minBeds,
+    minBaths,
+    filterMonth,
+    filterYear,
+    allHouses
+  ]);
 
   const parsePrice = (priceStr) => {
     if (!priceStr) return 0;
     return Number(String(priceStr).replace(/[^0-9]/g, ''));
+  };
+  const parseDate = (str) => {
+    if (!str) return null;
+    const d = new Date(str);
+    return isNaN(d) ? null : d;
   };
 
   const applyFilters = (text) => {
@@ -66,15 +61,33 @@ export default function Houses() {
 
       const matchesSearch =
         String(house.District).toLowerCase().includes(term) ||
-        // String(house.Address).toLowerCase().includes(term) ||
         String(house.Price).toLowerCase().includes(term);
+
+      const date = parseDate(house.AvailableAt);
+
+      const matchesDate = (() => {
+        if (!filterMonth && !filterYear) return true;
+
+        const filterDate =
+          filterYear && filterMonth
+            ? new Date(Number(filterYear), Number(filterMonth) - 1, 1)
+            : filterYear
+              ? new Date(Number(filterYear), 0, 1)
+              : new Date(0);
+
+        // include empty dates always
+        if (!date) return true;
+
+        return date >= filterDate;
+      })();
 
       return (
         matchesSearch &&
         (!minPrice || price >= Number(minPrice)) &&
         (!maxPrice || price <= Number(maxPrice)) &&
         (!minBeds || beds >= Number(minBeds)) &&
-        (!minBaths || baths >= Number(minBaths))
+        (!minBaths || baths >= Number(minBaths)) &&
+        matchesDate
       );
     });
 
@@ -87,6 +100,8 @@ export default function Houses() {
     setMaxPrice('');
     setMinBeds('');
     setMinBaths('');
+    setFilterMonth('');
+    setFilterYear('');
   };
 
   if (loading) {
@@ -103,15 +118,31 @@ export default function Houses() {
       <header className="navbar">
         <div className="nav-container">
           <h1 className="logo">My KY Home</h1>
+
+          {/* NEW: center container */}
+          <div className="nav-center">
+            <button className="filter-toggle" onClick={() => setShowFilters(prev => !prev)}>
+              {showFilters ? 'Hide Filters ▲' : 'Show Filters ▼'}
+            </button>
+          </div>
+
           <div className="nav-right">
             <Link to="/" className="back-btn">◀ Back</Link>
           </div>
         </div>
+        {/* <div className="nav-container">
+          <h1 className="logo">My KY Home</h1>
+          <div className="nav-right">
+            <Link to="/" className="back-btn">◀ Back</Link>
+          </div>
+        </div> */}
 
-        <button className="filter-toggle" onClick={() => setShowFilters(prev => !prev)}>
+        {/* <button className="filter-toggle" onClick={() => setShowFilters(prev => !prev)}>
           {showFilters ? 'Hide Filters ▲' : 'Show Filters ▼'}
-        </button>
+        </button> */}
 
+      </header>
+      
         <div className={`search-filters ${showFilters ? 'open' : ''}`}>
           <input
             type="text"
@@ -126,11 +157,24 @@ export default function Houses() {
             <input type="number" placeholder="Max Price" value={maxPrice} onChange={e => setMaxPrice(e.target.value)} />
             <input type="number" placeholder="Min Beds" value={minBeds} onChange={e => setMinBeds(e.target.value)} />
             <input type="number" placeholder="Min Baths" value={minBaths} onChange={e => setMinBaths(e.target.value)} />
+            <input
+              type="number"
+              placeholder="Month (mm)"
+              value={filterMonth}
+              onChange={e => setFilterMonth(e.target.value)}
+            />
+
+            <input
+              type="number"
+              placeholder="Year (yyyy)"
+              value={filterYear}
+              onChange={e => setFilterYear(e.target.value)}
+            />
+
 
             <button onClick={resetFilters} className="reset-btn">Reset</button>
           </div>
         </div>
-      </header>
 
       <div className="top-spacing" style={{ paddingTop: showFilters ? '6rem' : '0.5rem' }} />
 
@@ -141,7 +185,7 @@ export default function Houses() {
           <div key={index} className="house-card">
             <img src={house.Image} alt={house.District} className="house-image" 
               crossOrigin="anonymous"  /* Add this */
-              loading="lazy"           /* Good for performance */
+              loading="lazy"           /* for performance */
             />
 
             <div className="house-content">
@@ -149,11 +193,16 @@ export default function Houses() {
               <p className="address">{house.District}</p>
 
               <ul className="house-grid">
+
                 <li>Area: {house.Area}</li>
                 <li>Bedrooms: {house.Beds}</li>
                 <li>Bathrooms: {house.Baths}</li>
                 <li>Year Built: {house.Built_Yr}</li>
+                
                 {/* Comment spans full width */}
+                  <li className="full-width-item">
+                  <b>Available from: </b> {house.AvailableAt && new Date(house.AvailableAt).toLocaleDateString("en-US")}
+                  </li>
                   <li className="full-width-item">
                     <b>Comment:</b> {house.Comments}
                   </li>

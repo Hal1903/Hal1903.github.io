@@ -141,7 +141,7 @@ export default function FamilyHome() {
 />
 <FBGroupCard 
     name="セントラルケンタッキー在住日本人グループ"
-    image="https://scontent-atl3-2.xx.fbcdn.net/v/t1.6435-9/131454369_10158063071748111_2289784090943501382_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=25d718&_nc_ohc=3iAYnq6EKz8Q7kNvwFzkuQQ&_nc_oc=AdrpEFAJ27tAv9XLiJiSJKW3jpxRRFXNLuNAuVwP80twkbT5zSGW2JU7Dw9Zki3YYOjyX3tDdT9iOl0gGmfceW8i&_nc_zt=23&_nc_ht=scontent-atl3-2.xx&_nc_gid=rEq3zs3qlDNvVLFG8lgtBQ&_nc_ss=7a32e&oh=00_AfxNZo7G01V9HxJ8WcsMaGrXy3gMlq8jyCy0DYZdMbRmGg&oe=69EFC8DB"
+    image="images/ckjg.jpg"
     url="https://www.facebook.com/share/g/1D6YcoFZXy/"
     description="レキシントン付近での生活情報やお得な情報が共有されているコミュニティです。"
 />

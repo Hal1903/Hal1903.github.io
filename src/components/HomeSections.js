@@ -204,9 +204,33 @@ function SectionImg({ id, title, route, items }) {
                 <div style={{ padding: "10px" }}>
                   {item.Price ? (
                     <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                      <li style={{ fontSize: "1.2rem" }}>
-                       <b>${formatPrice(item.Price)}</b>
-                      </li>
+<li
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    fontSize: "1.2rem"
+  }}
+>
+  <b>${formatPrice(item.Price)}</b>
+
+  {item.AvailableAt && (
+    <span
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-end",
+        fontSize: "0.9rem",
+        color: "#555"
+      }}
+    >
+      <span>available from</span>
+      <span>
+        {new Date(item.AvailableAt).toLocaleDateString("en-US")}
+      </span>
+    </span>
+  )}
+</li>
 
                       <li style={{ color: "#555" }}>
                         {item.District}
@@ -216,7 +240,7 @@ function SectionImg({ id, title, route, items }) {
                         <a
                           className="NavExt"
                           href="mailto:hahikeyuaono@gmail.com"
-                          onClick={(e) => e.stopPropagation()} // prevent navigation click
+                          onClick={(e) => e.stopPropagation()}
                         >
                           Contact Us
                         </a>

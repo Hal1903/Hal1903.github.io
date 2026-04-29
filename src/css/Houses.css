@@ -125,11 +125,20 @@
 
   .house-image {
     width: 50%;
-    height: auto;
+    height: 280px;
+    /* height: auto; */
   }
 
   .house-content {
     width: 50%;
+  }
+
+  .search-filters{
+    top: 4rem;   /* adjust navbar height */
+  }
+
+  .search-filters > * {
+    width: min(1100px, 100vw);
   }
 }
 
@@ -157,21 +166,33 @@
 }
 
 .search-filters {
-  overflow: hidden;
+  width: 100%;
+  background: #222; /* match navbar */
+  padding: 0 1rem;
+
   max-height: 0;
   opacity: 0;
-  transition: all 0.3s ease;
-  padding: 0 clamp(1rem, 5vw, 4rem);
+  overflow: hidden;
+  position: fixed;
+  z-index: 100; /* above other content */
+
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+
+  
+  justify-content: center;
 }
 
-/* OPEN STATE */
+/* OPEN */
 .search-filters.open {
-  max-height: 500px;   /* big enough to fit content */
+  max-height: 500px;
   opacity: 1;
   padding-bottom: 1rem;
 }
 
-
+.search-filters input {
+  color: black;
+  background: white;
+}
 
 
 .NavExt {
