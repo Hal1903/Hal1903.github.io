@@ -184,6 +184,7 @@
 
 /* OPEN */
 .search-filters.open {
+  min-height: 175px;
   max-height: 500px;
   opacity: 1;
   padding-bottom: 1rem;
