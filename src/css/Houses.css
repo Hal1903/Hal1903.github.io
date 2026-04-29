@@ -142,6 +142,12 @@
   }
 }
 
+@media (max-width:768px) {
+  .search-filters.open {
+    min-height: 175px
+  }
+}
+
 
 .nav-right {
   display: flex;
@@ -184,7 +190,6 @@
 
 /* OPEN */
 .search-filters.open {
-  min-height: 175px;
   max-height: 500px;
   opacity: 1;
   padding-bottom: 1rem;

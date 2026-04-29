@@ -176,7 +176,7 @@ useEffect(() => {
           </div>
         </div>
 
-      <div className="top-spacing" style={{ paddingTop: showFilters ? '6rem' : '0.5rem' }} />
+      <div className="top-spacing" style={{ paddingTop: showFilters ? '6rem' : '1rem' }} />
 
       <section className="houses-section">
         {filteredHouses.length === 0 && <p>No houses found.</p>}
