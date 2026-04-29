@@ -143,9 +143,12 @@
 }
 
 @media (max-width:768px) {
-  .search-filters.open {
-    min-height: 175px
+  .search-filters {
+    top: 5rem;
   }
+  /* .search-filters.open {
+    min-height: 300px;
+  } */
 }
 
 
@@ -184,13 +187,17 @@
 
   transition: max-height 0.3s ease, opacity 0.3s ease;
 
-  
+  display: flex;
   justify-content: center;
 }
 
 /* OPEN */
 .search-filters.open {
-  max-height: 500px;
+  /* max-height: 500px; */
+  max-height: 80vh;   /* dynamic, based on screen */
+  overflow-y: auto;   /* allow scrolling if needed */
+  display: flex;
+  flex-direction: column;
   opacity: 1;
   padding-bottom: 1rem;
 }
