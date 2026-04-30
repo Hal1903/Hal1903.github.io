@@ -96,39 +96,6 @@ function Section({ id, title, items, category }) {
     );
 }
 
-// const PROXIES = [
-//   (url) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
-//   (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
-// ];
-
-// function ZillowImage({ src, alt, className }) {
-//   const [attempt, setAttempt] = React.useState(0);
-//   // attempt 0 = direct, 1 = proxy 1, 2 = proxy 2, 3 = placeholder
-//   const PLACEHOLDER = "/images/placeholder.png"; // swap with your own
-
-//   const resolvedSrc = React.useMemo(() => {
-//     if (!src || !src.startsWith("http")) return src || PLACEHOLDER;
-//     if (attempt === 0) return src;
-//     if (attempt <= PROXIES.length) return PROXIES[attempt - 1](src);
-//     return PLACEHOLDER;
-//   }, [src, attempt]);
-
-//   return (
-//     <img
-//       src={resolvedSrc}
-//       alt={alt}
-//       className={className}
-//       loading="lazy"
-//       // NO crossOrigin here — adding it forces CORS enforcement on plain image loads,
-//       // which breaks Zillow's CDN even through proxies
-//       onError={() => {
-//         if (attempt < PROXIES.length + 1) {
-//           setAttempt((a) => a + 1);
-//         }
-//       }}
-//     />
-//   );
-// }
 
 function SafeImage({ src, alt, className }) {
   const PLACEHOLDER = "/images/placeholder.png";

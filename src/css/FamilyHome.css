@@ -214,7 +214,7 @@ h1 {
 
 
 .faq-card p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.2;
 }
 
@@ -231,12 +231,14 @@ h1 {
     padding-bottom: 18px;
     background: #fcfcfc;
     border-radius: 10px;
+    
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     overflow: hidden;    /* hides overflowing text but allows gradient effect */
 }
 
 .faq-text {
     height: 100%;
+    
     overflow: hidden;
     position: relative;
     padding-right: 5px; /* prevent text from touching the overlay */
@@ -333,6 +335,7 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
+    flex: 1;  /* take remaining width */
 }
 
 .link-title {

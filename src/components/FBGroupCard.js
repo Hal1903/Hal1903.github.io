@@ -15,15 +15,19 @@ export default function FBGroupCard({ name, image, url, description }) {
             <p className="link-description">
                 {description}
             </p>
-            <p style={{textAlign: "center"}}>
-            <a 
-                href={url}
-                target="_blank" 
-                rel="noopener noreferrer"
-            >
-                Visit Group →
-            </a>
-            </p>
+<div style={{
+  width: "100%",
+  display: "flex",
+  justifyContent: "center"
+}}>
+  <a 
+    href={url}
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    Visit Group →
+  </a>
+</div>
         </div>
     </div>
     )
