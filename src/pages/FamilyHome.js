@@ -1,6 +1,5 @@
 import '../css/Home.css';
 import '../css/FamilyHome.css';
-import '../css/loaderAnime.css';
 import { SocialIcon } from 'react-social-icons'
 import { Link } from 'react-router-dom';         //  for page navigation
 import { HashLink } from 'react-router-hash-link'; //  for scrolling
@@ -8,9 +7,11 @@ import Courses_list from './Courses.json';
 import FBGroupCard from '../components/FBGroupCard';
 import {useEffect, useState} from 'react'
 import { useData } from '../utils/DataContext';
+import { useTables } from '../utils/TableDataContext';
 import {Section, SectionImg, VocabSection} from '../components/HomeSections';
 // import { loadVocabData } from '../utils/loadVocabData';
 import { PulseLoader } from "react-spinners";
+import '../css/loaderAnime.css';
 
 // import { SHEET_URLS } from "../utils/sheetURLs";
 // import { loadCSV } from "../utils/loadCSV";
@@ -19,11 +20,13 @@ import { useNavigate } from 'react-router-dom';
 
 export default function FamilyHome() {
     const [isOpen, setIsOpen] = useState(false);
+    
 
     const toggleMenu = () => setIsOpen(!isOpen);
     const closeMenu = () => setIsOpen(false);
 
     const { data, loading } = useData();
+    const { tables, loading: tablesLoading } = useTables();
     const ready = !loading && data?.faq && data?.houses;
 
     const houses = data.houses;
@@ -35,6 +38,13 @@ export default function FamilyHome() {
 
     const vocabData = data.vocab || {};
     const vocabImages = data.vocabImages || {};
+
+    const tableItems = tables.map(t => ({
+        title: t.title,
+        image: t.image,
+        key: t.key,
+        url: t.url
+    }));
 
     // if (loading) return <PulseLoader color="#36d7b7" size={15} />;
     if (loading) {
@@ -61,18 +71,21 @@ export default function FamilyHome() {
 
                 {/* Nav Links */}
                 <nav className={`nav-links ${isOpen ? 'open' : ''}`}>
-<HashLink smooth to="#Houses" onClick={closeMenu}>物件</HashLink>
+                    <HashLink smooth to="#Houses" onClick={closeMenu}>物件</HashLink>
 
-{categories.map(cat => (
-  <HashLink
-    key={cat}
-    smooth
-    to={`#${cat}`}
-    onClick={closeMenu}
-  >
-    {cat}
-  </HashLink>
-))}
+                    {categories.map(cat => (
+                    <HashLink
+                        key={cat}
+                        smooth
+                        to={`#${cat}`}
+                        onClick={closeMenu}
+                    >
+                        {cat}
+                    </HashLink>
+                    ))}
+                    <HashLink smooth to="#Vocab" onClick={closeMenu}>英単語</HashLink>
+                    <HashLink smooth to="#Community" onClick={closeMenu}>日本人コミュニティ</HashLink>
+                    <HashLink smooth to="#AboutUs" onClick={closeMenu}>当サイトについて</HashLink>
                 </nav>
             </div>
         </header>
@@ -114,6 +127,13 @@ export default function FamilyHome() {
                 ))}
 
                 <VocabSection vocabs={vocabData} vocabImages={vocabImages} />
+
+                <SectionImg
+                    id="Tables"
+                    title="早見表"
+                    route="/table"    // no global route
+                    items={tableItems}
+                />
 
                 <SectionImg
                     id="Academic"
@@ -186,6 +206,7 @@ export default function FamilyHome() {
 </p>
 <p>Email: hahikeyuaono@gmail.com</p>
                 <div className='social-icons' style={{margin: "2rem"}}>
+                <SocialIcon url="https://line.me/R/ti/p/@325uhrhr" />
                 <SocialIcon url="https://www.facebook.com/yukiko.aono.716/"></SocialIcon>
                 <SocialIcon url="https://www.linkedin.com/in/yuki-aono-547289384/"></SocialIcon>
                 <SocialIcon url="mailto:hahikeyuaono@gmail.com"></SocialIcon>
@@ -204,19 +225,22 @@ export default function FamilyHome() {
 同じくケンタッキー州に住む日本人の方々が
 少しでも安心して新生活をスタートできるよう、
 このサイトを作りました。
-まだプロトタイプであり問題も多いのですが、それらを解決しながら大人数にお届けできるようにしていきます。
 </p>
 <p>
 既存の、自己紹介と勉強資料のまとめを兼ねたサイトを改造して作りましたので、
 一応そのリンクも下に載せておきます。
+</p>
+<p>
+何か取り扱ってほしい情報や、サイトの改善点などがあれば、ぜひLINEなどでご連絡ください。
 </p>
                 <p>Email: hahikeyuaono0419@gmail.com</p>
                 <p><Link to="/home"><b>
                 ▶ Portfolio About-me Link
                 </b></Link></p>
                 
-
+                
           <div className='social-icons' style={{margin: "2rem"}}>
+            <SocialIcon url="https://line.me/R/ti/p/@726hstzb"></SocialIcon>
             <SocialIcon url="https://www.facebook.com/haruku.aono.5/"></SocialIcon>
             <SocialIcon url="https://www.linkedin.com/in/haruku-aono-b656661a9/"></SocialIcon>
             

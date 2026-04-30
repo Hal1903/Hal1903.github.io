@@ -5,6 +5,7 @@ import '../css/FamilyHome.css';
 import '../css/Houses.css';
 import { Link } from 'react-router-dom';
 import { PulseLoader } from "react-spinners";
+import ContactModal from '../components/ContactModal';
 // import { loadExcelData } from '../utils/loadExcel';
 // import { SHEET_URLS } from "../utils/sheetURLs";
 // import { loadCSV } from "../utils/loadCSV";
@@ -27,6 +28,7 @@ export default function Houses() {
   
   const { data, loading } = useData();
   const allHouses = data.houses;
+  const [showModal, setShowModal] = useState(false);
 
 useEffect(() => {
   applyFilters(searchTerm);
@@ -212,9 +214,11 @@ useEffect(() => {
   </a>
 )}
 
-<a className='NavExt' href="mailto:hahikeyuaono@gmail.com">
+{/* <a className='NavExt' href="mailto:hahikeyuaono@gmail.com"> */}
+<a className="NavExt" onClick={() => setShowModal(true)}>
   Contact Us
 </a>
+{showModal && <ContactModal onClose={() => setShowModal(false)} />}
               </ul>
 
             </div>

@@ -6,6 +6,7 @@ import './App.css';
 import FamilyHome from './pages/FamilyHome';
 import FAQ from './pages/FAQ';
 import Houses from './pages/Houses';
+import TablePage from './pages/TablePage';
 
 // import Home from './pages/Home';
 // import Courses from './pages/Courses';
@@ -23,12 +24,14 @@ const ArticleList = lazy(() => import('./pages/ArticleList'));
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 // import ReactMarkdown from 'react-markdown';
 import { DataProvider } from './utils/DataContext';
+import { TableDataProvider } from './utils/TableDataContext';
 import ScrollToTop from './utils/ScrollToTop';
 
 
 function App() {
   return (
     <DataProvider>
+    <TableDataProvider> 
     <MathJaxContext>
     <Router>
     <ScrollToTop /> 
@@ -40,6 +43,7 @@ function App() {
         <Route path="/houses" element={<Houses />} />
         <Route path="/vocab/:sheetName" element={<VocabPage />} />
 
+        <Route path="/table/:key" element={<TablePage />} />
         <Route path="/home" element={<Home />} />
         <Route path="/course" element={<Courses />} />
         <Route path="/course/:topic/:articleId" element={<MarkdownArticle />} />
@@ -48,6 +52,7 @@ function App() {
       </Routes>
     </Router>
     </MathJaxContext>
+    </TableDataProvider> 
     </DataProvider>
   );
 }

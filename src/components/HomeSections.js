@@ -1,10 +1,12 @@
 import '../css/Home.css';
 import '../css/FamilyHome.css';
+// import '../css/ContactModal.css';
 import { Link } from 'react-router-dom';         //  for page navigation
 import { HashLink } from 'react-router-hash-link'; //  for scrolling
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ContactModal from './ContactModal';
 // import React
 import React from 'react';
 
@@ -163,6 +165,7 @@ function SafeImage({ src, alt, className }) {
 
 
 function SectionImg({ id, title, route, items }) {
+  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
     const formatPrice = (price) => {
         if (!price) return "";
@@ -174,6 +177,7 @@ function SectionImg({ id, title, route, items }) {
 
         return Number(cleaned).toLocaleString();
     };
+    
 
   return (
     <section id={id} className="section">
@@ -191,7 +195,21 @@ function SectionImg({ id, title, route, items }) {
               <div
                 className="card"
                 key={index}
-                onClick={() => route && navigate(route)}
+                onClick={() => {
+                  if (!route) return;
+
+                  if (item.key) {
+                    navigate(`/table/${item.key}`, {
+                      state: {
+                        url: item.url,
+                        title: item.title
+                      }
+                    });
+                  } else {
+                    navigate(route);
+                  }
+                }}
+                // onClick={() => route && navigate(route)}
                 style={{ cursor: route ? "pointer" : "default" }}
               >
                 {/* Image (with ORB-safe wrapper) */}
@@ -235,15 +253,32 @@ function SectionImg({ id, title, route, items }) {
                       <li style={{ color: "#555" }}>
                         {item.District}
                       </li>
-
+{/* Contact Us */}
                       <li style={{ textAlign: "right" }}>
-                        <a
+                        <button
+                          className="NavExt"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setShowModal(true);
+                          }}
+                          style={{
+                            background: "none",
+                            border: "none",
+                            }}
+                        >
+                          Contact Us
+                        </button>
+                        {showModal && (
+                          <ContactModal onClose={() => setShowModal(false)} />
+                        )}
+                        {/* <a
                           className="NavExt"
                           href="mailto:hahikeyuaono@gmail.com"
                           onClick={(e) => e.stopPropagation()}
                         >
                           Contact Us
-                        </a>
+                        </a> */}
                       </li>
                     </ul>
                   ) : (
