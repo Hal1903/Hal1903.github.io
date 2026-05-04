@@ -2,7 +2,7 @@ import '../../css/post.css';
 import {Block, Inline} from "../../components/KatexBox";
 import "katex/dist/katex.min.css";
 
-export const title = "";
+export const title = "KYにある日本食品店";
 
 export default function Article01() {
     return (

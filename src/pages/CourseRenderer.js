@@ -10,7 +10,8 @@ function CourseRenderer({ data, title = "Courses", baseRoute = "/course" }) {
   return (
     <div className="App">
       <header className="navbar">
-        <h1>MAX-STUDIES</h1>
+      <h1>{title === "Courses" ? "MAX-STUDIES" : "My KY Home"}</h1>
+        {/* <h1>MAX-STUDIES</h1> */}
         <nav>
           <Link to="/home">About Me</Link>
           <Link to="/">My KY Home</Link>

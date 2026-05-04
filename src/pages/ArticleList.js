@@ -23,7 +23,8 @@ function ArticleList() {
   return (
     <div>
       <header className="navbar">
-        <h1>MAX-STUDIES</h1>
+      <h1>{type === "course" ? "MAX-STUDIES" : "My KY Home"}</h1>
+        {/* <h1>MAX-STUDIES</h1> */}
         <nav>
           {/* <a href="/home">Home</a> */}
           <Link to="/home">Home</Link>

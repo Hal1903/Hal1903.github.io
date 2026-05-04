@@ -164,12 +164,12 @@ export default function FamilyHome() {
                     items={tableItems}
                 />
 
-                <SectionImg
+                {/* <SectionImg
                     id="Academic"
                     title="Academic"
                     route="/course"
                     items={academic}
-                />
+                /> */}
 
 
 
