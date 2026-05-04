@@ -162,7 +162,13 @@ function SectionImg({ id, title, route, items }) {
               <div
                 className="card"
                 key={index}
+
                 onClick={() => {
+                  if (item.onClick) {
+                    item.onClick();
+                    return;
+                  }
+
                   if (!route) return;
 
                   if (item.key) {

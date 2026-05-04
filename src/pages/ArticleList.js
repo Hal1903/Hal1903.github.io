@@ -6,20 +6,17 @@ import '../css/ArticleList.css';
 import '../css/Courses.css'
 
 function ArticleList() {
-  const { topic } = useParams();
+  // const { topic } = useParams();
+  const { type, topic } = useParams();
 
   // Get the articles for this topic
   const topicArticles = articleMap[topic] || {};
-  // const articles = Object.keys(topicArticles).map((id) => {
-  //   // If the article exports a title constant, use it
-  //   const mod = topicArticles[id];
-  //   const title = mod.title || id;
-  //   return { id, title };
-  // });
+
+  
   const articles = Object.keys(topicArticles).map((id) => {
-  const mod = topicArticles[id];
-  const title = mod.title || (mod.default && mod.default.title) || id;
-  return { id, title };
+    const mod = topicArticles[id];
+    const title = mod.title || (mod.default && mod.default.title) || id;
+    return { id, title };
   });
 
 
@@ -30,14 +27,14 @@ function ArticleList() {
         <nav>
           {/* <a href="/home">Home</a> */}
           <Link to="/home">Home</Link>
-          <Link to="/course/">Course List</Link>
+          <Link to={`/${type}/`}>Course List</Link>
         </nav>
       </header>
       <div className="article-container">
         {articles.map((article) => (
           <Link
             key={article.id}
-            to={`/course/${topic}/${article.id}`}
+            to={`/${type}/${topic}/${article.id}`}
             style={{ textDecoration: 'none', color: 'inherit' }}
           >
             <div className="article-panel">

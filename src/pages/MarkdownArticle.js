@@ -15,7 +15,7 @@ const mathjaxConfig = {
 };
 
 export default function MarkdownArticle() {
-  const { topic, articleId } = useParams();
+  const { type, topic, articleId } = useParams();
   const [isOpen, setIsOpen] = useState(false);
 
   const ArticleModule = articleMap[topic]?.[articleId];
@@ -45,8 +45,8 @@ export default function MarkdownArticle() {
             {buttonLabel}
           </button>
             <nav>
-              <Link to="/">Home</Link>
-              <Link to={`/course/${topic}`}>Back</Link>
+              <Link to="/">MyKY Home</Link>
+              <Link to={`/${type}/${topic}`}>Back</Link>
             </nav>
         </div>
       </header>

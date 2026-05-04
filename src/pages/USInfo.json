@@ -1,0 +1,28 @@
+{
+  "Articles": [
+    {
+      "id": "usinfo_housing",
+      "title": "Housing Guide",
+      "description": "How to find housing in Kentucky",
+      "image": "/images/Courses/usinfo_housing.jpg"
+    },
+    {
+      "id": "usinfo_school",
+      "title": "School System",
+      "description": "Understanding US schools",
+      "image": "/images/Courses/usinfo_sch.jpg"
+    },
+    {
+        "id": "usinfo_japanese_grocery",
+        "title": "Japanese grocery",
+        "description": "A list of Japanese food in the area",
+        "image": "/images/Courses/usinfo_jpn.jpg"
+    },
+    {
+      "id": "Kentucky_State",
+      "title": "About Kentucky",
+      "description": "Information about Kentucky",
+      "image": "/images/Courses/usinfo_ky.avif"
+    }
+  ]
+}

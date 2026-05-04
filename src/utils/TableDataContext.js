@@ -12,7 +12,7 @@ export function TableDataProvider({ children }) {
     const loadRegistry = async () => {
       try {
         const res = await loadCSV(SHEET_URLS.tables_registry);
-        console.log("RAW CSV:", res);
+        // console.log("RAW CSV:", res);
 
         const parsed = res.map(row => ({
           key: row.key?.trim(),

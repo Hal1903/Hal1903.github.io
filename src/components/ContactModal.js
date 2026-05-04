@@ -24,43 +24,40 @@ const ContactModal = ({ onClose }) => {
 
         <ul className="contact-list">
           <li>
-            <a
-              href="https://line.me/R/ti/p/@325uhrhr"
-              className="contact-item"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <SocialIcon url="https://line.me/R/ti/p/@325uhrhr" />
-              <span>LINE (Recommended)</span>
-            </a>
+<div className="contact-item">
+  <SocialIcon
+    url="https://line.me/R/ti/p/@325uhrhr"
+    target="_blank"
+    rel="noopener noreferrer"
+  />
+  <span>LINE (Recommended)</span>
+</div>
           </li>
 
           <li>
-            <a
-              href="mailto:hahikeyuaono@gmail.com"
-              className="contact-item"
-            >
-              <SocialIcon url="mailto:hahikeyuaono@gmail.com" />
-
-              <span>Email</span>
-            </a>
+<div className="contact-item">
+  <SocialIcon
+    url="mailto:hahikeyuaono@gmail.com"
+    target="_blank"
+    rel="noopener noreferrer"
+  />
+  <span>Email</span>
+</div>
           </li>
 
           <li>
-            <a
-              href="https://www.facebook.com/yukiko.aono.716/"
-              className="contact-item"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <SocialIcon url="https://www.facebook.com/yukiko.aono.716/" />
-              <span>Facebook</span>
-            </a>
+<div className="contact-item">
+  <SocialIcon
+    url="https://www.facebook.com/yukiko.aono.716/"
+    target="_blank"
+    rel="noopener noreferrer"
+  />
+  <span>Facebook</span>
+            </div>
           </li>
         </ul>
       </div>
-    </div>,
-    document.body
+    </div>, document.body
   );
 };
 

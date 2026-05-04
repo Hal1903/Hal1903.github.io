@@ -4,19 +4,19 @@ import { SocialIcon } from 'react-social-icons'
 import { Link } from 'react-router-dom';         //  for page navigation
 import { HashLink } from 'react-router-hash-link'; //  for scrolling
 import Courses_list from './Courses.json';
+import USInfo_list from './USInfo.json';
 import FBGroupCard from '../components/FBGroupCard';
 import {useEffect, useState} from 'react'
 import { useData } from '../utils/DataContext';
+import { useNavigate } from 'react-router-dom';
 import { useTables } from '../utils/TableDataContext';
 import {Section, SectionImg, VocabSection} from '../components/HomeSections';
 // import { loadVocabData } from '../utils/loadVocabData';
 import { PulseLoader } from "react-spinners";
 import '../css/loaderAnime.css';
+import { useFAQImages } from '../utils/useFAQImages';
 
-// import { SHEET_URLS } from "../utils/sheetURLs";
-// import { loadCSV } from "../utils/loadCSV";
 
-import { useNavigate } from 'react-router-dom';
 
 export default function FamilyHome() {
     const [isOpen, setIsOpen] = useState(false);
@@ -27,14 +27,23 @@ export default function FamilyHome() {
 
     const { data, loading } = useData();
     const { tables, loading: tablesLoading } = useTables();
+    const { faqImages, loading: faqImgLoading } = useFAQImages();
+    
+    const navigate = useNavigate();
     const ready = !loading && data?.faq && data?.houses;
 
     const houses = data.houses;
     const faqData = data.faq;
 
     const categories = Object.keys(faqData);
+    const faqPanels = Object.keys(faqData).map(cat => ({
+        title: cat,
+        image: faqImages[cat] || "",   // from CSV
+        key: cat                       // use as identifier
+    }));
 
     const academic = Courses_list.Courses || []; // Parse from Courses; separate the list to json first.
+    const usinfo = USInfo_list.Articles || []; // Parse from USInfo; separate the list to json first.
 
     const vocabData = data.vocab || {};
     const vocabImages = data.vocabImages || {};
@@ -73,7 +82,7 @@ export default function FamilyHome() {
                 <nav className={`nav-links ${isOpen ? 'open' : ''}`}>
                     <HashLink smooth to="#Houses" onClick={closeMenu}>物件</HashLink>
 
-                    {categories.map(cat => (
+                    {/* {categories.map(cat => (
                     <HashLink
                         key={cat}
                         smooth
@@ -82,7 +91,8 @@ export default function FamilyHome() {
                     >
                         {cat}
                     </HashLink>
-                    ))}
+                    ))} */}
+
                     <HashLink smooth to="#Vocab" onClick={closeMenu}>英単語</HashLink>
                     <HashLink smooth to="#Community" onClick={closeMenu}>日本人コミュニティ</HashLink>
                     <HashLink smooth to="#AboutUs" onClick={closeMenu}>当サイトについて</HashLink>
@@ -116,7 +126,18 @@ export default function FamilyHome() {
                             title="物件 / Houses (affiliated by Golden 7 Realty)" 
                             route="/Houses" items={houses} />
 
-                {categories.map(category => (
+
+                <SectionImg
+                    id="FAQ"
+                    title="よくある質問 (FAQ)"
+                    items={faqImages.map(item => ({
+                        title: item.category,
+                        image: item.image,
+                        onClick: () => navigate(`/faq/${encodeURIComponent(item.category)}`)
+                    }))}
+                />
+
+                {/* {categories.map(category => (
                     <Section
                         key={category}
                         id={category}
@@ -124,7 +145,15 @@ export default function FamilyHome() {
                         items={faqData[category]}
                         category={category}
                     />
-                ))}
+                ))} */}
+
+                <SectionImg
+                    id="USInfo"
+                    title="記事"
+                    route="/blogs"
+                    items={usinfo}
+                />
+
 
                 <VocabSection vocabs={vocabData} vocabImages={vocabImages} />
 
@@ -146,7 +175,7 @@ export default function FamilyHome() {
 
 {/* <h1>Video Resources</h1> */}
 
-<h1>Community</h1>
+<h1 id="Community">Community</h1>
 <div className='about-container2'>
 <p style={{textShadow: "1px 1px 2px rgba(0,0,0,0.1)"}}>
     日本人コミュニティをお探しの場合は以下から参加が可能です： <br />
